@@ -10,7 +10,7 @@ requirements
 setup
 -----
 
-.. highlight:: c
+.. code-block:: sh
 
   git clone https://github.com/cross-solution/CrossApplicantManager
 
