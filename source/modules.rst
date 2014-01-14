@@ -4,10 +4,14 @@ Modules
 Core
 ----
 
+provides core functionality
+
 Auth
 ----
 
-the auth module is based on _hybridauth: http://hybridauth.sourceforge.net/
+the auth module is based on hybridauth_. This makes ist easy to integrate social networks like Facebook, Xing, Linkedin.
+
+.. _hybridauth: http://hybridauth.sourceforge.net/ 
 
 CV
 --
