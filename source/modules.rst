@@ -7,7 +7,7 @@ Core
 Auth
 ----
 
-the auth module is based on hybridauth. 
+the auth module is based on _hybridauth: http://hybridauth.sourceforge.net/
 
 CV
 --
