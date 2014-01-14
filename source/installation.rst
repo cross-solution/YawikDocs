@@ -5,6 +5,7 @@ Requirements
 ------------
 
 * php 5.3.*
+* Zend Framework 2.1.*
 * mongodb 2.4.*
 
 Setup
@@ -20,13 +21,34 @@ Setup
 Configuration
 -------------
 
-to enable login via Facebook, Xing, Linkedin or any other hybridauth adapter simply create a ``config/autoload/module.auth.local.php``
+Database
+^^^^^^^^
 
-.. code-block:: ruby
+create a ``config/autoload/core.db.mongodb.local.php`` to define the database. 
+
+.. code-block:: php
    :linenos:
 
-	<?php
-	return array(
+   <?php
+   return array(
+     'database' => array(
+        'connection' => 'localhost:27017',
+     ),
+   );
+   ?>
+
+
+
+Authentication
+^^^^^^^^^^^^^^
+
+to enable login via Facebook, Xing, Linkedin or any other hybridauth adapter simply create a ``config/autoload/module.auth.local.php``
+
+.. code-block:: php
+   :linenos:
+
+   <?php
+   return array(
 	'hybridauth' => array(
         "Facebook" => array (
             "enabled" => true,
@@ -47,6 +69,5 @@ to enable login via Facebook, Xing, Linkedin or any other hybridauth adapter sim
             ),
             "keys"    => array ( "key" => "", "secret" => "" ),
         ),
-
-	);
-	?>
+   );
+   ?>

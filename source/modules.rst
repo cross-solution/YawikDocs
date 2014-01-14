@@ -1,33 +1,32 @@
 Modules
 =======
 
-Core
-----
+we use module system of the ZF2_.
 
-provides core functionality
+.. _ZF2: http://framework.zend.com/manual/2.0/en/modules/zend.module-manager.intro.html
 
-Auth
-----
+Modules can simply be enabled by adding their names to an array in ``config/config.php``.
 
-the auth module is based on hybridauth_. This makes ist easy to integrate social networks like Facebook, Xing, Linkedin.
+.. code-block:: php
+   :linenos:
 
-.. _hybridauth: http://hybridauth.sourceforge.net/ 
+   <?php
+   $modules = array(
+         'Core', /*'TwbBundle', */'Auth', 'Cv', 'Applications', 'Jobs', 'Settings', 'Pdf',
+    );
 
-CV
---
+   ...
+   ?>
 
-a CV is a collection of education history, work experiences, personal skills and attachments
+currently the following modules exists:
 
-Applications
-------------
+.. toctree::
+   :maxdepth: 2
 
-an application is related to a certain job.
+   modules/core/index
+   modules/auth/index
+   modules/cv/index
+   modules/applications/index
+   modules/jobs/index
+   modules/pdf/index
 
-Jobs
-----
-
-
-PDF
----
-
-the PDF modules enables to download an application as an PDF document
