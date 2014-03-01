@@ -14,6 +14,10 @@ Contents:
    about
    installation
    modules
+   screens
+   faq
+   customize
+   api
 
 
 Indices and tables

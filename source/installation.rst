@@ -5,8 +5,10 @@ Requirements
 ------------
 
 * php 5.3.*
-* Zend Framework 2.1.*
+* Zend Framework 2.2.*
 * mongodb 2.4.*
+* php5-mongo
+* php5-intl
 
 Setup
 -----
@@ -15,8 +17,9 @@ Setup
 
   git clone https://github.com/cross-solution/CrossApplicantManager
   cd CrossApplicantManager
-  composer.phar install
+  make install
 
+this will download the composer.phar, check dependencies and install missing libraries.
 
 Configuration
 -------------
