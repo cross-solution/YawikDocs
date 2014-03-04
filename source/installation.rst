@@ -4,6 +4,8 @@ Installation
 Requirements
 ------------
 
+you need at least a webserver, a mongo database and PHP. We're developing using apache with mod_php5 enabled.
+
 * php 5.3.*
 * Zend Framework 2.2.*
 * mongodb 2.4.*
@@ -19,7 +21,9 @@ Setup
   cd CrossApplicantManager
   make install
 
-this will download the composer.phar, check dependencies and install missing libraries.
+this will download the composer_, check dependencies and install missing libraries.
+
+.. _composer: https://getcomposer.org/
 
 Configuration
 -------------
@@ -40,12 +44,33 @@ create a ``config/autoload/core.db.mongodb.local.php`` to define the database.
    );
    ?>
 
+Apache
+^^^^^^
+
+point the DocumentRoot of your Webserver to the ``public`` directory.
+
+.. code-block:: sh
+
+  <VirtualHost *:80>
+        ServerName YOUR.HOSTNAME
+        DocumentRoot /YOUR/DIRECTORY/public
+  
+        <Directory /YOUR/DIRECTORY/public>
+                DirectoryIndex index.php
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        </Directory>
+  </VirtualHost>
+
 
 
 Authentication
 ^^^^^^^^^^^^^^
 
-to enable login via Facebook, Xing, Linkedin or any other hybridauth adapter simply create a ``config/autoload/module.auth.local.php``
+to enable login via Facebook, Xing, Linkedin or any other hybridauth_ adapter simply create a ``config/autoload/module.auth.local.php``
+
+.. _hybridauth: http://hybridauth.sourceforge.net/
 
 .. code-block:: php
    :linenos:

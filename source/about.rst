@@ -1,4 +1,4 @@
 About
 =====
 
-the Cross Applicant Management aims to become some kind of a wordress(tm) for the HR peole.
+the Cross Applicant Manager is a modular system for managing applications.
