@@ -99,3 +99,8 @@ to enable login via Facebook, Xing, Linkedin or any other hybridauth_ adapter si
         ),
    );
    ?>
+
+Debugging
+^^^^^^^^^
+
+you can enable the debugging Mode by setting the enviroment variable APPLICATION_ENV=develop. This will enable increase the debug level, enable error messages on the screen.
