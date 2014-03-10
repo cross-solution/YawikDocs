@@ -14,8 +14,6 @@ Contents:
    about
    installation
    modules
-   screens
-   faq
    customize
    api
 
