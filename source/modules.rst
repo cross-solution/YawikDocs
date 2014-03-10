@@ -19,6 +19,27 @@ Modules can simply be enabled by adding their names to an array in ``config/conf
    ...
    ?>
 
+Directory Structure of a module
+
++----------+-------------------------------------+---------------------------------+
+|directory |description                          |example                          |
++==========+=====================================+=================================+
+|language  | contains gettext language files     | .. image:: images/module.png    |
++----------+-------------------------------------+                                 |
+|public    | place for images, css or javascript |                                 |
++----------+-------------------------------------+                                 |
+|config    | place for configuration files       |                                 |
++----------+-------------------------------------+                                 |
+|test      | place for unit tests                |                                 |
++----------+-------------------------------------+                                 |
+|src       | Controllers, Models etc.            |                                 |
++----------+-------------------------------------+                                 |
+|view      | view scripts                        |                                 |
++----------+-------------------------------------+---------------------------------+
+
+
+
+
 currently the following modules exists:
 
 .. toctree::
