@@ -1,3 +1,5 @@
+.. _customize:
+
 Customize
 ^^^^^^^^^
 
@@ -18,7 +20,8 @@ You can activate/deactivate Modules in config/config.php
     );
 
 
-If you want to customize the layout, you can do so by writing a plugin. Create a directory "MyPlugin".
+If you want to customize the layout, you can do so by writing a plugin. Create a directory "MyPlugin" and map all :ref:`templates <templates>` 
+to your own views scripts.
 
 .. code-block:: sh
 
