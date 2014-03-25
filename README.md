@@ -1,4 +1,4 @@
 docs
 ====
 
-Documentation for the Cross Applicant Management System
+Documentation for the YAWIK System. Rendered at http://crossapplicantmanager.readthedocs.org/en/latest/
