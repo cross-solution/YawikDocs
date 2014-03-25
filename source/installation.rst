@@ -28,6 +28,18 @@ this will download the composer_, check dependencies and install missing librari
 Configuration
 -------------
 
+Configuration files are located in ``config/autoload``. Config files are 
+returning an assoziative array. All arrays are merged, so the order how 
+the configuration files are processed might be relevant.
+
+Files with names ending in ``*.global.php`` are process first. As a second
+files ending in ``*.{env}.php``. {env} can have at least the values ``production``, 
+and ``development``. 
+If the environment variable ``APPLICATION_ENV`` is set, and if files named 
+``*. development.php`` exist, then these configurations are processed.
+
+At the and ``*.local.php`` files are processed.
+
 Database
 ^^^^^^^^
 
@@ -103,4 +115,6 @@ to enable login via Facebook, Xing, Linkedin or any other hybridauth_ adapter si
 Debugging
 ^^^^^^^^^
 
-you can enable the debugging Mode by setting the enviroment variable APPLICATION_ENV=develop. This will enable increase the debug level, enable error messages on the screen.
+you can enable the debugging Mode by setting the enviroment variable 
+``APPLICATION_ENV=development``. This will enable increase the debug 
+level, enable error messages on the screen.
