@@ -48,9 +48,11 @@ you can create a module ``MyModule``. Put it into the directory ``vendor/extern/
 copy ``module/Core/view/layout/layout.phtml`` into your modules directory and start to customize your layout. 
 
 
+CSS
+---
 
-
-
+YAWIK comes with bootstrap. Glyphicons are replaced by awesome fonts. The css for the complete application 
+is currently build with lessc. 
 
 
 

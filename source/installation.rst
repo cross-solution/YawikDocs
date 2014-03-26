@@ -40,6 +40,12 @@ If the environment variable ``APPLICATION_ENV`` is set, and if files named
 
 At the and ``*.local.php`` files are processed.
 
+Modules are coming with there own ``config`` directory. Configuration files of
+modules can be named ``*.config.php``. This allows you to split configurations
+into sections. E.g. a router.config.php file sould contain an assoziative
+array defining routing specific things.
+
+
 Database
 ^^^^^^^^
 
