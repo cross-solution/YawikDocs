@@ -81,7 +81,10 @@ point the DocumentRoot of your Webserver to the ``public`` directory.
         </Directory>
   </VirtualHost>
 
+.. note::
 
+  you should ``SetEnv APPLICANTION_ENV development`` in your VirtualHost section,
+  if you plan do develop.
 
 Authentication
 ^^^^^^^^^^^^^^
