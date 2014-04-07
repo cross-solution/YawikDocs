@@ -4,7 +4,12 @@ Installation
 Requirements
 ------------
 
-you need at least a webserver, a mongo database and PHP. We're developing using apache with mod_php5 enabled.
+you need at least a webserver, a mongo database and PHP. We're developing using 
+apache with mod_php5 enabled. If you don't have a local mongoDB availabe you can
+try a provider like mongolab.com_ or mongosoup.de_.
+
+.. _mongolab.com: https://mongolab.com/welcome/
+.. _mongosoup.de: https://www.mongosoup.de/
 
 * php 5.3.*
 * Zend Framework 2.2.*
