@@ -3,6 +3,14 @@
 Core
 ----
 
+Contents: 
+
+.. toctree:: 
+   :maxdepth: 1
+
+   notifications
+   
+   
 provides core functionality
 
 * Logging
