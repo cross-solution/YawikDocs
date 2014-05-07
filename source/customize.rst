@@ -20,36 +20,34 @@ You can activate/deactivate Modules in config/config.php
     );
 
 
-If you want to customize the layout, you can do so by writing a plugin. Create a directory "MyPlugin" and map :ref:`templates <templates>` 
-to your own views scripts. If you want e.g. add an additional javascrip for click tracking (Piwik, Google Analytics or whatever) without touching the sources, 
-you can create a module ``MyModule``. Name it Module.php and put it into the directory ``module/MyModule`` and modify your layout.phtml.
+If you want to customize the layout, you can do so by writing a plugin. The easiest way is to clone 
+the YawikDemoSkin_ into your ``modules`` directory.
+
+.. code-block:: sh
+ 
+ cd modules
+ git clone https://github.com/cbleek/YawikDemoSkin
+
+To activate the plugin you can either simply add ``'YawikDemoSkin'`` to your modules array in ``config/config.php``, 
+or if you don't want to touch any code from git at all, add an ENV variable e.g. ``APPLICATION_HOST`` to your 
+VirtualHost section. In addition create a file ``config/autoload/yawik.module.php``
 
 .. code-block:: sh
 
-  <?php
-     
-  namespace MyModule;
-  
-  class Module
-  {
-    public function getConfig()
-    {
-       return array('view_manager' => array(
-                      'template_map' => array(
-                        'layout/layout' => __DIR__ . '/layout.phtml',
-                                             ),
-                                           ),  
-                                         );    
-    }
+  if ((!array_key_exists('APPLICATION_HOST', $_SERVER) || $_SERVER['APPLICATION_HOST'] != "yawik") && !$allModules) {
+     return array();
   }
- 
- 
+  return array("YawikDemoSkin");
 
-copy ``module/Core/view/layout/layout.phtml`` into your modules directory and start to customize your layout. 
+This will add the module dynamically. 
+
+.. _YawikDemoSkin: https://github.com/cbleek/YawikDemoSkin
+
+customize your Skin by mapping more :ref:`templates <templates>` to your own views scripts. 
 
 .. note::
 
-   If the name of your module stats with "Cam", you can put it outside of the
+   If the name of your module starts with "Cam", you can put it outside of the
    repository into the ``vendor/extern`` directory`.
 
 
