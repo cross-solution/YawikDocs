@@ -26,9 +26,22 @@ Setup
   cd CrossApplicantManager
   make install
 
-this will download the composer_, check dependencies and install missing libraries.
+this will download composer_ for installing missing libraries and and phing_ for generating the config files
+
+.. code-block:: sh
+
+  cp build.properties.dist build.properties
+
+The build.properties contains all configuration values. Adapt these values and run
+
+.. code-block:: sh
+  
+  ./phing -D overwrite=1
+
+This will copy varios config *.dist files into the autoload directory.  
 
 .. _composer: https://getcomposer.org/
+.. _phing: http://www.phing.info/
 
 Configuration
 -------------
