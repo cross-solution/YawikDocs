@@ -70,3 +70,33 @@ you can install lessc on ubuntu by
 .. _sources: https://github.com/cross-solution/CrossApplicantManager/tree/master/less
 .. _make-css.sh: https://github.com/cross-solution/CrossApplicantManager/blob/master/less/make-css.sh
 
+
+Formular Fields
+---------------
+
++----------------+---------------------------------------------------------------------------------------------------------+
+|Name            |description                                                                                              |
++================+=========================================================================================================+
+|Rating_         | Star rating Element                                                                                     |
++----------------+---------------------------------------------------------------------------------------------------------+
+|SpinnerSubmit_  | a spinner icon is added during form validation. While sending data, the submit button is inactivated    |
++----------------+---------------------------------------------------------------------------------------------------------+
+
+.. _Rating: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/Form/Element/Rating.php
+.. _SpinnerSubmit: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/Form/Element/SpinnerSubmit.php
+
+
+View Herper Scripts
+-------------------
+
++----------------+---------------------------------------------------------------------------------------------------------+
+|Name            |description                                                                                              |
++================+=========================================================================================================+
+|Alert_          | displays notification like error or success                                                             |
++----------------+---------------------------------------------------------------------------------------------------------+
+|Services_       | can access Services                                                                                     |
++----------------+---------------------------------------------------------------------------------------------------------+
+
+
+.. _Alert: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/View/Helper/Alert.php 
+.. _Services: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/View/Helper/Services.php
