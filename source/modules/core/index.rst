@@ -50,11 +50,12 @@ all PHP errors are logged into log/cam.log. This is configured in:
 Layout
 ^^^^^^
 
-
 +---------+-------------------------+---------------------------------------------------+
 |Module   |Name                     |Description                                        |
 +=========+=========================+===================================================+
 |Core     |`layout/layout`_         |general layout                                     |
++---------+-------------------------+---------------------------------------------------+
+|Core     |`core/index/index`_      |homepage for guests                                |
 +---------+-------------------------+---------------------------------------------------+
 |Core     |`main-navigation`_       |can be used as view script for the main navigation |
 +---------+-------------------------+---------------------------------------------------+
@@ -70,6 +71,7 @@ Layout
 +---------+-------------------------+---------------------------------------------------+
 
 .. _layout/layout: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/layout/layout.phtml
+.. _index/index: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/index/index.phtml
 .. _main-navigation: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/main-navigation.phtml
 .. _pagination-control: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/pagination-control.phtml
 .. _form/core/buttons: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/form/buttons.phtml
