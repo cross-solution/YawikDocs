@@ -14,6 +14,7 @@ Contents:
    about
    installation
    modules
+   guidelines
    customize
    api
 
