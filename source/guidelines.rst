@@ -1,11 +1,11 @@
 Guidelines
 ==========
 
-Ajax Requests
--------------
+Common JavaScript Trigger
+-------------------------
 
-If ajax requests are finished, they fire a hook in javascript
+Trigger are used to broadcast certain events
 
-Example:
-
-TODO
+ajax.ready
+	  Is triggered on the container, which is altered by the ajax.request.
+          Remember, this event bubbles, so all listener on elements above will spring into action, too.
