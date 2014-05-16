@@ -24,9 +24,10 @@ Setup
 
   git clone https://github.com/cross-solution/CrossApplicantManager
   cd CrossApplicantManager
-  make install
+  ./install.sh
 
-this will download composer_ for installing missing libraries and and phing_ for generating the config files
+this downloads composer_ and phing_ and installs missing dependencies and 
+generates config files.
 
 .. code-block:: sh
 
@@ -36,9 +37,37 @@ The build.properties contains all configuration values. Adapt these values and r
 
 .. code-block:: sh
   
-  ./phing -D overwrite=1
+  ./phing.phar
 
-This will copy varios config *.dist files into the autoload directory.  
+This will copy varios config *.dist files into the autoload directory. 
+
+all build options can be listed by:
+
+.. code-block:: sh
+
+  $ ./phing.phar -l
+  Buildfile: /home/cbleek/Zend/workspaces/DefaultWorkspace/CrossApplicantManager/build.xml
+   [property] Loading /home/cbleek/Zend/workspaces/DefaultWorkspace/CrossApplicantManager/./build.properties
+  Default target:
+  -------------------------------------------------------------------------------
+   install    reads build.properties and generates config files
+  
+  Main targets:
+  -------------------------------------------------------------------------------
+   clean      removes build, log, cache, tmp and vendor dir
+   dist       create a distribution package
+   docs       build api docs
+   install    reads build.properties and generates config files
+   phpdoc     build api docs
+   translate  compiles all languages *.po files
+
+  Subtargets:
+  -------------------------------------------------------------------------------
+   build
+   compile-po-file
+   generate-autoload-config
+   prepare
+
 
 .. _composer: https://getcomposer.org/
 .. _phing: http://www.phing.info/
