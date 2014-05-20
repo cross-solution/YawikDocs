@@ -9,11 +9,11 @@ Contents:
    :maxdepth: 1
 
    notifications
+   logging
    
    
 provides core functionality
 
-* Logging
 * Sending Mails
 * Formular handling
 * Pagination
@@ -23,27 +23,6 @@ provides core functionality
 * Attachment handling
 * ACL for Attachments
 * general Layout
-
-Logging
-^^^^^^^
-
-all PHP errors are logged into log/cam.log. This is configured in:
-
-.. code-block:: php
-
-  'log' => array(
-        'Log/Core/Cam' => array(
-            'writers' => array(
-                 array(
-                     'name' => 'stream',
-                    'priority' => 1000,
-                    'options' => array(
-                         'stream' => __DIR__ .'/../../../log/cam.log',
-                    ),
-                ),
-            ),
-        ),
-
 
 .. _templates:
 
