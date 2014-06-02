@@ -11,11 +11,14 @@ try a provider like mongolab.com_ or mongosoup.de_.
 .. _mongolab.com: https://mongolab.com/welcome/
 .. _mongosoup.de: https://www.mongosoup.de/
 
+* a Facebook, Xing or LinkedIn App
 * php 5.3.*
 * Zend Framework 2.2.*
 * mongodb 2.4.*
 * php5-mongo
 * php5-intl
+* php5-curl (only needed to install dependencies via composer)
+* php5-xsl (only needed to install dependencies via composer)
 
 Setup
 -----
@@ -33,7 +36,39 @@ generates config files.
 
   cp build.properties.dist build.properties
 
-The build.properties contains all configuration values. Adapt these values and run
+The build.properties contains all configuration values. You currently need
+at least one Social Network App. So take a look how to create an App with
+Facebook_, Xing_ or LinkedIn_. Currently there is no way to create a Yawik
+Account without a such an App.
+
+.. _Facebook: https://developers.facebook.com/
+.. _Xing: https://dev.xing.com/overview
+.. _LinkedIn: https://developer.linkedin.com/
+
+Adapt these values. Put you app IDs and your secret into the ``build.properties``.
+
+.. code-block:: sh
+
+  ;
+  ; Facebook, Xing and Linkedin credentials. (module/Auth/config/module.auth.global.php.dist)
+  ;
+
+  facebook.enabled=false
+  facebook.appid=
+  facebook.secret=
+  facebook.scope="email, user_about_me, user_birthday, user_hometown", "user_work_history", "user_education_history"
+
+  xing.enabled=false
+  xing.appid=
+  xing.secret=
+  xing.scope=
+
+  linkedin.enabled=false
+  linkedin.appid=
+  linkedin.secret=
+  linkedin.scope="r_fullprofile"
+
+Ànd then run
 
 .. code-block:: sh
   
