@@ -27,25 +27,27 @@ Setup
 
   git clone https://github.com/cross-solution/CrossApplicantManager
   cd CrossApplicantManager
-  ./install.sh
-
-this downloads composer_ and phing_ and installs missing dependencies and 
-generates config files.
-
-.. code-block:: sh
-
   cp build.properties.dist build.properties
 
 The build.properties contains all configuration values. You currently need
-at least one Social Network App. So take a look how to create an App with
-Facebook_, Xing_ or LinkedIn_. Currently there is no way to create a Yawik
-Account without a such an App.
+at least one Social Network App to log into your YAWIK. So take a look how 
+to create an App with Facebook_, Xing_ or LinkedIn_. Currently there is no 
+way to create a Yawik Account without a such an App.
 
 .. _Facebook: https://developers.facebook.com/
 .. _Xing: https://dev.xing.com/overview
 .. _LinkedIn: https://developer.linkedin.com/
 
-Adapt these values. Put you app IDs and your secret into the ``build.properties``.
+Adapt these values. Put your app IDs and your secret into the ``build.properties``.
+
+Finally run the ``install.sh`` script. This downloads composer_ and phing_ and 
+installs missing dependencies and generates config files.
+
+.. code-block:: sh
+
+  ./install.sh
+
+
 
 .. code-block:: sh
 
