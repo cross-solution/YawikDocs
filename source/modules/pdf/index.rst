@@ -1,5 +1,7 @@
 .. index:: PDF
 
+.. _PDF:
+
 PDF
 ---
 

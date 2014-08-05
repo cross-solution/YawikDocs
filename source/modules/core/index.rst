@@ -36,6 +36,8 @@ Layout
 +---------+-------------------------+---------------------------------------------------+
 |Core     |`core/index/index`_      |homepage for guests                                |
 +---------+-------------------------+---------------------------------------------------+
+|Core     |`core/notifications`_    |notifications                                      |
++---------+-------------------------+---------------------------------------------------+
 |Core     |`main-navigation`_       |can be used as view script for the main navigation |
 +---------+-------------------------+---------------------------------------------------+
 |Core     |`pagination-control`_    |defines the pagination of listings                 |
@@ -53,6 +55,7 @@ Layout
 
 .. _layout/layout: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/layout/layout.phtml
 .. _core/index/index: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Auth/view/auth/index/index.phtml
+.. _core/notifications: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/notifications.phtml
 .. _index/index: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/index/index.phtml
 .. _main-navigation: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/main-navigation.phtml
 .. _pagination-control: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/pagination-control.phtml

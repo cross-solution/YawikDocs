@@ -55,7 +55,7 @@ Notifications are rendered by injecting a child view model into the layout via
 an Listener on the Zend Framework's RENDER event.
 
 This injected view model renders the template which is registered under the
-key "core/notifications" in the view manager's template map.
+key `core/notifications`_ in the view manager's template map.
 
 The default view script provided renders all notifications in a div container
 with the class "yk-notifications" using the "Alert" view helper.
@@ -65,7 +65,8 @@ Notifications are rendered in the following order:
  - Warning
  - Success
  - Info
- 
+
+.. _core/notifications: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/notifications.phtml 
 
 Alert View Helper
 ^^^^^^^^^^^^^^^^^

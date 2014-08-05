@@ -8,14 +8,25 @@ This way you can split up your configuration in smaller chunks (e.g. put all you
 
 .. _ZF2: http://framework.zend.com/manual/2.0/en/modules/zend.module-manager.intro.html
 
-Modules can simply be enabled by adding their names to an array in ``config/config.php``.
+Modules can simply be enabled by adding their names to an array in `config/config.php`_.
+
+.. _config/config.php: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/notifications.phtml
 
 .. code-block:: php
    :linenos:
 
    <?php
    $modules = array(
-         'Core', /*'TwbBundle', */'Auth', 'Cv', 'Applications', 'Jobs', 'Settings', 'Pdf',
+         'DoctrineModule', 
+         'DoctrineMongoODMModule', 
+         'Core',
+         'Auth',
+         'Cv',
+         'Applications',
+         'Jobs',
+         'Settings',
+         'Pdf',
+         'Geo', //'FormularValidation',
     );
 
    ...
