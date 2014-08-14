@@ -11,7 +11,6 @@ try a provider like mongolab.com_ or mongosoup.de_.
 .. _mongolab.com: https://mongolab.com/welcome/
 .. _mongosoup.de: https://www.mongosoup.de/
 
-* a Facebook, Xing or LinkedIn App
 * php 5.3.*
 * Zend Framework 2.2.*
 * mongodb 2.4.*
@@ -23,16 +22,42 @@ try a provider like mongolab.com_ or mongosoup.de_.
 Setup
 -----
 
+get the latest YAWIK Package. Packages are build as ZIP or TGZ archive. They
+extract into a subdirectory YAWIK. 
+
+Then edit the ``build.properties`` file. There you can set database resources
+and an initial Account to login into your YAWIK.
+
+next step is to run ``./install.sh``
+
+This will download phing.phar_ , executes ``./phing.phar generate-autoload-config`` 
+which takes the configuration option of your ``build.properties`` and generates
+various configuration files located in config/autoload.
+
+now you should be able to login into your YAWIK by pointing a browser to
+
+http://your.server/YAWIK/public
+
+ 
+http://yawik.org/download/latest.zip or http://yawik.org/download/latest.tgz
+
+Setup for Developers
+^^^^^^^^^^^^^^^^^^^^
+
+if you want to modify the YAWIK code, you have to clone the sources from Github. 
+
+Unpack the sources in the DocumentRoot. You'll find the sources in the YAWIK directory. 
+
 .. code-block:: sh
 
   git clone https://github.com/cross-solution/CrossApplicantManager
   cd CrossApplicantManager
   cp build.properties.dist build.properties
 
-The build.properties contains all configuration values. You currently need
-at least one Social Network App to log into your YAWIK. So take a look how 
-to create an App with Facebook_, Xing_ or LinkedIn_. Currently there is no 
-way to create a Yawik Account without a such an App.
+The build.properties contains all configuration values.Here you can define an initial
+user account, a database resource or integrate social networks. 
+Note: you need a Facebook, Xing or LinkedIn App, if you want to integrate the social
+networks . So take a look how to create an App with Facebook_, Xing_ or LinkedIn_. 
 
 .. _Facebook: https://developers.facebook.com/
 .. _Xing: https://dev.xing.com/overview
@@ -46,8 +71,6 @@ installs missing dependencies and generates config files.
 .. code-block:: sh
 
   ./install.sh
-
-
 
 .. code-block:: sh
 
