@@ -54,7 +54,7 @@ Unpack the sources in the DocumentRoot. You'll find the sources in the YAWIK dir
   cd CrossApplicantManager
   cp build.properties.dist build.properties
 
-The build.properties contains all configuration values.Here you can define an initial
+The build.properties contains all configuration values. Here you can define an initial
 user account, a database resource or integrate social networks. 
 Note: you need a Facebook, Xing or LinkedIn App, if you want to integrate the social
 networks . So take a look how to create an App with Facebook_, Xing_ or LinkedIn_. 
@@ -127,7 +127,6 @@ all build options can be listed by:
    compile-po-file
    generate-autoload-config
    prepare
-
 
 .. _composer: https://getcomposer.org/
 .. _phing: http://www.phing.info/
