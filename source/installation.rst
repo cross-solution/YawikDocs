@@ -19,6 +19,21 @@ try a provider like mongolab.com_ or mongosoup.de_.
 * php5-curl (only needed to install dependencies via composer)
 * php5-xsl (only needed to install dependencies via composer)
 
+The YAWIK development is done on Ubuntu 14.04 Linux. There you can install the 
+required apache, php and mongodb via:
+
+.. code-block:: sh
+
+  aptitude install mongodb-server php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
+                   php5-intl php5-common php5-cli php5-json php5 apache2
+
+YAWIK should run on all operating systems, which support PHP. 
+
+More Informations about installation of Mongo: 
+
+http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+
+
 Setup
 -----
 
@@ -30,7 +45,7 @@ and an initial Account to login into your YAWIK.
 
 next step is to run ``./install.sh``
 
-This will download phing.phar_ , executes ``./phing.phar generate-autoload-config`` 
+This will download phing_ , executes ``./phing.phar generate-autoload-config`` 
 which takes the configuration option of your ``build.properties`` and generates
 various configuration files located in config/autoload.
 
@@ -99,7 +114,7 @@ installs missing dependencies and generates config files.
   
   ./phing.phar
 
-This will copy varios config *.dist files into the autoload directory. 
+This will copy varios config \*.dist files into the autoload directory. 
 
 all build options can be listed by:
 
