@@ -5,7 +5,7 @@ Requirements
 ------------
 
 you need at least a webserver, a mongo database and PHP. We're developing using 
-apache with mod_php5 enabled. If you don't have a local mongoDB availabe you can
+apache with mod_php5 enabled. If you don't have a local mongoDB available you can
 try a provider like mongolab.com_ or mongosoup.de_.
 
 .. _mongolab.com: https://mongolab.com/welcome/
@@ -19,17 +19,17 @@ try a provider like mongolab.com_ or mongosoup.de_.
 * php5-curl (only needed to install dependencies via composer)
 * php5-xsl (only needed to install dependencies via composer)
 
-The YAWIK development is done on Ubuntu 14.04 Linux. There you can install the 
-required apache, php and mongodb via:
+The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty
+14.04. There you can install the required apache, php and mongodb via:
 
 .. code-block:: sh
 
   aptitude install mongodb-server php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
-                   php5-intl php5-common php5-cli php5-json php5 apache2
+                   php5-intl php5-common php5-cli php5-json php5 apache2 curl
 
 YAWIK should run on all operating systems, which support PHP. 
 
-More Informations about installation of Mongo: 
+More information about installation of Mongo:
 
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 
@@ -38,12 +38,14 @@ Setup
 -----
 
 get the latest YAWIK Package. Packages are build as ZIP or TGZ archive. We publish 
-them on Sourceforgce_. They extract into a subdirectory YAWIK. 
+them on Sourceforge_. They extract into a subdirectory YAWIK.
 
-.._ Sourceforge: https://sourceforge.net/projects/yawik/
+.. _Sourceforge: https://sourceforge.net/projects/yawik/
 
 Go into the ``YAWIK`` directory and edit the ``build.properties`` file. There you can 
-set database resources and an initial Account to login into your YAWIK.
+set database resources and an initial Account to login into your YAWIK. The Webserver
+only needs read access to the ``YAWIK/public`` and write access to the ``YAWIK/public``
+and ``YAWIK/cache`` directory.
 
 next step is to run ``./install.sh``
 
@@ -51,11 +53,60 @@ This will download phing_ , executes ``./phing.phar generate-autoload-config``
 which takes the configuration option of your ``build.properties`` and generates
 various configuration files located in config/autoload.
 
+Trusty comes with php5.5 and therefore you can simply fire up YAWIK by
+
+.. code-block:: sh
+
+  cd public
+  php -S localhost:8080     # make sure, the port is not already in use
+
+after that you should are able to access YAWIK on your local machine by pointing your
+browser to:
+
+http://localhost:8080
+
+If you want to use Apache, you probably need root access to the machine you've installed
+YAWIK on. In addition you need to enable the rewrite module of apache.
+
+.. code-block:: sh
+
+  sudo a2enmod rewrite && sudo /etc/init.d/apache2 reload
+
+Then you have to make sure that the DocumentRoot of apache is pointing to ``YAWIK/public``
+and apache is allowed to Access the YAWIK directory.
+
+A VirtualHost section might look like.
+
+.. code-block:: sh
+
+   <VirtualHost *:80>
+        ServerName example.com/
+        DocumentRoot ${YAWIK_HOME}/public
+        AddDefaultCharset utf-8
+
+        SetEnv APPLICATION_ENV "development"             // you can set
+
+        <Directory ${YAWIK_HOME}/public>
+             DirectoryIndex index.php
+             Options Indexes FollowSymLinks MultiViews
+             AllowOverride All
+             Require all granted
+        </Directory>
+    </VirtualHost>
+
+
+
 now you should be able to login into your YAWIK by pointing a browser to
 
-http://your.server/YAWIK/public
+http://example.com/
 
-https://sourceforge.net/projects/yawik/files/ 
+.. note::
+
+    make sure your Webserver cannot access your build.properties. You can safely remove this file
+    after you've run the installation is done.
+
+
+Yawik can be downloaded at https://sourceforge.net/projects/yawik/files/
 
 Setup for Developers
 ^^^^^^^^^^^^^^^^^^^^
@@ -91,7 +142,7 @@ installs missing dependencies and generates config files.
 .. code-block:: sh
 
   ;
-  ; Facebook, Xing and Linkedin credentials. (module/Auth/config/module.auth.global.php.dist)
+  ; Facebook, Xing and LinkedIn credentials. (module/Auth/config/module.auth.global.php.dist)
   ;
 
   facebook.enabled=false
@@ -115,7 +166,7 @@ installs missing dependencies and generates config files.
   
   ./phing.phar
 
-This will copy varios config \*.dist files into the autoload directory. 
+This will copy various config \*.dist files into the ``config/autoload`` directory.
 
 all build options can be listed by:
 
@@ -151,7 +202,7 @@ Configuration
 -------------
 
 Configuration files are located in ``config/autoload``. Config files are 
-returning an assoziative array. All arrays are merged, so the order how 
+returning an associative array. All arrays are merged, so the order how
 the configuration files are processed might be relevant.
 
 Files with names ending in ``*.global.php`` are process first. As a second
@@ -164,7 +215,7 @@ At the and ``*.local.php`` files are processed.
 
 Modules are coming with there own ``config`` directory. Configuration files of
 modules can be named ``*.config.php``. This allows you to split configurations
-into sections. E.g. a router.config.php file sould contain an assoziative
+into sections. E.g. a router.config.php file should contain an associative
 array defining routing specific things.
 
 
@@ -205,13 +256,13 @@ point the DocumentRoot of your Webserver to the ``public`` directory.
 
 .. note::
 
-  you should ``SetEnv APPLICANTION_ENV development`` in your VirtualHost section,
+  you should ``SetEnv APPLICATION_ENV development`` in your VirtualHost section,
   if you plan do develop.
 
 Authentication
 ^^^^^^^^^^^^^^
 
-to enable login via Facebook, Xing, Linkedin or any other hybridauth_ adapter simply create a ``config/autoload/module.auth.local.php``
+to enable login via Facebook, Xing, LinkedIn or any other hybridauth_ adapter simply create a ``config/autoload/module.auth.local.php``
 
 .. _hybridauth: http://hybridauth.sourceforge.net/
 
@@ -246,6 +297,6 @@ to enable login via Facebook, Xing, Linkedin or any other hybridauth_ adapter si
 Debugging
 ^^^^^^^^^
 
-you can enable the debugging Mode by setting the enviroment variable 
+you can enable the debugging Mode by setting the environment variable
 ``APPLICATION_ENV=development``. This will enable increase the debug 
 level, enable error messages on the screen.
