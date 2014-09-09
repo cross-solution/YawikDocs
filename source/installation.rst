@@ -121,8 +121,13 @@ Unpack the sources in the DocumentRoot. You'll find the sources in the YAWIK dir
   cd CrossApplicantManager
   cp build.properties.dist build.properties
 
-The build.properties contains all configuration values. Here you can define an initial
-user account, a database resource or integrate social networks. 
+The build.properties contains all configuration values in one file. It simplifies the
+setup of a development environment. Here you can define an initial user account, a
+database resource or integrate social networks. The values itself are copied to various
+configuration files, which are placed into ``config/autoload`` by running
+``./phing generate-autoload-config``. That means, you have to execute ``./phing generate-autoload-config``
+to make changes available to the application.
+
 Note: you need a Facebook, Xing or LinkedIn App, if you want to integrate the social
 networks . So take a look how to create an App with Facebook_, Xing_ or LinkedIn_. 
 
@@ -166,34 +171,38 @@ installs missing dependencies and generates config files.
   
   ./phing.phar
 
-This will copy various config \*.dist files into the ``config/autoload`` directory.
+This will extract the key/value pairs from the ``build.properties``, replaces them in the
+``modules/<Module>/config/*.php.dist`` files and copies the result into the ``config/autoload`` directory.
 
 all build options can be listed by:
 
 .. code-block:: sh
 
-  $ ./phing.phar -l
-  Buildfile: /home/cbleek/Zend/workspaces/DefaultWorkspace/CrossApplicantManager/build.xml
-   [property] Loading /home/cbleek/Zend/workspaces/DefaultWorkspace/CrossApplicantManager/./build.properties
+  cbleek@xenon:~/Projects/YAWIK$ ./phing.phar -l
+  Buildfile: /home/cbleek/Projects/YAWIK/build.xml
+   [property] Loading /home/cbleek/Projects/YAWIK/./build.properties
   Default target:
   -------------------------------------------------------------------------------
-   install    reads build.properties and generates config files
-  
+   install        reads build.properties and generates config files
+
   Main targets:
   -------------------------------------------------------------------------------
-   clean      removes build, log, cache, tmp and vendor dir
-   dist       create a distribution package
-   docs       build api docs
-   install    reads build.properties and generates config files
-   phpdoc     build api docs
-   translate  compiles all languages *.po files
+   build          build tgz and zip packages
+   clean          removes build, log, cache, tmp, components and vendor dir
+   deploy-builds  publish TGZ and ZIP packages via rsync
+   deploy-docs    publish API docs via rsync
+   docs           build api docs
+   install        reads build.properties and generates config files
+   phpdoc         build api docs using phpdoc
+   translate      compiles all languages *.po files
 
   Subtargets:
   -------------------------------------------------------------------------------
-   build
    compile-po-file
    generate-autoload-config
    prepare
+   symlinks
+
 
 .. _composer: https://getcomposer.org/
 .. _phing: http://www.phing.info/
@@ -209,14 +218,19 @@ Files with names ending in ``*.global.php`` are process first. As a second
 files ending in ``*.{env}.php``. {env} can have at least the values ``production``, 
 and ``development``. 
 If the environment variable ``APPLICATION_ENV`` is set, and if files named 
-``*. development.php`` exist, then these configurations are processed.
+``*. development.php`` exist, then these configurations are processed. If no environment
+variable ist set, ``production`` is assumed.
 
-At the and ``*.local.php`` files are processed.
+At the end ``*.local.php`` files are processed.
 
 Modules are coming with there own ``config`` directory. Configuration files of
 modules can be named ``*.config.php``. This allows you to split configurations
 into sections. E.g. a router.config.php file should contain an associative
 array defining routing specific things.
+
+If the enviroment is set to ``production``, all configurations are cached in
+``cahe/module-classmap-cache.module_map.php``. There is currently no way to invalidate the
+cache. You have to remove this file, if you alter files in ``config/autoload``.
 
 
 Database
@@ -298,5 +312,7 @@ Debugging
 ^^^^^^^^^
 
 you can enable the debugging Mode by setting the environment variable
-``APPLICATION_ENV=development``. This will enable increase the debug 
-level, enable error messages on the screen.
+``APPLICATION_ENV=development``. This will increase the debug
+level, enable error messages on the screen and disables sending of mails to the
+recipients, stored in the database. You can overwrite the the all recipients (To, CC, Bcc)
+by setting ``mail.develop.override_recipient=<your mail address>``
