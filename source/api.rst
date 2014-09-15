@@ -11,6 +11,7 @@ YAWIK allows an external application to post jobs via http POST requests. At fir
 done by:
 
 Example:
+
 .. code-block:: sh
 
     curl -c "/tmp/cookie" -d "appkey=SecretYawikDemoKey&user=demo&pass=demo" http://yawik.org/demo/login/extern?format=json
@@ -76,6 +77,7 @@ email.
 A successfull request returns:
 
 .. code-block:: sh
+
     curl -b /tmp/cookie -d "applyId=1234&title=this%20is%20a%20test%20job&company=MyComishStart=2014-09-15&link=http://example.com/myjob.html" \
             'http://yawik.org/demo/de/saveJob?format=json'
     {
