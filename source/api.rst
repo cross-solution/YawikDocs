@@ -78,8 +78,8 @@ A successfull request returns:
 
 .. code-block:: sh
 
-    curl -b /tmp/cookie -d "applyId=1234&title=this%20is%20a%20test%20job&company=MyComishStart=2014-09-15&link=http://example.com/myjob.html" \
-            'http://yawik.org/demo/de/saveJob?format=json'
+    curl -b /tmp/cookie -d "applyId=1234&title=this%20is%20a%20test%20job&company=MyCompany&datePublishStart=2014-09-15&link=http://example.com/myjob.html" \
+           'http://yawik.org/demo/de/saveJob?format=json'
     {
         "token":"903rgbrs1j6p5gb2586tdci833",
         "isSaved":true,
