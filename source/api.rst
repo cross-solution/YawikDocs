@@ -14,7 +14,7 @@ Example:
 
 .. code-block:: sh
 
-    curl -c "/tmp/cookie" -d "appkey=SecretYawikDemoKey&user=demo&pass=demo" http://yawik.org/demo/login/extern?format=json
+    curl -c "/tmp/cookie" -d "appKey=SecretYawikDemoKey&user=demo&pass=demo" http://yawik.org/demo/login/extern?format=json
 
 The following parameters can be passed:
 
@@ -55,7 +55,7 @@ email.
 
 .. code-block:: sh
 
-    curl -b /tmp/cookie -d "applyId=1234" 'http://yawik.org/DEMO/de/saveJob?format=json'
+    curl -b /tmp/cookie -d "applyId=1234" 'http://yawik.org/demo/de/saveJob?format=json'
     {
         "token":"903rgbrs1j6p5gb2586tdci833",
         "isSaved":false,
