@@ -8,6 +8,7 @@ Contents:
 .. toctree:: 
    :maxdepth: 1
 
+   forms
    notifications
    logging
    
