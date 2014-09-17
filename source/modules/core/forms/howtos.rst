@@ -40,7 +40,7 @@ SummaryForm
 .. _form-mode:
 
 .. figure:: ../../../images/summary_form-form-mode.png
-    :width: 350px
+    :scale: 50%
     :align: right
 
     Form Mode
@@ -55,7 +55,7 @@ presentation modes:
 .. _summary-mode:
 
 .. figure:: ../../../images/summary_form-summary-mode.png
-    :width: 350px
+    :scale: 50%
     :align: right
 
     Summary Mode
