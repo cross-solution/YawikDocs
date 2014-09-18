@@ -51,7 +51,63 @@ Once you've logged in, the cookie returned by YAWIK has to be stored on the exte
 testing it with the above curl statement, the cookie is stored in /tmp/cookie.
 
 If the application Key is valid and the user is unknown, a user is simply created. The password of the user is sent via
-email.
+email (if an email-value is provided in the curl-call).
+Authentification via CURL and the normal login are traded different. Every authentification with an external application
+uses a separate key, therefore the external application is liable to provide privacy.
+An user can root out any external application by simply revoking it's key without affecting any other authentification.
+
+
+
+These parameters are available or must be set to transmit a job:
+
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|Param            |Value                    |example  |mandatory |Description                                                                |
++=================+=========================+=========+==========+===========================================================================+
+|applyId          |string                   |AMS79j   |yes       |the id is an unique key to adress your job                                 |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|company          |string                   |         |yes       |name of the company                                                        |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|companyId        |string                   |         |no        |if an id is provided, the company is stored in the YAWIK-DB                |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|contactEmail     |email adress             |         |no        |for automatic informations like new applicants                             |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|title            |string                   |         |yes       |for tabular overview                                                       |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|location         |string                   |         |no        |for overview, will be later prone for indexing                             |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|link             |http adress              |         |yes       |the job offer weblink                                                      |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|datePublishStart |YYYY-MM-DD               |         |yes       |                                                                           |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|status           |string                   |         |no        |                                                                           |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|reference        |string                   |         |no        |an internal reference from the publisher                                   |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|logoRef          |http adress              |         |no        |Logo for the Company                                                       |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|publisher        |http adress              |         |no        |who get the credit for any application                                     |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+
+some remarks:
+
+applyId
+    The applyId must be unique just to the provider, this key along with your authentification is the only access to your data.
+    Consistently there is no key provided by YAWIK.
+
+company, companyId
+    companies can managed alongside the job if a companyId is passed, the companyId is an assurance for yawik, that different jobs with the same companyId belong to the same company.
+    The name is for that a to weak criteria.
+
+contactEmail
+    Although a contact-email is not obligatory, it is a crucial enhancement of service. Whenever something happens to your job, you get an update.
+    This includes new applicants for a job.
+
+link
+    This link should be an appealing presentation of the job. YAWIK can not (up to now) display Jobs on it own, so this link is mandatory.
+
+publisher
+    One of the basic ideas of YAWIK is to distribute jobs automatically. Even though, every job may have an owner who wants to administer the job.
+
 
 .. code-block:: sh
 
