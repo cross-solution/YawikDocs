@@ -24,9 +24,11 @@ Modules can simply be enabled by adding their names to an array in `config/confi
          'Cv',
          'Applications',
          'Jobs',
+         'Organizations',
          'Settings',
          'Pdf',
-         'Geo', //'FormularValidation',
+         'Geo',
+         'FormularValidation',
     );
 
    ...
@@ -51,6 +53,11 @@ Directory Structure of a module
 +----------+-------------------------------------+---------------------------------+
 
 
+A module can implement the following Features:
+
+* Dashboard Widgets
+* Configuration formulars
+* Command line tools
 
 
 currently the following modules exists:

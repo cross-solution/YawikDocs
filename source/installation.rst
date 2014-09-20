@@ -40,7 +40,8 @@ Setup
 -----
 
 get the latest YAWIK Package. Packages are build as ZIP or TGZ archive. We publish 
-them on Sourceforge_. They extract into a subdirectory YAWIK.
+them on Sourceforge_. They extract into a subdirectory YAWIK-x.y.z. If you preserve the
+permissions, the directories ``cache`` and ``log`` should be writable after extraction.
 
 .. _Sourceforge: https://sourceforge.net/projects/yawik/
 
