@@ -56,18 +56,18 @@ Layout
 |Auth     |`auth/manage/password`_          |change password page                               |
 +---------+---------------------------------+---------------------------------------------------+
 
-.. _layout/layout: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/layout/layout.phtml
-.. _core/index/index: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Auth/view/auth/index/index.phtml
-.. _core/notifications: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/notifications.phtml
-.. _index/index: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/index/index.phtml
-.. _main-navigation: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/main-navigation.phtml
-.. _pagination-control: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/pagination-control.phtml
-.. _form/core/buttons: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/form/buttons.phtml
-.. _form/core/privacy: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/form/privacy.phtml
-.. _form/auth/contact.form: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Auth/view/form/contact.form.phtml
-.. _form/auth/contact.view: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Auth/view/form/contact.view.phtml
-.. _auth/index/login-info: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Auth/view/auth/index/login-info.phtml
-.. _auth/manage/password: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Auth/view/auth/manage/password.phtml
+.. _layout/layout: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/layout/layout.phtml
+.. _core/index/index: https://github.com/cross-solution/YAWIK/blob/master/module/Auth/view/auth/index/index.phtml
+.. _core/notifications: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/notifications.phtml
+.. _index/index: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/index/index.phtml
+.. _main-navigation: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/main-navigation.phtml
+.. _pagination-control: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/pagination-control.phtml
+.. _form/core/buttons: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/form/buttons.phtml
+.. _form/core/privacy: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/form/privacy.phtml
+.. _form/auth/contact.form: https://github.com/cross-solution/YAWIK/blob/master/module/Auth/view/form/contact.form.phtml
+.. _form/auth/contact.view: https://github.com/cross-solution/YAWIK/blob/master/module/Auth/view/form/contact.view.phtml
+.. _auth/index/login-info: https://github.com/cross-solution/YAWIK/blob/master/module/Auth/view/auth/index/login-info.phtml
+.. _auth/manage/password: https://github.com/cross-solution/YAWIK/blob/master/module/Auth/view/auth/manage/password.phtml
 
 Mail Templates
 ^^^^^^^^^^^^^^

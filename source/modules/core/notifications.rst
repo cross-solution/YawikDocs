@@ -66,7 +66,7 @@ Notifications are rendered in the following order:
  - Success
  - Info
 
-.. _core/notifications: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/notifications.phtml 
+.. _core/notifications: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/notifications.phtml
 
 Alert View Helper
 ^^^^^^^^^^^^^^^^^

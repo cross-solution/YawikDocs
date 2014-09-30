@@ -265,5 +265,5 @@ lexers['php'] = PhpLexer(startinline=True)
 
 
 github_base_account = 'cross-solution'
-github_project = 'crossapplicantmanager'
+github_project = 'yawik'
   

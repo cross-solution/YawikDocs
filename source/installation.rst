@@ -120,8 +120,8 @@ Unpack the sources in the DocumentRoot. You'll find the sources in the YAWIK dir
 
 .. code-block:: sh
 
-  git clone https://github.com/cross-solution/CrossApplicantManager
-  cd CrossApplicantManager
+  git clone https://github.com/cross-solution/YAWIK
+  cd YAWIK
   cp build.properties.dist build.properties
 
 The build.properties contains all configuration values in one file. It simplifies the

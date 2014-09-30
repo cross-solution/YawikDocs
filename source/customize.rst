@@ -67,8 +67,8 @@ you can install lessc on ubuntu by
   sudo npm install -g less
 
 .. _lessc: http://lesscss.org/#using-less
-.. _sources: https://github.com/cross-solution/CrossApplicantManager/tree/master/less
-.. _make-css.sh: https://github.com/cross-solution/CrossApplicantManager/blob/master/less/make-css.sh
+.. _sources: https://github.com/cross-solution/YAWIK/tree/master/less
+.. _make-css.sh: https://github.com/cross-solution/YAWIK/blob/master/less/make-css.sh
 
 
 Formular Fields
@@ -82,11 +82,11 @@ Formular Fields
 |SpinnerSubmit_  | a spinner icon is added during form validation. While sending data, the submit button is inactivated    |
 +----------------+---------------------------------------------------------------------------------------------------------+
 
-.. _Rating: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/Form/Element/Rating.php
-.. _SpinnerSubmit: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/Form/Element/SpinnerSubmit.php
+.. _Rating: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/Rating.php
+.. _SpinnerSubmit: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/SpinnerSubmit.php
 
 
-View Herper Scripts
+View Helper Scripts
 -------------------
 
 +----------------+---------------------------------------------------------------------------------------------------------+
@@ -98,5 +98,5 @@ View Herper Scripts
 +----------------+---------------------------------------------------------------------------------------------------------+
 
 
-.. _Alert: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/View/Helper/Alert.php 
-.. _Services: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/src/Core/View/Helper/Services.php
+.. _Alert: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Alert.php
+.. _Services: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Services.php

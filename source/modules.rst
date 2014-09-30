@@ -10,7 +10,7 @@ This way you can split up your configuration in smaller chunks (e.g. put all you
 
 Modules can simply be enabled by adding their names to an array in `config/config.php`_.
 
-.. _config/config.php: https://github.com/cross-solution/CrossApplicantManager/blob/master/module/Core/view/partial/notifications.phtml
+.. _config/config.php: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/notifications.phtml
 
 .. code-block:: php
    :linenos:
