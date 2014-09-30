@@ -85,7 +85,11 @@ These parameters are available or must be set to transmit a job:
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
 |logoRef          |http adress              |         |no        |Logo for the Company                                                       |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
-|publisher        |http adress              |         |no        |who get the credit for any application                                     |
+|uriPublisher     |http adress              |         |no        |who get the credit for any application                                     |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|camEnabled       |boolean                  |         |no        |set to true shows up a link to an application form                         |
++-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
+|uriApply         |http adress              |         |no        |adress to an external application form                                     |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
 
 some remarks:
@@ -105,9 +109,13 @@ contactEmail
 link
     This link should be an appealing presentation of the job. YAWIK can not (up to now) display Jobs on it own, so this link is mandatory.
 
-publisher
+uriPublisher
     One of the basic ideas of YAWIK is to distribute jobs automatically. Even though, every job may have an owner who wants to administer the job.
+    The Adress of uriPublisher must provide and own rest-service for updates or feedback of informations.
 
+uriApply
+    As joboffers can be distributed, the application could directly linked back to the source.
+    The distributing system can add a signature to the application to indicate where the applicant has first seen the job offer.
 
 .. code-block:: sh
 
