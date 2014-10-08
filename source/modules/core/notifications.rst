@@ -66,7 +66,16 @@ Notifications are rendered in the following order:
  - Success
  - Info
 
+You can place notifications into your general layout by simply put the following
+line into your view script. (Example: layout.phtml_)
+
+.. code-block:: php
+
+	<?php echo $this->notifications?>
+
+
 .. _core/notifications: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/notifications.phtml
+.. _layout.phtml: https://github.com/cbleek/YawikDemoSkin/blob/master/view/layout.phtml#L98
 
 Alert View Helper
 ^^^^^^^^^^^^^^^^^
