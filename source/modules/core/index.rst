@@ -9,6 +9,7 @@ Contents:
    :maxdepth: 1
 
    forms
+   navigation
    notifications
    logging
    
@@ -17,6 +18,7 @@ provides core functionality
 
 * Sending Mails
 * Formular handling
+* Navigation
 * Pagination
 * Error Handling
 * Configuration Handling
