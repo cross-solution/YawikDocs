@@ -3,6 +3,14 @@
 Core
 ----
 
+.. raw:: html
+
+    <div style="float:right; width: 50%">
+    <img src="https://www.transifex.com/projects/p/yawik/resource/core/chart/image_png"/>
+    <br/>translation state of Core module.
+    </div>
+
+
 Contents: 
 
 .. toctree:: 
@@ -12,8 +20,11 @@ Contents:
    navigation
    notifications
    logging
-   
-   
+
+
+
+
+
 provides core functionality
 
 * Sending Mails

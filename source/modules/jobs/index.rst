@@ -3,6 +3,14 @@
 Jobs
 ----
 
+
+.. raw:: html
+
+    <div style="float:right; width: 50%">
+    <img src="https://www.transifex.com/projects/p/yawik/resource/jobs/chart/image_png"/>
+    <br/>translation state of Jobs module.
+    </div>
+
 The Jobs module allows to enter and manage job ads. In addition it generates a 
 list of jobs. List of Jobs can be generated in a recruiter (:ref:`recruiter-mode`) 
 and a public search (:ref:`search-mode`) mode

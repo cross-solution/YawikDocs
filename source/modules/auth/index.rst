@@ -3,6 +3,13 @@
 Auth
 ----
 
+.. raw:: html
+
+    <div style="float:right; width: 50%">
+    <img src="https://www.transifex.com/projects/p/yawik/resource/jobs/chart/image_png"/>
+    <br/>translation state of Auth module.
+    </div>
+
 the auth module is based on hybridauth_. The social networks Facebook, Xing 
 and LinkedIn are ready to connect, just by configuring their API key and secret.
 Other Networks can be easily added.
