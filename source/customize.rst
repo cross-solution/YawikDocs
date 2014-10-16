@@ -45,11 +45,6 @@ This will add the module dynamically.
 
 customize your Skin by mapping more :ref:`templates <templates>` to your own views scripts. 
 
-.. note::
-
-   If the name of your module starts with "Cam", you can put it outside of the
-   repository into the ``vendor/extern`` directory`.
-
 
 CSS
 ---
