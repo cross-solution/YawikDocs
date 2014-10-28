@@ -51,10 +51,8 @@ The plugin provides following methods:
 Rendering
 ^^^^^^^^^
 
-Notifications are rendered by injecting a child view model into the layout via
-an Listener on the Zend Framework's RENDER event.
-
-This injected view model renders the template which is registered under the
+To render notifications it is necessary to render the
+template which is registered under the
 key `core/notifications`_ in the view manager's template map.
 
 The default view script provided renders all notifications in a div container
@@ -66,13 +64,36 @@ Notifications are rendered in the following order:
  - Success
  - Info
 
-You can place notifications into your general layout by simply put the following
-line into your view script. (Example: layout.phtml_)
+You can place notifications into your general layout by following these steps:
+
+ 1. In the layout script, above the output of the headScript-Helper, render the
+    notifications partial and capture to a variable. (Because the template injects
+    a javascript to the headscript container)
+
+ 2. Echo the capture variable at the position where the notifications should be.
+
 
 .. code-block:: php
 
-	<?php echo $this->notifications?>
+    <?php $notifications = $this->partial('core/notifications'); ?>
 
+    //...
+
+    <?php echo $this->headScript(); ?>
+
+    // ...
+
+    <?php echo $notifications; ?>
+
+
+.. note::   In earlier versions there was a child model injected to the layout view.
+            This leads to problems, where no notifications are needed in a layout.
+            Due to internal Zend Framework procedures, child models will be rendered
+            BEFORE the containing model.
+
+            So, injecting a child model in the layout view model always renders the notifications
+            even if not needed, resulting in unneeded javascript beeing loaded as well as the general
+            rendering overhead.
 
 .. _core/notifications: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/notifications.phtml
 .. _layout.phtml: https://github.com/cbleek/YawikDemoSkin/blob/master/view/layout.phtml#L98
