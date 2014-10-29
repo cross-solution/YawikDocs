@@ -52,3 +52,22 @@ module`_ which lets YAWIK act like a jobboard. This module is running on
 http://jobs.yawik.org
 
 .. _`jobboard module`: https://github.com/cbleek/YawikDemoJobboard
+
+
+Job Templates
+-------------
+
+you can create templates_ for entering job ads. All you need is an HTML version of your
+jobad. Simply replace the `requirements`, `qualifications` or `benefits` with a small piece
+of code. E.g.
+
+.. code-block:: php
+
+    <h4>Requirements:</h4>
+    <?php echo $this->requirements;?>
+
+YAWIK replaces this code with an inline Wysiwyg HTML Editor if you want to modify your
+jobad.
+
+
+.. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
