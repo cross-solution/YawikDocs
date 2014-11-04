@@ -61,6 +61,22 @@ you can install lessc on ubuntu by
   sudo apt-get install npm
   sudo npm install -g less
 
+Our YawikDemoSkin_ can be seen as an example, how to modify the CSS. The Skin needs a different height
+for the fixed footer. This is achieved by creating a new less file, which can import our
+``yawik/yawik.less`` (a symlink is pointing to it). You can overwrite all less variables.
+
+.. code-block:: sh
+
+  @import "yawik/yawik.less";
+  @footer-height:                     39px;
+
+Your customized CSS can be compiled with lessc like:
+
+.. code-block:: sh
+
+ lessc YawikDemoSkin.less ../public/YawikDemoSkin.css
+
+
 .. _lessc: http://lesscss.org/#using-less
 .. _sources: https://github.com/cross-solution/YAWIK/tree/master/less
 .. _make-css.sh: https://github.com/cross-solution/YAWIK/blob/master/less/make-css.sh
