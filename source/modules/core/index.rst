@@ -20,6 +20,7 @@ Contents:
    navigation
    notifications
    logging
+   headscripts
 
 
 
