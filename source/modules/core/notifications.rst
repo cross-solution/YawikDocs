@@ -3,17 +3,19 @@
 Notifications
 -------------
 
-YAWIK comes with a notification system which allows to easy set notifcation messages
-to be displayed to the user regardless, if the request will make a redirect or not.
+YAWIK comes with a notification system to easily display notification messages
+to the user. These messages are persisted in the session and can be retrieved even after a redirection (e.g. Login)
 
-Notification messages are displayed via a child model which is injected in the
-layout. Therefor they are rendered centralized and are easily changeable.
+Once a message is displayed (rendered), it is removed from the session.
 
 
 Controller Plugin
 ^^^^^^^^^^^^^^^^^
 
-The controller plugin is merely a wrapper for Zend Framework's FlashMessenger.
+Yawik provides the controller plugin "Notification" (service name "notification") to
+set notification messages in different namespaces.
+
+It is merely a wrapper for Zend Framework's FlashMessenger.
 It provides own namespaces and shortcut methods to add notifications according to
 Twitter Bootstrap alert class names. 
 
@@ -85,27 +87,15 @@ You can place notifications into your general layout by following these steps:
 
     <?php echo $notifications; ?>
 
-
-.. note::   In earlier versions there was a child model injected to the layout view.
-            This leads to problems, where no notifications are needed in a layout.
-            Due to internal Zend Framework procedures, child models will be rendered
-            BEFORE the containing model.
-
-            So, injecting a child model in the layout view model always renders the notifications
-            even if not needed, resulting in unneeded javascript beeing loaded as well as the general
-            rendering overhead.
-
 .. _core/notifications: https://github.com/cross-solution/YAWIK/blob/master/module/Core/view/partial/notifications.phtml
 .. _layout.phtml: https://github.com/cbleek/YawikDemoSkin/blob/master/view/layout.phtml#L98
 
 Alert View Helper
 ^^^^^^^^^^^^^^^^^
 
-The alert view helper is registered in the view helper manager under the key
-"Alert". It takes a message and renders it in the bootstrap markup for an 
-dismissable alert box.
-
-It is also possible to capture content or using shortcut methods. 
+The alert view helper takes a message and renders it in the bootstrap markup for an
+dismissable alert box. It is registered in the view helper manager under the key
+"Alert".
 
 .. code-block:: php
 	
@@ -138,4 +128,15 @@ with the according type.
     <?php $this->alert()->info() ?>
     <p> This is an info message </p>
     <?php echo $this->alert()->end() ?>
+    
+
+The resulting html will look something like this:
+
+.. code-block:: html
+
+    <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p>This is an info message</p>
+    </div>
+
     
