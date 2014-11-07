@@ -1,13 +1,14 @@
 .. index:: Core; Forms
 
-Forms
------
+Formular Handling
+-----------------
 
 :Author: Mathias Gelhausen <gelhausen@cross-solution.de>
 
-YAWIK uses forms almost everywhere.
+Forms are essential. YAWIK uses forms almost everywhere. The main goals of forms are:
 
-[TODO: Write meaningful text]
+* Consistent look&feel
+* Binding to Entities
 
 .. toctree::
 

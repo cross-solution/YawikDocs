@@ -55,7 +55,7 @@ http://jobs.yawik.org
 
 
 Job Templates
--------------
+^^^^^^^^^^^^^
 
 you can create templates_ for entering job ads. All you need is an HTML version of your
 jobad. Simply replace the `requirements`, `qualifications` or `benefits` with a small piece
@@ -67,7 +67,7 @@ of code. E.g.
     <?php echo $this->requirements;?>
 
 YAWIK replaces this code with an inline Wysiwyg HTML Editor if you want to modify your
-jobad.
+jobad. Otherwise the code is replaced by the HTML code, which was entered.
 
 
 .. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
