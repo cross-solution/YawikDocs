@@ -27,8 +27,7 @@ Modules can simply be enabled by adding their names to an array in `config/confi
          'Organizations',
          'Settings',
          'Pdf',
-         'Geo',
-         'FormularValidation',
+         'Geo'
     );
 
    ...

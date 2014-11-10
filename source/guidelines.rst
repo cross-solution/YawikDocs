@@ -35,7 +35,7 @@ Naming Conventions
 
 
 * Variables: lowerCaseStartingCamelCase like ....
-* Modules and Classes: UpperCaseStartingCamelCase like FormularValidation
+* Modules and Classes: UpperCaseStartingCamelCase
 * Array keys (options arrays): underscore_separated ( 'option_key' )
 * Service names Module/[SubCategory/]Service ok.
 * Configuration Keys invocable form element: UpperCaseStartingCamelCase, <Module>/<Element> like 'Applications/Mail'
