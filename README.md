@@ -1,4 +1,4 @@
 docs
 ====
 
-Documentation for the YAWIK System. Rendered at http://crossapplicantmanager.readthedocs.org/en/latest/
+Documentation for the YAWIK System. Rendered at http://yawik.readthedocs.org/en/latest/
