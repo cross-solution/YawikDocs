@@ -68,6 +68,7 @@ currently the following modules exists:
    modules/auth/index
    modules/cv/index
    modules/applications/index
+   modules/organizations/index
    modules/jobs/index
    modules/pdf/index
    modules/geo/index
