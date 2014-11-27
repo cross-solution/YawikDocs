@@ -69,5 +69,21 @@ of code. E.g.
 YAWIK replaces this code with an inline Wysiwyg HTML Editor if you want to modify your
 jobad. Otherwise the code is replaced by the HTML code, which was entered.
 
+You currently can use the following placeholders:
+
++---------------------------+---------------------------------+
+| Name                      | Description                     |
++===========================+=================================+
+| $this->title              | title of the job posting        |
++---------------------------+---------------------------------+
+| $this->requirements       | requirements of the job posting |
++---------------------------+---------------------------------+
+| $this->qualifications     | Needed qualifications           |
++---------------------------+---------------------------------+
+| $this->benefits           | Employee benefits               |
++---------------------------+---------------------------------+
+
+
+
 
 .. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
