@@ -14,6 +14,13 @@ the auth module is based on hybridauth_. The social networks Facebook, Xing
 and LinkedIn are ready to connect, just by configuring their API key and secret.
 Other Networks can be easily added.
 
-User Data are stored in the ``users`` collection. 
+User Data are stored in the ``users`` collection.
+
+The Auth module offers the following features
+
+* Register with Facebook, Xing or LinkedIn
+* Register via registration form
+* I forgot my Password
+* Roles for applicants and recruiters
 
 .. _hybridauth: http://hybridauth.sourceforge.net/

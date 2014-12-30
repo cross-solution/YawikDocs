@@ -15,9 +15,7 @@ The Jobs module allows to enter and manage job ads. In addition it generates a
 list of jobs. List of Jobs can be generated in a recruiter (:ref:`recruiter-mode`) 
 and a public search (:ref:`search-mode`) mode
 
-The entering process will look like:
-
-http://www.gliffy.com/go/publish/6254781
+The entering process is defined at: http://www.gliffy.com/go/publish/6254781
 
 
 .. _recruiter-mode:
@@ -58,7 +56,7 @@ Job Templates
 ^^^^^^^^^^^^^
 
 you can create templates_ for entering job ads. All you need is an HTML version of your
-jobad. Simply replace the `requirements`, `qualifications` or `benefits` with a small piece
+job opening. Simply replace the `requirements`, `qualifications` or `benefits` with a small piece
 of code. E.g.
 
 .. code-block:: php
@@ -67,7 +65,7 @@ of code. E.g.
     <?php echo $this->requirements;?>
 
 YAWIK replaces this code with an inline Wysiwyg HTML Editor if you want to modify your
-jobad. Otherwise the code is replaced by the HTML code, which was entered.
+job opening. Otherwise the code is replaced by the HTML code, which was entered.
 
 You currently can use the following placeholders:
 
