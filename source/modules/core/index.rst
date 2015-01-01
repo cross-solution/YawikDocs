@@ -46,7 +46,7 @@ Layout
 .. note::
 
     the following table is generated automatically.
-    Descriptions are marked from the view scripts files mit {{rtd ...}}
+    Descriptions are marked from the view scripts files mit ``{{rtd: ...}}``
 
 +----------------------------------------+----------------------------------------+----------------------------------------+
 |Module                                  |Name                                    |Description                             |
@@ -208,7 +208,7 @@ Services
 +---------+-----------------------+-----------------------------+
 | Module  | Name                  | Description                 |   
 +=========+=======================+=============================+
-|Core     | Log/Core/Cam          | Logging service             |
+|Core     | Core/Log              | Logging service             |
 +---------+-----------------------+-----------------------------+
 |Auth     | HybridAuthAdapter     | Login via Social Networks   |
 +---------+-----------------------+-----------------------------+

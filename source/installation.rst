@@ -156,7 +156,7 @@ installs missing dependencies and generates config files.
   facebook.enabled=false
   facebook.appid=
   facebook.secret=
-  facebook.scope="email, user_about_me, user_birthday, user_hometown", "user_work_history", "user_education_history"
+  facebook.scope="email, user_about_me, user_birthday, user_hometown, user_work_history, user_education_history"
 
   xing.enabled=false
   xing.appid=
@@ -181,30 +181,35 @@ all build options can be listed by:
 
 .. code-block:: sh
 
-  cbleek@xenon:~/Projects/YAWIK$ ./phing.phar -l
-  Buildfile: /home/cbleek/Projects/YAWIK/build.xml
-   [property] Loading /home/cbleek/Projects/YAWIK/./build.properties
-  Default target:
-  -------------------------------------------------------------------------------
-   install        reads build.properties and generates config files
+    cbleek@xenon:~/Projects/YAWIK$ ./phing.phar -l
+    Buildfile: /home/cbleek/Projects/YAWIK/build.xml
+    Default target:
+    -------------------------------------------------------------------------------
+     install        reads build.properties and generates config files
 
-  Main targets:
-  -------------------------------------------------------------------------------
-   build          build tgz and zip packages
-   clean          removes build, log, cache, tmp, components and vendor dir
-   deploy-builds  publish TGZ and ZIP packages via rsync
-   deploy-docs    publish API docs via rsync
-   docs           build api docs
-   install        reads build.properties and generates config files
-   phpdoc         build api docs using phpdoc
-   translate      compiles all languages *.po files
+    Main targets:
+    -------------------------------------------------------------------------------
+     build          build tgz and zip packages
+     clean          removes build, log, cache, tmp, components and vendor dir
+     deploy-builds  publish TGZ and ZIP packages via rsync
+     deploy-docs    publish API docs via rsync
+     docs           build api docs
+     install        reads build.properties and generates config files
+     phpdoc         build api docs using phpdoc
+     phpunit        run phpunit tests
+     translate      compiles all languages *.po files
 
-  Subtargets:
-  -------------------------------------------------------------------------------
-   compile-po-file
-   generate-autoload-config
-   prepare
-   symlinks
+    Subtargets:
+    -------------------------------------------------------------------------------
+     compile-po-file
+     filesets
+     generate-autoload-config
+     init
+     load-properties
+     load-properties-subtask
+     prepare
+     symlinks
+
 
 
 .. _composer: https://getcomposer.org/
