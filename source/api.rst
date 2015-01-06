@@ -175,3 +175,74 @@ A successfull request returns:
             "link":"http:\/\/example.com\/myjob.html"
         }
     }
+
+Transfering Jobs
+----------------
+
+Jobs are transferred as complete JSON-Objects, there are no RESTful API HTTP methods like ``get``, ``put``, ``post``, ``delete``.
+That's why this is considered a pure
+
+.. code-block:: sh
+
+    curl name:password@server/report/job
+        -H 'Accept: application/json'
+        -H 'Content-Type: application/json'
+        -d '{
+            "applyId": "ref_from_yawik_123",
+            "title": "lorem ipsum title",
+            "description": "lorem ipsum body",
+            "company": "tcomp",
+            "contactEmail": "weitz@cross-solution",
+            "location": "35510 Butzbach",
+            "link": ".",
+            "datePublishStart": "2013-08-20T08:19:12.000Z",
+            "status": "active"
+        }'
+
+applyId
+    is a textfield
+    is always the ID of the sending system, it is within the duty of the receiving system to classify the ID to the system,
+    it is recommended to use information of the send-header, like referer-host.
+    The apply-id is mandatory.
+
+title
+    is a textfield
+    title is for a fast human readable classification.
+    The title is mandatory.
+
+description
+    is (propably) a textfield
+    is all information displayed on the target. The content is not specified on purpose, so it's up to the user how to define the description.
+    Though it is recommended to use HTML or at least XML.
+    The description is optional, especially if you use an external link to the job offer.
+
+company
+    is a textfield
+    a company-name is mandatory, for just the reason it is mandatory in every job-offer in the system.
+    It should provide an allocation for accounting
+
+contactEmail
+    is a textfield
+    in case of question or feedback
+    although it is not settled, if this concerns just the content of job or the provider of jobs, this is mandatory
+
+location
+    is a textfield about the location of the job-offer,
+    Since a lot of jobs have no specific location, this is optional.
+
+link
+    is a textfield,
+    when the job-offer should redirect or link to an external page. This is always recommended for high glossy jobs.offers.
+    But - buyers aware - you have to be cognizant that external linking can be disabled for some reason.
+    Anyway, this is optional.
+
+datePublishStart
+    is a textfield in the format YYYY-MM-DD\THH:II:SS.FRAC\Z (Uni-Format), It can be easely interpreted with PHP and is the time-format in MONGO.
+    This field is just to facilitate the process in transferring jobs in advance.
+    Nonetheless it is a matter of personal agreements for ending a job-offer. As we can not ensure a notice of a premature ending of a job-offer this is not stringent.
+    Therefore this is optional.
+
+status
+    is a textfield
+    this is for putting a job on passiv by external command, or switch it back to active.
+    Default is always active. This field is optional.
