@@ -79,7 +79,7 @@ These parameters are available or must be set to transmit a job:
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
 |datePublishStart |YYYY-MM-DD               |         |yes       |                                                                           |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
-|status           |string                   |         |no        |                                                                           |
+|status           |string                   |         |no        |Possible values                                                                           |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
 |reference        |string                   |         |no        |an internal reference from the publisher                                   |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
@@ -116,6 +116,26 @@ uriPublisher
 uriApply
     As joboffers can be distributed, the application could directly linked back to the source.
     The distributing system can add a signature to the application to indicate where the applicant has first seen the job offer.
+
+Current States of job openings are defined in Jobs/Entity/StatusInterface
+
++----------------------+----------------------------------------------+
+|Status                |Description                                   |
++======================+==============================================+
+|CREATED               | job opening was created                      |
++----------------------+----------------------------------------------+
+|WAITING_FOR_APPROVAL  | entering of a job opening was finished       |
++----------------------+----------------------------------------------+
+|REJECTED              | the job was rejected                         |
++----------------------+----------------------------------------------+
+|PUBLISH               | job was accepted an is going to be published |
++----------------------+----------------------------------------------+
+|ACTIVE                | the job is online                            |
++----------------------+----------------------------------------------+
+|INACTIVE              | job should go offline                        |
++----------------------+----------------------------------------------+
+|EXPIRED               | the job is expired                           |
++----------------------+----------------------------------------------+
 
 .. code-block:: sh
 
