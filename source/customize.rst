@@ -43,7 +43,10 @@ This will add the module dynamically.
 
 .. _YawikDemoSkin: https://github.com/cbleek/YawikDemoSkin
 
-customize your Skin by mapping more :ref:`templates <templates>` to your own views scripts. 
+customize your Skin by mapping more :ref:`templates <templates>` to your own views scripts.
+
+If you want a completely own customized startpage, add a 'startpage' to your viewmap. It will be automatically picked, when you enter the name of the domain and have no session.
+But be aware, there is no login-box, unless you integrate ist yourself.
 
 
 CSS
