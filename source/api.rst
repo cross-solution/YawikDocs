@@ -87,7 +87,7 @@ These parameters are available or must be set to transmit a job:
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
 |uriPublisher     |http adress              |         |no        |who get the credit for any application                                     |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
-|camEnabled       |boolean                  |         |no        |set to true shows up a link to an application form                         |
+|atsEnabled       |boolean                  |         |no        |set to true shows up a link to an application form                         |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
 |uriApply         |http adress              |         |no        |adress to an external application form                                     |
 +-----------------+-------------------------+---------+----------+---------------------------------------------------------------------------+
@@ -97,6 +97,9 @@ some remarks:
 applyId
     The applyId must be unique just to the provider, this key along with your authentification is the only access to your data.
     Consistently there is no key provided by YAWIK.
+
+atsEnabled
+    enables the Applicant Tracking System for the job opening. 
 
 company, companyId
     companies can managed alongside the job if a companyId is passed, the companyId is an assurance for yawik, that different jobs with the same companyId belong to the same company.
