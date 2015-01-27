@@ -214,3 +214,37 @@ Services
 +---------+-----------------------+-----------------------------+
 |Auth     | AuthenticationService | Authentication Service      |
 +---------+-----------------------+-----------------------------+
+
+Notifications
+^^^^^^^^^^^^^
+
+Every notification or message, no matter how it will be displayed or returned, runs through an unified API.
+This API is implemented in the Controller-Plugin 'notification'.
+Notifications are session-persistent, that implies, they will pop up either on the current site, or on a following site.
+So unless you are sure of it, make no references to a current page, because the notification may pop up on a different page.
+
+The common use is:
+
+.. code-block:: php
+
+    $this->notification('any text');
+    $this->notification()->success('any text');
+    $this->notification()->error('any text');
+    $this->notification()->info('any text');
+
+To display notifications on a html-page, insert somewhere in the script or layout.
+In the standard-layout this partial is already included.
+
+.. code-block:: php
+
+    echo $this->partial('core/notifications');
+
+If you have an ajax-request and expect back a JSON,
+the JSON-response should include information about notifications.
+You have to trigger an event with the whole response as data.
+
+.. code-block:: javascript
+
+    $.post(url, param, function(data) {
+        $(this).trigger('ajax.ready', {'data': data});
+    })
