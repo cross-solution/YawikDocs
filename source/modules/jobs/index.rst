@@ -69,30 +69,34 @@ job opening. Otherwise the code is replaced by the HTML code, which was entered.
 
 You currently can use the following placeholders:
 
-+---------------------------+---------------------------------+
-| Name                      | Description                     |
-+===========================+=================================+
-| $this->title              | title of the job posting        |
-+---------------------------+---------------------------------+
-| $this->requirements       | requirements of the job posting |
-+---------------------------+---------------------------------+
-| $this->qualifications     | Needed qualifications           |
-+---------------------------+---------------------------------+
-| $this->benefits           | Employee benefits               |
-+---------------------------+---------------------------------+
-| $this->uriLogo            | URL of a company logo           |
-+---------------------------+---------------------------------+
-| $this->description        | desciption of the company       |
-+---------------------------+---------------------------------+
-| $this->uriApply           | URL a an application form       |
-+---------------------------+---------------------------------+
-| $this->oraganizationName  | Name of the company             |
-+---------------------------+---------------------------------+
-| $this->city               | City of the company             |
-+---------------------------+---------------------------------+
-| $this->street             | Street of the company           |
-+---------------------------+---------------------------------+
-| $this->postalCode         | postalCode of the company       |
-+---------------------------+---------------------------------+
++----------------------------+-------------------------------------+
+| Name                       | Description                         |
++===========================+======================================+
+| $this->title               | editable title of the job posting   |
++----------------------------+-------------------------------------+
+| $this->titleHead           | title of the job posting            |
++----------------------------+-------------------------------------+
+| $this->requirements        | requirements of the job posting     |
++----------------------------+-------------------------------------+
+| $this->qualifications      | Needed qualifications               |
++----------------------------+-------------------------------------+
+| $this->benefits            | Employee benefits                   |
++----------------------------+-------------------------------------+
+| $this->uriLogo             | URL of a company logo               |
++----------------------------+-------------------------------------+
+| $this->description         | desciption of the company           |
++----------------------------+-------------------------------------+
+| $this->descriptionEditable | editable desciption of the company  |
++----------------------------+-------------------------------------+
+| $this->uriApply            | URL a an application form           |
++----------------------------+-------------------------------------+
+| $this->oraganizationName   | Name of the company                 |
++----------------------------+-------------------------------------+
+| $this->city                | City of the company                 |
++----------------------------+-------------------------------------+
+| $this->street              | Street of the company               |
++----------------------------+-------------------------------------+
+| $this->postalCode          | postalCode of the company           |
++----------------------------+-------------------------------------+
 
 .. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
