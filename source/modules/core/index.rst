@@ -21,6 +21,7 @@ Contents:
    notifications
    logging
    headscripts
+   mails
 
 
 
