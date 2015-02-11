@@ -21,10 +21,10 @@ Mails can be used everywhere, where have access to the application-servicelocato
 
 When you need to send a mail, there are four steps to do
 
-# call the mail-service
-# get a message-service from the mail-service (there are two distinguished types)
-# feed the message-service with informations
-# use the mail-service to send the message-service
+1. call the mail-service
+2. get a message-service from the mail-service (there are two distinguished types)
+3. feed the message-service with informations
+4. use the mail-service to send the message-service
 
 The two types of message-service:
 
