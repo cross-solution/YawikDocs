@@ -82,11 +82,13 @@ You currently can use the following placeholders:
 +----------------------------+-------------------------------------+
 | $this->benefits            | Employee benefits                   |
 +----------------------------+-------------------------------------+
+| $this->location            | Location of the job                 |
++----------------------------+-------------------------------------+
 | $this->uriLogo             | URL of a company logo               |
 +----------------------------+-------------------------------------+
-| $this->description         | desciption of the company           |
+| $this->description         | description of the company          |
 +----------------------------+-------------------------------------+
-| $this->descriptionEditable | editable desciption of the company  |
+| $this->descriptionEditable | editable description of the company |
 +----------------------------+-------------------------------------+
 | $this->uriApply            | URL a an application form           |
 +----------------------------+-------------------------------------+
