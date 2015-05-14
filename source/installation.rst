@@ -47,8 +47,10 @@ permissions, the directories ``cache`` and ``log`` should be writable after extr
 
 Go into the ``YAWIK`` directory and edit the ``build.properties`` file. There you can 
 set database resources and an initial Account to login into your YAWIK. The Webserver
-only needs read access to the ``YAWIK/public`` and write access to the ``YAWIK/public``
+only needs read access to the ``YAWIK/public`` and write access to the ``YAWIK/log``
 and ``YAWIK/cache`` directory.
+
+Thee ``èmail`` ist required, too.
 
 next step is to run ``./install.sh``
 
