@@ -24,3 +24,22 @@ The Auth module offers the following features
 * Roles for applicants and recruiters
 
 .. _hybridauth: http://hybridauth.sourceforge.net/
+
+Mails
+~~~~~
+
++------------------------+---------------------------------------------+---------------------------------+
+|template                |purpose                                      |triggered from                   |
++========================+=============================================+=================================+
+|register                | contains a confirmation-link to ensure      |                                 |
+|                        | the email-adress. Without this assurance    |                                 |
+|                        | the account will not be fully activated     |                                 |
++------------------------+---------------------------------------------+---------------------------------+
+|forgot-password         | send a link for a requery of the password   |                                 |
+|                        | this mail is submitted to the stored email  |                                 |
+|                        | address of the register process             |                                 |
++------------------------+---------------------------------------------+---------------------------------+
+|first-socialmedia-login |                                             |                                 |
++------------------------+---------------------------------------------+---------------------------------+
+|first-external-login    |                                             |                                 |
++------------------------+---------------------------------------------+---------------------------------+

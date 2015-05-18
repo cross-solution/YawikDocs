@@ -39,18 +39,24 @@ http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 Setup
 -----
 
-get the latest YAWIK Package. Packages are build as ZIP or TGZ archive. We publish 
-them on Sourceforge_. They extract into a subdirectory YAWIK-x.y.z. If you preserve the
+Get the latest YAWIK Package from Sourceforge_. Packages are build as ZIP or TGZ archive. 
+They extract into a subdirectory YAWIK-x.y.z. If you preserve the
 permissions, the directories ``cache`` and ``log`` should be writable after extraction.
+You can preserve the Permissions if you unpach the archive File with ``tar`` and the ``p``-Option.
+We recommend you to unpack with ``tar -xzpf file``. 
 
 .. _Sourceforge: https://sourceforge.net/projects/yawik/
 
-Go into the ``YAWIK`` directory and edit the ``build.properties`` file. There you can 
-set database resources and an initial Account to login into your YAWIK. The Webserver
+Go into the ``YAWIK`` directory and edit the ``build.properties`` file. 
+You should at least set your initial Account:
+  
+  * login-name
+  * password
+  * email-account
+
+Ensure that the Database-Defaults comply with your local Settings. The Webserver
 only needs read access to the ``YAWIK/public`` and write access to the ``YAWIK/log``
 and ``YAWIK/cache`` directory.
-
-Thee ``èmail`` ist required, too.
 
 next step is to run ``./install.sh``
 
