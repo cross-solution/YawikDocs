@@ -40,22 +40,34 @@ Setup
 -----
 
 Get the latest YAWIK Package from Sourceforge_. Packages are build as ZIP or TGZ archive. 
-They extract into a subdirectory YAWIK-x.y.z. If you preserve the
-permissions, the directories ``cache`` and ``log`` should be writable after extraction.
-You can preserve the Permissions if you unpach the archive File with ``tar`` and the ``p``-Option.
-We recommend you to unpack with ``tar -xzpf file``. 
+They extract into a subdirectory YAWIK-x.y.z. If you preserve the permissions, the directories
+``cache`` and ``log`` should be writable after extraction.
+
+``tar`` preserves permissions with the ``p``-Option. So unpack a TGZ with ``tar -xzpf YAWIK-y.x.z.tgz``.
+``unzip`` preserves the permissions by default (at least on ubuntu 14.4). So unpack a ZIP archive with
+``unzip YAWIK-x.y.z.zip``
 
 .. _Sourceforge: https://sourceforge.net/projects/yawik/
 
 Go into the ``YAWIK`` directory and edit the ``build.properties`` file. 
 You should at least set your initial Account:
-  
-  * login-name
-  * password
-  * email-account
 
-Ensure that the Database-Defaults comply with your local Settings. The Webserver
-only needs read access to the ``YAWIK/public`` and write access to the ``YAWIK/log``
+.. code-block:: sh
+
+  ;
+  ; initial user login. The useraccount will be added to the mongodb if not exist.
+  ; This allows to add user accounts to the mongodb.
+  ;
+
+  username=
+  password=
+  email=
+
+
+Ensure that the database defaults comply with your local settings.
+
+
+The webserver only needs read access to the ``YAWIK/`` and write access to the ``YAWIK/log``
 and ``YAWIK/cache`` directory.
 
 next step is to run ``./install.sh``
@@ -63,6 +75,12 @@ next step is to run ``./install.sh``
 This will download phing_ , executes ``./phing.phar generate-autoload-config`` 
 which takes the configuration option of your ``build.properties`` and generates
 various configuration files located in config/autoload.
+
+.. note::
+
+    YAWIK will run in production mode by default. So if you make modifications to the config autoload files you
+    have to remove the ``cache/module-classmap-cache.module_map.php`` and ``cache/module-config-cache.production.php``.
+
 
 Trusty comes with php5.5 and therefore you can simply fire up YAWIK by
 
@@ -101,7 +119,8 @@ A VirtualHost section might look like.
              DirectoryIndex index.php
              Options Indexes FollowSymLinks MultiViews
              AllowOverride All
-             Require all granted
+             Require all granted   // for apache >= 2.4
+             //Allow from all      // for apache <= 2.2
         </Directory>
     </VirtualHost>
 

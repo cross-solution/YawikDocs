@@ -102,3 +102,6 @@ You currently can use the following placeholders:
 +----------------------------+-------------------------------------+
 
 .. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
+
+Mails
+^^^^^

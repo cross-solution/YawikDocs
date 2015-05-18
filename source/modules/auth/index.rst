@@ -23,23 +23,31 @@ The Auth module offers the following features
 * I forgot my Password
 * Roles for applicants and recruiters
 
+
 .. _hybridauth: http://hybridauth.sourceforge.net/
 
 Mails
-~~~~~
+^^^^^
 
-+------------------------+---------------------------------------------+---------------------------------+
-|template                |purpose                                      |triggered from                   |
-+========================+=============================================+=================================+
-|register                | contains a confirmation-link to ensure      |                                 |
-|                        | the email-adress. Without this assurance    |                                 |
-|                        | the account will not be fully activated     |                                 |
-+------------------------+---------------------------------------------+---------------------------------+
-|forgot-password         | send a link for a requery of the password   |                                 |
-|                        | this mail is submitted to the stored email  |                                 |
-|                        | address of the register process             |                                 |
-+------------------------+---------------------------------------------+---------------------------------+
-|first-socialmedia-login |                                             |                                 |
-+------------------------+---------------------------------------------+---------------------------------+
-|first-external-login    |                                             |                                 |
-+------------------------+---------------------------------------------+---------------------------------+
+.. index:: Mail
+
++-------------------------+---------------------------------------------+---------------------------------+
+|template                 |purpose                                      |triggered from                   |
++=========================+=============================================+=================================+
+|register_                | contains a confirmation-link to ensure      |                                 |
+|                         | the email-address. Without this assurance   |                                 |
+|                         | the account will not be fully activated     |                                 |
++-------------------------+---------------------------------------------+---------------------------------+
+|forgot-password_         | Mail containing a link which enables        |                                 |
+|                         | the user to reset the password              |                                 |
++-------------------------+---------------------------------------------+---------------------------------+
+|first-socialmedia-login_ |                                             |                                 |
++-------------------------+---------------------------------------------+---------------------------------+
+|first-external-login_    |                                             |                                 |
++-------------------------+---------------------------------------------+---------------------------------+
+
+.. _register: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/register.phtml
+.. _forgot-password: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/forgot-password.phtml
+.. _first-socialmedia-login: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/first-socialmedia-login.phtml
+.. _first-external-login: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/first-external-login.phtml
+
