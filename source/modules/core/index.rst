@@ -195,11 +195,23 @@ Layout
 
 Mail Templates
 ^^^^^^^^^^^^^^
-+--------+---------------------------+-------------------------------+
-| Module | Name                      | Description                   |
-+========+===========================+===============================+
-|Auth    | first-login               | informs about the first login |
-+--------+---------------------------+-------------------------------+
++--------+---------------------------+---------------------------------------------------------------------------------+
+| Module | Name                      | Description                                                                     |
++========+===========================+=================================================================================+
+|Auth    | register_                 | sends a confirmation link to the user, after registration                       |
++--------+---------------------------+---------------------------------------------------------------------------------+
+|Auth    | forgot-password_          | sends a confirmation link to the user, after using the forgot password feature  |
++--------+---------------------------+---------------------------------------------------------------------------------+
+|Auth    | first-external-login_     | sends the user login data, after the user wa created by an external application |
++--------+---------------------------+---------------------------------------------------------------------------------+
+|Auth    | first-socialmedia-login_  | sends the user a welcom mail after the first login via a social network         |
++--------+---------------------------+---------------------------------------------------------------------------------+
+
+.. _forgot-password: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/forgot-password.phtml
+.. _register: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/register.phtml
+.. _first-socialmedia-login: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/first-socialmedia-login.phtml
+.. _first-external-login: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/first-external-login.phtml
+
 
 Services
 ^^^^^^^^
