@@ -71,7 +71,7 @@ You currently can use the following placeholders:
 
 +----------------------------+-------------------------------------+
 | Name                       | Description                         |
-+===========================+======================================+
++============================+=====================================+
 | $this->title               | editable title of the job posting   |
 +----------------------------+-------------------------------------+
 | $this->titleHead           | title of the job posting            |
@@ -119,7 +119,7 @@ Mails
 +----------------------------+-------------------------------------------------------------------------------------+
 
 .. _job-created: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-created.phtml
-.. _job-pending: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-penging.phtml
+.. _job-pending: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-pending.phtml
 .. _job-rejected: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-rejected.phtml
 .. _job-accepted: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-accepted.phtml
 
@@ -146,3 +146,48 @@ To modify the options, copy the module.jobs.options.local.php.dist_ to you ``con
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 
 .. _module.jobs.options.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/config/module.jobs.options.local.php.dist
+
+
+Channel Options
+^^^^^^^^^^^^^^^
+
+The Channel Options contain information about publishing channels, a user can select to publish a job posting. To modify the
+options, copy the channel.options.local.php.dist_ to you ``config/autoload`` directory, remove the ``.dist`` prefix and
+adjust the values
+
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|Name                        | type   | description                                                                            |
++============================+========+========================================================================================+
+|key                         | string | Unique key of the channel                                                              |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|externalKey                 | string | external key of a channel. Eg. a provider offers the channel "MyJobboard" with the key |
+|                            |        | "123". YAWIK provides a channel "MyJobboard" using the key "myJobborad".               |
+|                            |        | Set externalKey to "123", if the job is published to the provider.                     |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|price                       | string | Price for publishing a job posting on this channel                                     |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|currency                    | string | currency of the price. Default: CoreOptions::defaultCurrency                           |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|tax                         | int    | tax rate of the channel. Default: CoreOptions::defaultTaxRate                          |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|label                       | string | label of the channel  (deprecated)                                                     |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|publishDuration             | int    | number of days a job opening can be published                                          |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|category                    | string | Category of the channel. Default: "General"                                            |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|headline                    | string | Headline of the channel                                                                |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|description                 | string | Description of the channel                                                             |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|linkText                    | string | Linktext of a link to further information of the channel                               |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|linkTarget                  | string | Link target  of a link to further information of the channel                           |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|route                       | string | Route to a content page with details about the channel                                 |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|params                      | array  |Parameter, which can be used for linking the detail page about the channel              |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+
+
+.. _channel.options.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/config/module.jobs.options.local.php.dist

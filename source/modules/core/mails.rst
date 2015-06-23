@@ -13,10 +13,10 @@ when creating own mails, you usually extends the message
 All related classes are in the Core-Modul, the interaction in in this diagram:
 http://www.gliffy.com/go/publish/7191865
 
-Using the Mailservice
+Using the MailService
 ---------------------
 
-Mails can be used everywhere, where have access to the application-servicelocator.
+Mails can be used everywhere, where have access to the application-serviceLocator.
 
 
 When you need to send a mail, there are four steps to do
@@ -40,7 +40,7 @@ When using a script the message-service in some way behaves like a viewmodel,
 it takes in arbitrary variables, which can be accessed in the script.
 Also you can set a template, which is resolved by view-maps or view-pathes.
 In the scripts you can use PHP, and since the script is included into the message-service,
-you can set or change in the script mail-specific attributs like header oder subject.
+you can set or change in the script mail-specific attributes like header oder subject.
 Scripts are an alike to views.
 
 To use a script you have to instanciate a mail service and a htmltemplate service
