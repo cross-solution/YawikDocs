@@ -105,3 +105,44 @@ You currently can use the following placeholders:
 
 Mails
 ^^^^^
+
++----------------------------+-------------------------------------------------------------------------------------+
+| Name                       | Description                                                                         |
++============================+=====================================================================================+
+| job-created_               | mail is sent to th approval team                                                    |
++----------------------------+-------------------------------------------------------------------------------------+
+| job-pending_               | mail is sent to the person, who created the job.                                    |
++----------------------------+-------------------------------------------------------------------------------------+
+| job-accepted_              | mail informs the person, who created the job, that the job is going to be published |
++----------------------------+-------------------------------------------------------------------------------------+
+| job-rejected_              | mail informs the person, who created the job, that the job was rejected             |
++----------------------------+-------------------------------------------------------------------------------------+
+
+.. _job-created: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-created.phtml
+.. _job-pending: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-penging.phtml
+.. _job-rejected: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-rejected.phtml
+.. _job-accepted: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-accepted.phtml
+
+
+Options
+^^^^^^^
+
+To modify the options, copy the module.jobs.options.local.php.dist_ to you ``config/autoload`` directory, remove the
+``.dist`` prefix and adjust the values
+
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|Name                        | type   | description                                                                            |
++============================+========+========================================================================================+
+|multipostingApprovalMail    | string | recipient email of the approval team                                                   |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|multipostingTargetUri       | string | Send a Rest Request to this target on status changes of a job opening. The URI can     |
+|                            |        | contain username/password. eg:  ``http://user:pass@host/location?query``               |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|defaultLogo                 | string | The default Logo is shown in a job opening and in the application form                 |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|companyLogoMaxSize          | int    | Maximum size in bytes of a company Logo. Default 200kB                                 |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+|companyLogoMimeType         | array  | Allowed Mime-Types for company Logos                                                   |
++----------------------------+--------+----------------------------------------------------------------------------------------+
+
+.. _module.jobs.options.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/config/module.jobs.options.local.php.dist

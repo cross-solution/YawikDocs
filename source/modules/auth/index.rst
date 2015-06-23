@@ -41,9 +41,13 @@ Mails
 |forgot-password_         | Mail containing a link which enables        |                                 |
 |                         | the user to reset the password              |                                 |
 +-------------------------+---------------------------------------------+---------------------------------+
-|first-socialmedia-login_ |                                             |                                 |
+|first-socialmedia-login_ | contains username and password. Mail is     |                                 |
+|                         | sent to the user after the first social     |                                 |
+|                         | media login                                 |                                 |
 +-------------------------+---------------------------------------------+---------------------------------+
-|first-external-login_    |                                             |                                 |
+|first-external-login_    | contains username and password. Mail is     |                                 |
+|                         | sent, after a user was created by an        |                                 |
+|                         | external application                        |                                 |
 +-------------------------+---------------------------------------------+---------------------------------+
 
 .. _register: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/view/mail/register.phtml

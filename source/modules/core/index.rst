@@ -22,6 +22,7 @@ Contents:
    logging
    headscripts
    mails
+   options
 
 
 

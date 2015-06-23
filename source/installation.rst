@@ -64,8 +64,8 @@ You should at least set your initial Account:
   email=
 
 
-Ensure that the database defaults comply with your local settings.
-
+Ensure that the database defaults comply with your local settings. By default YAWIK assumes to connect to a local
+mongodb without authentication.
 
 The webserver only needs read access to the ``YAWIK/`` and write access to the ``YAWIK/log``
 and ``YAWIK/cache`` directory.
