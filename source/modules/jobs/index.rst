@@ -191,3 +191,24 @@ adjust the values
 
 
 .. _channel.options.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/config/module.jobs.options.local.php.dist
+
+
+ATS Mode
+^^^^^^^^
+
+The ATS (Applicant Tracking System) Mode defines, how applications should be processed. The following modes exist:
+
++----------------------------+----------------------------------------------------------------------------------------+
+|Name                        | description                                                                            |
++============================+========================================================================================+
+|intern                      | Applications are stored within the local YAWIK instance                                |
++----------------------------+----------------------------------------------------------------------------------------+
+|uri                         | Application Form is pointed to en external ATS System                                  |
++----------------------------+----------------------------------------------------------------------------------------+
+|email                       | Application Form is forwarded via Email                                                |
++----------------------------+----------------------------------------------------------------------------------------+
+|none                        | The Application Formular is deactivated                                                |
++----------------------------+----------------------------------------------------------------------------------------+
+
+
+
