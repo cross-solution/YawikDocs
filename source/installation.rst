@@ -11,9 +11,9 @@ try a provider like mongolab.com_ or mongosoup.de_.
 .. _mongolab.com: https://mongolab.com/welcome/
 .. _mongosoup.de: https://www.mongosoup.de/
 
-* php 5.3.*
-* Zend Framework 2.2.*
-* mongodb 2.4.*
+* php >= 5.5.*
+* Zend Framework 2.5.*
+* mongodb >= 2.4.*
 * php5-mongo
 * php5-intl
 * php5-curl (only needed to install dependencies via composer)
@@ -33,11 +33,23 @@ YAWIK should run on all operating systems, which support PHP.
 
 More information about installation of Mongo:
 
-http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+http://docs.mongodb.org/manual/tutorial/install-mongodb-enterprise-on-ubuntu/
+
+YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). If you want to use a later version
+(which is recommended), you can install e.g. mongo 2.6 by:
+
+.. code-block:: sh
+
+ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+ echo "deb http://repo.mongodb.com/apt/ubuntu "$(lsb_release -sc)"/mongodb-enterprise/2.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-enterprise-2.6.list
+ sudo apt-get update
+ sudo apt-get install -y mongodb-enterprise
+
 
 
 Setup
 -----
+
 
 Get the latest YAWIK Package from Sourceforge_. Packages are build as ZIP or TGZ archive. 
 They extract into a subdirectory YAWIK-x.y.z. If you preserve the permissions, the directories
@@ -49,50 +61,22 @@ They extract into a subdirectory YAWIK-x.y.z. If you preserve the permissions, t
 
 .. _Sourceforge: https://sourceforge.net/projects/yawik/
 
-Go into the ``YAWIK`` directory and edit the ``build.properties`` file. 
-You should at least set your initial Account:
+.. figure:: images/install-step-2.png
+    :scale: 20%
+    :align: right
 
-.. code-block:: sh
+.. figure:: images/install-step-1.png
+    :scale: 20%
+    :align: right
 
-  ;
-  ; initial user login. The useraccount will be added to the mongodb if not exist.
-  ; This allows to add user accounts to the mongodb.
-  ;
-
-  username=
-  password=
-  email=
-
-
-Ensure that the database defaults comply with your local settings. By default YAWIK assumes to connect to a local
-mongodb without authentication.
-
-The webserver only needs read access to the ``YAWIK/`` and write access to the ``YAWIK/log``
-and ``YAWIK/cache`` directory.
-
-next step is to run ``./install.sh``
-
-This will download phing_ , executes ``./phing.phar generate-autoload-config`` 
-which takes the configuration option of your ``build.properties`` and generates
-various configuration files located in config/autoload.
+By pointing your browser to the ``YAWIK/public`` directory, an installation page appears. You'll be asked to
+enter a mongodb connection string, a username, a password and an email address.
 
 .. note::
 
     YAWIK will run in production mode by default. So if you make modifications to the config autoload files you
     have to remove the ``cache/module-classmap-cache.module_map.php`` and ``cache/module-config-cache.production.php``.
 
-
-Trusty comes with php5.5 and therefore you can simply fire up YAWIK by
-
-.. code-block:: sh
-
-  cd public
-  php -S localhost:8080     # make sure, the port is not already in use
-
-after that you should are able to access YAWIK on your local machine by pointing your
-browser to:
-
-http://localhost:8080
 
 If you want to use Apache, you probably need root access to the machine you've installed
 YAWIK on. In addition you need to enable the rewrite module of apache.
@@ -148,8 +132,8 @@ Unpack the sources in the DocumentRoot. You'll find the sources in the YAWIK dir
 .. code-block:: sh
 
   git clone https://github.com/cross-solution/YAWIK
-  cd YAWIK
-  cp build.properties.dist build.properties
+
+After that, point your browser to the``YAWIK/public`` directory, which will open the install page.
 
 The build.properties contains all configuration values in one file. It simplifies the
 setup of a development environment. Here you can define an initial user account, a
@@ -268,22 +252,6 @@ If the enviroment is set to ``production``, all configurations are cached in
 cache. You have to remove this file, if you alter files in ``config/autoload``.
 
 
-Database
-^^^^^^^^
-
-create a ``config/autoload/core.db.mongodb.local.php`` to define the database. 
-
-.. code-block:: php
-   :linenos:
-
-   <?php
-   return array(
-     'database' => array(
-        'connection' => 'localhost:27017',
-     ),
-   );
-   ?>
-
 Apache
 ^^^^^^
 
@@ -293,9 +261,9 @@ point the DocumentRoot of your Webserver to the ``public`` directory.
 
   <VirtualHost *:80>
         ServerName YOUR.HOSTNAME
-        DocumentRoot /YOUR/DIRECTORY/public
+        DocumentRoot /YOUR/DIRECTORY/YAWIK/public
   
-        <Directory /YOUR/DIRECTORY/public>
+        <Directory /YOUR/DIRECTORY/YAWIK/public>
                 DirectoryIndex index.php
                 AllowOverride All
                 Order allow,deny
