@@ -125,22 +125,54 @@ Yawik can be downloaded at https://sourceforge.net/projects/yawik/files/
 Setup for Developers
 ^^^^^^^^^^^^^^^^^^^^
 
-if you want to modify the YAWIK code, you have to clone the sources from Github. 
-
-Unpack the sources in the DocumentRoot. You'll find the sources in the YAWIK directory. 
+if you want to modify the YAWIK code, you should clone the repository from Github. 
+The repository does not contain any dependency. You can import all dependencies by 
+executing the ``ìnstall.sh`` script located in the YAWIK root. This scripts imports 
+all external libraries via composer. In addition, it creates the directories ``log``, 
+``cache`` ùnd  ``config/autoload`` and set the directory permissions to a+w. 
 
 .. code-block:: sh
 
   git clone https://github.com/cross-solution/YAWIK
+  cd YAWIK
+  ./install.sh
 
-After that, point your browser to the``YAWIK/public`` directory, which will open the install page.
 
-The build.properties contains all configuration values in one file. It simplifies the
-setup of a development environment. Here you can define an initial user account, a
-database resource or integrate social networks. The values itself are copied to various
-configuration files, which are placed into ``config/autoload`` by running
-``./phing generate-autoload-config``. That means, you have to execute ``./phing generate-autoload-config``
-to make changes available to the application.
+After the execution you are ready to point your browser to the ``public`` directory.
+You'll get the install wizard and after entering the initial user, the database
+connection and an email address you are ready to use YAWIK.
+
+At this point your ```config/autoload`` directory contains only one file 
+``yawik.config.global.php`` containing the database connection string. The initial user
+is created with the ``àdmin`` role in the database.
+
+.. code-block:: sh
+
+    $ ls YAWIK/config/autoload
+    yawik.config.global.php
+
+All other configurations are currently done manually by copying the ```*.dist`` files
+from the modules configuration directory to the autoload directory. 
+
+Example: Setting up Facebook_, Xing_ or LinkedIn_ Login
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    YAWIK$ cp module/Auth/config/module.auth.global.php.dist config/autoload/module.auth.global.php
+
+  
+All placeholders in the configuration files which match '%%.*%%' are deprecated. They are relics of
+the build.properties area. Since 0.20 an intall wizard is available which introduces an initial
+user with the ``admin`` role. 
+
+
+
+.. code-block:: sh
+
+    ....
+    "keys"    => array ( "id" => "%%facebook.appid%%", "secret" => "%%facebook.secret%%" ),    
+    ....
 
 Note: you need a Facebook, Xing or LinkedIn App, if you want to integrate the social
 networks . So take a look how to create an App with Facebook_, Xing_ or LinkedIn_. 
@@ -149,78 +181,8 @@ networks . So take a look how to create an App with Facebook_, Xing_ or LinkedIn
 .. _Xing: https://dev.xing.com/overview
 .. _LinkedIn: https://developer.linkedin.com/
 
-Adapt these values. Put your app IDs and your secret into the ``build.properties``.
-
-Finally run the ``install.sh`` script. This downloads composer_ and phing_ and 
-installs missing dependencies and generates config files.
-
-.. code-block:: sh
-
-  ./install.sh
-
-.. code-block:: sh
-
-  ;
-  ; Facebook, Xing and LinkedIn credentials. (module/Auth/config/module.auth.global.php.dist)
-  ;
-
-  facebook.enabled=false
-  facebook.appid=
-  facebook.secret=
-  facebook.scope="email, user_about_me, user_birthday, user_hometown, user_work_history, user_education_history"
-
-  xing.enabled=false
-  xing.appid=
-  xing.secret=
-  xing.scope=
-
-  linkedin.enabled=false
-  linkedin.appid=
-  linkedin.secret=
-  linkedin.scope="r_fullprofile"
-
-Ànd then run
-
-.. code-block:: sh
-  
-  ./phing.phar
-
-This will extract the key/value pairs from the ``build.properties``, replaces them in the
-``modules/<Module>/config/*.php.dist`` files and copies the result into the ``config/autoload`` directory.
-
-all build options can be listed by:
-
-.. code-block:: sh
-
-    cbleek@xenon:~/Projects/YAWIK$ ./phing.phar -l
-    Buildfile: /home/cbleek/Projects/YAWIK/build.xml
-    Default target:
-    -------------------------------------------------------------------------------
-     install        reads build.properties and generates config files
-
-    Main targets:
-    -------------------------------------------------------------------------------
-     build          build tgz and zip packages
-     clean          removes build, log, cache, tmp, components and vendor dir
-     deploy-builds  publish TGZ and ZIP packages via rsync
-     deploy-docs    publish API docs via rsync
-     docs           build api docs
-     install        reads build.properties and generates config files
-     phpdoc         build api docs using phpdoc
-     phpunit        run phpunit tests
-     translate      compiles all languages *.po files
-
-    Subtargets:
-    -------------------------------------------------------------------------------
-     compile-po-file
-     filesets
-     generate-autoload-config
-     init
-     load-properties
-     load-properties-subtask
-     prepare
-     symlinks
-
+Copy the *.dist files from the modules/*/config dir into the config/autoload directory. Don't forget
+to remove the "*.dist" suffix. Addjust the values and remove the cache/modules-* files.
 
 
 .. _composer: https://getcomposer.org/
@@ -231,7 +193,7 @@ Configuration
 
 Configuration files are located in ``config/autoload``. Config files are 
 returning an associative array. All arrays are merged, so the order how
-the configuration files are processed might be relevant.
+the configuration files are processed is relevant.
 
 Files with names ending in ``*.global.php`` are process first. As a second
 files ending in ``*.{env}.php``. {env} can have at least the values ``production``, 
