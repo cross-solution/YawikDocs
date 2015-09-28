@@ -241,10 +241,11 @@ point the DocumentRoot of your Webserver to the ``public`` directory.
 Authentication
 ^^^^^^^^^^^^^^
 
-to enable login via Facebook, Xing, LinkedIn or any other hybridauth_ adapter simply copy the  ``modules/Auth/config/module.auth.local.php``
+to enable login via Facebook, Xing, LinkedIn or any other hybridauth_ adapter simply copy the module.auth.local.php.dist_
 file to ``config/autoload/module.auth.local.php`` and adjust your keys and secrets.
 
 .. _hybridauth: http://hybridauth.sourceforge.net/
+.. _module.auth.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/config/module.auth.global.php.dist
 
 .. code-block:: php
    :linenos:
