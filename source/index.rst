@@ -14,6 +14,7 @@ Contents:
 
    about
    installation
+   configuration
    modules
    guidelines
    customize

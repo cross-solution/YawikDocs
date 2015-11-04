@@ -158,19 +158,17 @@ adjust the values
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |Name                        | type   | description                                                                            |
 +============================+========+========================================================================================+
-|key                         | string | Unique key of the channel                                                              |
-+----------------------------+--------+----------------------------------------------------------------------------------------+
 |externalKey                 | string | external key of a channel. Eg. a provider offers the channel "MyJobboard" with the key |
 |                            |        | "123". YAWIK provides a channel "MyJobboard" using the key "myJobborad".               |
 |                            |        | Set externalKey to "123", if the job is published to the provider.                     |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
-|price                       | string | Price for publishing a job posting on this channel                                     |
+|prices                      | array  | [base,list,min] You can define 3 prices which you can use in your price calculation    |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |currency                    | string | currency of the price. Default: CoreOptions::defaultCurrency                           |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |tax                         | int    | tax rate of the channel. Default: CoreOptions::defaultTaxRate                          |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
-|label                       | string | label of the channel  (deprecated)                                                     |
+|label                       | string | label of the channel                                                                   |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |publishDuration             | int    | number of days a job opening can be published                                          |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
@@ -180,7 +178,7 @@ adjust the values
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |description                 | string | Description of the channel                                                             |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
-|linkText                    | string | Linktext of a link to further information of the channel                               |
+|linktext                    | string | Linktext of a link to further information of the channel                               |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |linkTarget                  | string | Link target  of a link to further information of the channel                           |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
