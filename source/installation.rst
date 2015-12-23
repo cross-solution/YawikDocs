@@ -126,7 +126,7 @@ Setup for Developers
 ^^^^^^^^^^^^^^^^^^^^
 
 if you want to modify the YAWIK code, you should clone the repository from Github. 
-The repository does not contain any dependency. You can import all dependencies by 
+The repository does not contain any dependency. You have to import all dependencies by 
 executing the ``ìnstall.sh`` script located in the YAWIK root. This scripts imports 
 all external libraries via composer. In addition, it creates the directories ``log``, 
 ``cache`` ùnd  ``config/autoload`` and set the directory permissions to a+w. 
@@ -202,7 +202,7 @@ If the environment variable ``APPLICATION_ENV`` is set, and if files named
 ``*. development.php`` exist, then these configurations are processed. If no environment
 variable ist set, ``production`` is assumed.
 
-At the end ``*.local.php`` files are processed.
+At the end ``*.local.php`` files are processed.:
 
 Modules are coming with there own ``config`` directory. Configuration files of
 modules can be named ``*.config.php``. This allows you to split configurations
