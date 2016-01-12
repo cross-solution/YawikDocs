@@ -210,3 +210,37 @@ The ATS (Applicant Tracking System) Mode defines, how applications should be pro
 
 
 
+Widget
+^^^^^^
+
+by using the folloging Javascript Widget you can add your jobs into your personal homepage. 
+
+
+.. code-block:: javascript
+
+ <script>
+    (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            script.src = "./../yawik.min.js";
+            tag.parentNode.insertBefore(script, tag);
+        };
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+ </script>
+
+
+The javascript renders a joblist inside a container with the id ``YawikWidget``
+
+.. code-block:: html
+
+ <div id="YawikWidget"
+     data-organization="55ae775c6b10f8f05b8b457f"
+     data-yawik="https://yawik.org/">
+ </div>
+
+
+The attribute data-organizations takes an organization id, provided by your used yawik. The attribute data-yawik takes the location of the used yawik.
+
+
+
