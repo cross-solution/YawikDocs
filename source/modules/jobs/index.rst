@@ -222,7 +222,7 @@ by using the folloging Javascript Widget you can add your jobs into your persona
     (function (window, document) {
         var loader = function () {
             var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-            script.src = "./../yawik.min.js";
+            script.src = "view-source:https://yawik.org/YawikWidget/yawik.min.js";
             tag.parentNode.insertBefore(script, tag);
         };
         window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
@@ -242,5 +242,5 @@ The javascript renders a joblist inside a container with the id ``YawikWidget``
 
 The attribute data-organizations takes an organization id, provided by your used yawik. The attribute data-yawik takes the location of the used yawik.
 
-
+Source Code of the Widget: https://github.com/cbleek/YawikWidget
 
