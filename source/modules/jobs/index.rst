@@ -67,38 +67,47 @@ of code. E.g.
 YAWIK replaces this code with an inline Wysiwyg HTML Editor if you want to modify your
 job opening. Otherwise the code is replaced by the HTML code, which was entered.
 
+Modifications to the label fields ``labelBenefits``, ``labelQualifications`` and 
+``labelRequirements`` are
+
 You currently can use the following placeholders:
 
 +----------------------------+-------------------------------------+
 | Name                       | Description                         |
 +============================+=====================================+
-| $this->title               | editable title of the job posting   |
-+----------------------------+-------------------------------------+
-| $this->titleHead           | title of the job posting            |
-+----------------------------+-------------------------------------+
-| $this->requirements        | requirements of the job posting     |
-+----------------------------+-------------------------------------+
-| $this->qualifications      | Needed qualifications               |
-+----------------------------+-------------------------------------+
 | $this->benefits            | Employee benefits                   |
 +----------------------------+-------------------------------------+
-| $this->location            | Location of the job                 |
-+----------------------------+-------------------------------------+
-| $this->uriLogo             | URL of a company logo               |
+| $this->city                | City of the company                 |
 +----------------------------+-------------------------------------+
 | $this->description         | description of the company          |
 +----------------------------+-------------------------------------+
 | $this->descriptionEditable | editable description of the company |
 +----------------------------+-------------------------------------+
-| $this->uriApply            | URL a an application form           |
+| $this->qualifications      | Needed qualifications               |
++----------------------------+-------------------------------------+
+| $this->location            | Location of the job                 |
++----------------------------+-------------------------------------+
+| $this->labelBenefits       | Label of the Benefits Section       |
++----------------------------+-------------------------------------+
+| $this->labelQualifications | Label of the Qualifications Section |
++----------------------------+-------------------------------------+
+| $this->labelRequirements   | Label of the Requirements Secion    |
 +----------------------------+-------------------------------------+
 | $this->oraganizationName   | Name of the company                 |
 +----------------------------+-------------------------------------+
-| $this->city                | City of the company                 |
+| $this->postalCode          | postalCode of the company           |
++----------------------------+-------------------------------------+
+| $this->requirements        | requirements of the job posting     |
 +----------------------------+-------------------------------------+
 | $this->street              | Street of the company               |
 +----------------------------+-------------------------------------+
-| $this->postalCode          | postalCode of the company           |
+| $this->title               | editable title of the job posting   |
++----------------------------+-------------------------------------+
+| $this->titleHead           | title of the job posting            |
++----------------------------+-------------------------------------+
+| $this->uriApply            | URL a an application form           |
++----------------------------+-------------------------------------+
+| $this->uriLogo             | URL of a company logo               |
 +----------------------------+-------------------------------------+
 
 .. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
@@ -162,7 +171,7 @@ adjust the values
 |                            |        | "123". YAWIK provides a channel "MyJobboard" using the key "myJobborad".               |
 |                            |        | Set externalKey to "123", if the job is published to the provider.                     |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
-|prices                      | array  | [base,list,min] You can define 3 prices which you can use in your price calculation    |
+|prices                      | array  | [base,list,min] You can define 3 prices which you can use in your price-calculation_   |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
 |currency                    | string | currency of the price. Default: CoreOptions::defaultCurrency                           |
 +----------------------------+--------+----------------------------------------------------------------------------------------+
@@ -240,7 +249,37 @@ The javascript renders a joblist inside a container with the id ``YawikWidget``
  </div>
 
 
-The attribute data-organizations takes an organization id, provided by your used yawik. The attribute data-yawik takes the location of the used yawik.
+The attribute data-organizations takes an organization id, provided by your used yawik. The attribute data-yawik 
+takes the location of the used yawik.
 
 Source Code of the Widget: https://github.com/cbleek/YawikWidget
+
+
+Price Calculation
+^^^^^^^^^^^^^^^^^
+
+.. _price-calculation:
+
+
+The price calculations can be overridden by creating a MyCalculation.php. You can start by coping the 
+ChannelPrices.php_ to MyCalculation.php. Adjust the namespace and implement your logic within the 
+filter function.
+
+To use your MyCalculation.php, you have to copy the ChannelPricesFactory.php_ into YourModule. Adjust 
+the namespace and the $filterClass value.
+
+To use your filter, you have to put the following config into your modules.config.php 
+
+.. code-block:: php
+
+ 'filters' => [
+   'factories'=> [
+      'Jobs/ChannelPrices'  => 'YourModule\Factory\Filter\MyCalculation',
+      ...
+     ]
+  ]
+
+
+.. _ChannelPrices.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/src/Jobs/Filter/ChannelPrices.php
+.. _ChannelPricesFactory.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/src/Jobs/Factory/Filter/ChannelPricesFactory.php
 
