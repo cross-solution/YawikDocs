@@ -29,17 +29,23 @@ the YawikDemoSkin_ into your ``modules`` directory.
  git clone https://github.com/cbleek/YawikDemoSkin
 
 To activate the plugin you can either simply add ``'YawikDemoSkin'`` to your modules array in ``config/config.php``, 
-or if you don't want to touch any code from git at all, add an ENV variable e.g. ``APPLICATION_HOST`` to your 
-VirtualHost section. In addition create a file ``config/autoload/yawik.module.php``
+or if you don't want to touch any code from git at all, simply put a file named eg. ``config/autoload/MyModule.module.php``
+in your autoload directory. Files named *.module.* are read to include additional Modules.
 
 .. code-block:: sh
 
-  if ((!array_key_exists('APPLICATION_HOST', $_SERVER) || $_SERVER['APPLICATION_HOST'] != "yawik") && !$allModules) {
-     return array();
-  }
+  <?php
   return array("YawikDemoSkin");
 
-This will add the module dynamically. 
+This will add the module dynamically.
+
+Next thing you propably want is to change the name of the Module. Search and replace all "YawikDemoSkin" with "MyModule"
+in the sources and rename the Directory "YawikDemoSkin" into "MyModule". Do not forget to change the name in your
+"autoload/MyModule.module.php" file.
+
+Now you have a module which you can use as a starting point for modifications.
+
+
 
 .. _YawikDemoSkin: https://github.com/cbleek/YawikDemoSkin
 
@@ -95,9 +101,14 @@ Formular Fields
 +----------------+---------------------------------------------------------------------------------------------------------+
 |SpinnerSubmit_  | a spinner icon is added during form validation. While sending data, the submit button is inactivated    |
 +----------------+---------------------------------------------------------------------------------------------------------+
+|Location_       | autocomplete a location and adds additional Geo data, see: :ref:`Geo Module <geo>`                      |
++----------------+---------------------------------------------------------------------------------------------------------+
+
+
 
 .. _Rating: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/Rating.php
 .. _SpinnerSubmit: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/SpinnerSubmit.php
+.. _Location: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/GeoText.php
 
 
 View Helper Scripts
@@ -108,7 +119,7 @@ View Helper Scripts
 +================+=========================================================================================================+
 |Alert_          | displays notification like error or success                                                             |
 +----------------+---------------------------------------------------------------------------------------------------------+
-|Services_       | can access Services                                                                                     |
+|Services_       | can access Services.                                                                                    |
 +----------------+---------------------------------------------------------------------------------------------------------+
 
 
