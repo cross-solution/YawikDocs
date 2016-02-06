@@ -12,14 +12,14 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-       about
-       installation
-       upgrade
-       configuration
-       modules
-       guidelines
-       customize
-       api
+   about
+   installation
+   upgrade
+   configuration
+   modules
+   guidelines
+   customize
+   api
 
 
 Indices and tables

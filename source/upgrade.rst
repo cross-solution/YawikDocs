@@ -33,5 +33,5 @@ moved old YAWIK installation into to ``config/autoload`` directory of your new i
 
 
 
-  
+
 
