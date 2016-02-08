@@ -122,8 +122,20 @@ Mail
 Setting the senders address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+
+
 Setting Mail Texts
 ^^^^^^^^^^^^^^^^^^
+
+The mail texts are currently not multilingual. You can overwrite the mails by mapping the following keys
+
+.. code-block:: php
+   :linenos:
+
+            'mail/job-created' => __DIR__ . '/../view/mails/job-created.phtml',
+            'mail/job-pending' => __DIR__ . '/../view/mails/job-pending.phtml',
+            'mail/job-accepted' => __DIR__ . '/../view/mails/job-accepted.phtml',
+            'mail/job-rejected' => __DIR__ . '/../view/mails/job-rejected.phtml',
 
 
 Jobs
