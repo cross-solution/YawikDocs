@@ -97,18 +97,29 @@ Formular Fields
 +----------------+---------------------------------------------------------------------------------------------------------+
 |Name            |description                                                                                              |
 +================+=========================================================================================================+
+|Editor_         | Editor element                                                                                          |
++----------------+---------------------------------------------------------------------------------------------------------+
+|FileUpload_     | FileUpload Form element                                                                                 |
++----------------+---------------------------------------------------------------------------------------------------------+
+|InfoCheckbox_   | InfoCheckbox Form element. Adds a Link like to the description Text.                                    |
++----------------+---------------------------------------------------------------------------------------------------------+
+|Location_       | autocomplete a location and adds additional Geo data, see: :ref:`Geo Module <geo>`                      |
++----------------+---------------------------------------------------------------------------------------------------------+
+|Phone_          | adds Validation for a phone number                                                                      |
++----------------+---------------------------------------------------------------------------------------------------------+
 |Rating_         | Star rating Element                                                                                     |
 +----------------+---------------------------------------------------------------------------------------------------------+
 |SpinnerSubmit_  | a spinner icon is added during form validation. While sending data, the submit button is inactivated    |
 +----------------+---------------------------------------------------------------------------------------------------------+
-|Location_       | autocomplete a location and adds additional Geo data, see: :ref:`Geo Module <geo>`                      |
-+----------------+---------------------------------------------------------------------------------------------------------+
 
 
-
+.. _Editor: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/Editor.php
+.. _FileUpload: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/FileUpload.php
+.. _InfoCheckbox: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/InfoCheckbox.php
+.. _Location: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/GeoText.php
+.. _Phone: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/Phone.php
 .. _Rating: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/Rating.php
 .. _SpinnerSubmit: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/SpinnerSubmit.php
-.. _Location: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/GeoText.php
 
 
 View Helper Scripts

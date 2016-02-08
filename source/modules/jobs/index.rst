@@ -110,6 +110,29 @@ You currently can use the following placeholders:
 | $this->uriLogo             | URL of a company logo               |
 +----------------------------+-------------------------------------+
 
+Yawik comes with the example temples "default", "modern" and "classic". If you want to change the Templates within your
+Module, you can overwrite the template mapping adding the following configuration to your module config. Eg. you can put
+a file ``templates.config.php`` into your ``MyModule/config`` directory.
+
+.. code-block:: php
+
+ <?php
+ return ['view_manager' => [
+        'templates/default/index' => __DIR__ . '/../view/yourTemplate1/index.phtml',
+        'templates/modern/index' => __DIR__ . '/../view/yourTemplate2/index.phtml',
+        'templates/classic/index' => __DIR__ . '/../view/yourTemplate3/index.phtml',
+       ]
+ ];
+
+If you want to modify the selection of the templates (iframe_) add the following mapping
+
+.. code-block:: php
+
+    'iframe/iFrame.phtml' => __DIR__ . '/../view/YourTemplateSelection.phtml',
+
+
+
+.. _iframe:  https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/iframe/iFrame.phtml
 .. _templates: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/public/templates/default/index.phtml
 
 Mails

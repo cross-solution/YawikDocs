@@ -23,6 +23,7 @@ To drop all indexes, go to your mongo shell and type:
 .. _mongodump: https://docs.mongodb.org/manual/reference/program/mongodump/
 .. _mongorestore: https://docs.mongodb.org/manual/reference/program/mongorestore/
 
+
 2) Move your YAWIK Installation to a new location, so you are able to undo the upgrade any time.
 
 3) Install the new Version. Eighter via ``git`` or unpack the latest ZIP/TGZ Package from sourceforge. In contrast to
