@@ -20,7 +20,7 @@ Contents:
    guidelines
    customize
    api
-
+   faq
 
 Indices and tables
 ==================
