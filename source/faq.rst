@@ -6,3 +6,4 @@ Frequently Asked Questions
     :maxdepth: 2
 
     faq/faq-navigation
+    faq/faq-translation

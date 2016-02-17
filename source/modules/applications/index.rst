@@ -63,3 +63,4 @@ your config/autoload directory. Remove the ".dist" extention and adjust the valu
     );
 
 
+AbstractIdentifiableModificationDateAwareEntity

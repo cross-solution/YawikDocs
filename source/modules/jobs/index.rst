@@ -68,7 +68,7 @@ YAWIK replaces this code with an inline Wysiwyg HTML Editor if you want to modif
 job opening. Otherwise the code is replaced by the HTML code, which was entered.
 
 Modifications to the label fields ``labelBenefits``, ``labelQualifications`` and 
-``labelRequirements`` are
+``labelRequirements`` are applied to all jobs of company, which are using the template.
 
 You currently can use the following placeholders:
 
