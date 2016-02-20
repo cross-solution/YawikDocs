@@ -138,16 +138,19 @@ If you want to modify the selection of the templates (iframe_) add the following
 Mails
 ^^^^^
 
+you can translate mails by adding the language to the template name.
+example: https://github.com/cross-solution/YAWIK/tree/develop/module/Auth/view/mail
+
 +----------------------------+-------------------------------------------------------------------------------------+
 | Name                       | Description                                                                         |
 +============================+=====================================================================================+
-| job-created_               | mail is sent to th approval team                                                    |
+| mail/job-created_          | mail is sent to th approval team                                                    |
 +----------------------------+-------------------------------------------------------------------------------------+
-| job-pending_               | mail is sent to the person, who created the job.                                    |
+| mail/job-pending_          | mail is sent to the person, who created the job.                                    |
 +----------------------------+-------------------------------------------------------------------------------------+
-| job-accepted_              | mail informs the person, who created the job, that the job is going to be published |
+| mail/job-accepted_         | mail informs the person, who created the job, that the job is going to be published |
 +----------------------------+-------------------------------------------------------------------------------------+
-| job-rejected_              | mail informs the person, who created the job, that the job was rejected             |
+| mail/job-rejected_         | mail informs the person, who created the job, that the job was rejected             |
 +----------------------------+-------------------------------------------------------------------------------------+
 
 .. _job-created: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/view/mails/job-created.phtml
