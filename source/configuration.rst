@@ -127,7 +127,7 @@ Setting the senders address
 Setting Mail Texts
 ^^^^^^^^^^^^^^^^^^
 
-The mail texts are currently not multilingual. You can overwrite the mails by mapping the following keys
+The mail texts are defined by the following templats. You can overwrite the mails by mapping the following keys
 
 .. code-block:: php
    :linenos:
@@ -136,6 +136,21 @@ The mail texts are currently not multilingual. You can overwrite the mails by ma
             'mail/job-pending' => __DIR__ . '/../view/mails/job-pending.phtml',
             'mail/job-accepted' => __DIR__ . '/../view/mails/job-accepted.phtml',
             'mail/job-rejected' => __DIR__ . '/../view/mails/job-rejected.phtml',
+
+
+The mail texts can be translated by adding the languages to the mapping keys. The Logic is coded in:
+https://github.com/cross-solution/YAWIK/blob/develop/module/Core/src/Core/Mail/HTMLTemplateMessage.php#L246
+
+.. code-block:: php
+   :linenos:
+
+                'mail/job-created.fr' => __DIR__ . '/../view/mails/job-created.fr.phtml',
+                'mail/job-pending.fr' => __DIR__ . '/../view/mails/job-pending.fr.phtml',
+                'mail/job-accepted.fr' => __DIR__ . '/../view/mails/job-accepted.fr.phtml',
+                'mail/job-rejected.fr' => __DIR__ . '/../view/mails/job-rejected.fr.phtml',
+
+
+
 
 
 Jobs
