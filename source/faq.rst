@@ -8,3 +8,4 @@ Frequently Asked Questions
     faq/faq-mails
     faq/faq-navigation
     faq/faq-translation
+    faq/faq-core

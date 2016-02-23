@@ -21,6 +21,8 @@ try a provider like mongolab.com_ or mongosoup.de_.
 * php5-openssl (only needed to install dependencies via composer)
 * php5-mbstring (only needed, if the PDF module is used)
 
+On FreeBSD, make sure, the php fileinfo extention is available. Fileinfo extention is needed by validating file uploads.
+
 The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty
 14.04. There you can install the required apache, php and mongodb via:
 
