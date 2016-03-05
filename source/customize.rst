@@ -39,6 +39,25 @@ in your autoload directory. Files named *.module.* are read to include additiona
 
 This will add the module dynamically.
 
+If modules contain data like images, javasript or css, which should be directly accessable by the Webserver, these data
+should be placed into a directory named ``public``. To make this directory accessible to the Webserver place a symbolic
+link into the ``YAWIK/public`` directory, pointing to the modules public directory.
+
+.. code-block:: sh
+
+  cd YAWIK/public
+  ln -s ../modules/YawikDemoSkin/public YawikDemoSkin
+
+It is a good practice to name the link with the modules name. This way, you can reference objects of the module by
+using the ModulesName within the URL.
+
+Example: The YawikDemoSkin references its css in the layout.phtml_
+
+.. code-block:: php
+
+  $this->headLink()->prependStylesheet($this->basePath() . '/YawikDemoSkin/YawikDemoSkin.css');
+
+
 Next thing you propably want is to change the name of the Module. Search and replace all "YawikDemoSkin" with "MyModule"
 in the sources and rename the Directory "YawikDemoSkin" into "MyModule". Do not forget to change the name in your
 "autoload/MyModule.module.php" file.
@@ -46,13 +65,14 @@ in the sources and rename the Directory "YawikDemoSkin" into "MyModule". Do not 
 Now you have a module which you can use as a starting point for modifications.
 
 
-
+.. _layout.phtml: https://github.com/cbleek/YawikDemoSkin/blob/master/view/layout.phtml
 .. _YawikDemoSkin: https://github.com/cbleek/YawikDemoSkin
 
 customize your Skin by mapping more :ref:`templates <templates>` to your own views scripts.
 
-If you want a completely own customized startpage, add a 'startpage' to your viewmap. It will be automatically picked, when you enter the name of the domain and have no session.
-But be aware, there is no login-box, unless you integrate ist yourself.
+If you want a completely own customized startpage, add a 'startpage' to your viewmap. It will be automatically picked,
+when you enter the name of the domain and have no session. But be aware, there is no login-box, unless you integrate
+it yourself.
 
 
 CSS
