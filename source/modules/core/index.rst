@@ -18,6 +18,7 @@ Contents:
 
    forms
    navigation
+   pagination
    notifications
    logging
    headscripts
