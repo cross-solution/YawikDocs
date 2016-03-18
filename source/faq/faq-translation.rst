@@ -29,6 +29,18 @@ Example
 executing ``bin/translate module/MyModule`` will scan all .php and .phtml files for texts to translate. This will
 create .po file in the ``module/MyModule/language`` directory, which you may translate with poedit_
 
+User Feedback:
+
+- "bin/translate module/MyModule" ausführen
+- poedit (unter kubuntu, Version 1.5.4, deutsche Version) starten
+- die de_DE.po öffnen
+- im Menü 'Katalog' -> 'Aus POT-Datei aktualisieren ...' wählen
+- 'messages.pot' wählen
+
+Nach Änderungen dann die de_DE.po speichern und das translate - Skript nochmal ausführen.
+
+
+
 .. _poedit: https://poedit.net/
 .. _translate: https://github.com/cross-solution/YAWIK/blob/develop/bin/translate
 .. _gettext: https://www.gnu.org/software/gettext/

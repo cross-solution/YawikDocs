@@ -9,3 +9,4 @@ Frequently Asked Questions
     faq/faq-navigation
     faq/faq-translation
     faq/faq-core
+    faq/faq-documentation
