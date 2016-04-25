@@ -64,3 +64,16 @@ your config/autoload directory. Remove the ".dist" extention and adjust the valu
 
 
 AbstractIdentifiableModificationDateAwareEntity
+
+Events
+^^^^^^
+
+you can attach Listeners to the following events
+
++----------------------------------------+-------------------------+-----------------------------------------------------------------------+
+|Name                                    |                         | description                                                           |
++========================================+=========================+=======================================================================+
+| EVENT_APPLICATION_POST_CREATE          | application.post.create | Thrown, after an application was saved in the Database                |
++----------------------------------------+-------------------------+-----------------------------------------------------------------------+
+| EVENT_APPLICATION_PRE_DELETE           | application.pre.delete  | Thrown, befor an application is removed from the Database             |
++----------------------------------------+-------------------------+-----------------------------------------------------------------------+

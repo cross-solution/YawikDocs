@@ -96,7 +96,7 @@ This is taken from the Jobs Module and is the pagination container of the Jobboa
 $jobs in this case is the paginator service passed along from the controller.
 
 
-.. code-block:: html
+.. code-block:: php
 
     <?php //description: Renders the list of public jobs. ?>
     <?php $this->headTitle($this->translate('Jobs'));
@@ -123,7 +123,7 @@ $jobs in this case is the paginator service passed along from the controller.
 
 and the script which renders the items:
 
-.. code-block:: html
+.. code-block:: php
 
     <?php if (count($jobs)): // We only want to render something, if there are items.?>
     <table class="pagination-content table table-striped table-bordered table-hover" id="jobs-list">
