@@ -109,6 +109,8 @@ You currently can use the following placeholders:
 +----------------------------+-------------------------------------+
 | $this->uriLogo             | URL of a company logo               |
 +----------------------------+-------------------------------------+
+| $this->jobApplyButtons($this->applyData) | Apply Button          |
++------------------------------------------+-----------------------+
 
 Yawik comes with the example temples "default", "modern" and "classic". If you want to change the Templates within your
 Module, you can overwrite the template mapping adding the following configuration to your module config. Eg. you can put
@@ -243,6 +245,8 @@ The ATS (Applicant Tracking System) Mode defines, how applications should be pro
 |none                        | The Application Formular is deactivated                                                |
 +----------------------------+----------------------------------------------------------------------------------------+
 
+By using the ATS Mote ``intern``, you can enable the One-Click-Apply Feature. This will add an additional Apply Button
+per selected social network into the job opening.
 
 
 Widget
@@ -309,3 +313,39 @@ To use your filter, you have to put the following config into your modules.confi
 .. _ChannelPrices.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/src/Jobs/Filter/ChannelPrices.php
 .. _ChannelPricesFactory.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/src/Jobs/Factory/Filter/ChannelPricesFactory.php
 
+
+
+One-Click-Apply
+^^^^^^^^^^^^^^^
+
+Since 0.25
+
+You can simply add an apply button to you job opening by putting the following code into your job template.
+
+.. code-block:: php
+
+ <?=$this->jobApplyButtons($this->applyData)?>
+
+This will use the ATS Mode settings and render the button. In addition to the ATS Mode settings you can set options to
+the Apply buttons. These options can be used to modify the layout and the behaviour of the Apply button.
+
+
+.. code-block:: php
+
+        <?=$this->jobApplyButtons(
+            $this->applyData,
+            [
+                'sendImmediately' => true,
+                'oneClickOnly' => false,
+                'defaultLabel' => 'Click here to apply',
+                'oneClickLabel' => null
+            ]
+        )?>
+
+
+| sendImmediately | bool           | true = Application is send immediatly. Privacy policy are accepted by clicking on the button |
+| oneClickOnly    | bool           | true = normal button, which refers to the form is hidden                                     |
+| defaultLabel    | string or NULL | label of the normal button.                                                                  |
+| oneClickLabel   | string or NULL | label of the OneClickApply Button                                                            |
+
+By modifying the labels, you normally loose the translations. Feature was sponsored by http://stellenmarkt.de
