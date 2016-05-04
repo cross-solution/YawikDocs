@@ -344,10 +344,16 @@ the Apply buttons. These options can be used to modify the layout and the behavi
             ]
         )?>
 
-
++-----------------+----------------+----------------------------------------------------------------------------------------------+
+| name            | value          | description                                                                                  |
++=================+================+==============================================================================================+
 | sendImmediately | bool           | true = Application is send immediatly. Privacy policy are accepted by clicking on the button |
++-----------------+----------------+----------------------------------------------------------------------------------------------+
 | oneClickOnly    | bool           | true = normal button, which refers to the form is hidden                                     |
++-----------------+----------------+----------------------------------------------------------------------------------------------+
 | defaultLabel    | string or NULL | label of the normal button.                                                                  |
++-----------------+----------------+----------------------------------------------------------------------------------------------+
 | oneClickLabel   | string or NULL | label of the OneClickApply Button                                                            |
++-----------------+----------------+----------------------------------------------------------------------------------------------+
 
 By modifying the labels, you normally loose the translations. Feature was sponsored by http://stellenmarkt.de
