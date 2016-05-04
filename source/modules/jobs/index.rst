@@ -248,6 +248,7 @@ The ATS (Applicant Tracking System) Mode defines, how applications should be pro
 By using the ATS Mote ``intern``, you can enable the One-Click-Apply Feature. This will add an additional Apply Button
 per selected social network into the job opening.
 
+.. index:: Widget
 
 Widget
 ^^^^^^
@@ -314,6 +315,7 @@ To use your filter, you have to put the following config into your modules.confi
 .. _ChannelPricesFactory.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/src/Jobs/Factory/Filter/ChannelPricesFactory.php
 
 
+.. index:: One-Click-Apply
 
 One-Click-Apply
 ^^^^^^^^^^^^^^^

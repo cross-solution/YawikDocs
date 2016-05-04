@@ -266,13 +266,17 @@ file to ``config/autoload/module.auth.local.php`` and adjust your keys and secre
         ),
         "XING" => array (
             "enabled" => true,
-            // This is a hack due to bad design of Hybridauth
-            // There's no simpler way to include "additional-providers"
-            "wrapper" => array ( 
-                'class' => 'Hybrid_Providers_XING',
-                'path' => __FILE__,
-            ),
             "keys"    => array ( "key" => "", "secret" => "" ),
+        ),
+        "Github" => array(
+            "enabled" => true,
+            'keys'    => array ( "id" => "", 'secret' => ""),
+            "scope"   => ''
+        ),
+        "Google" => array(
+             "enabled" => true,
+             'keys'    => array ( "id" => 'xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com', 'secret' => ''),
+             "scope"   => 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
         ),
    );
    ?>
