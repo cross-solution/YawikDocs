@@ -35,4 +35,24 @@ moved old YAWIK installation into to ``config/autoload`` directory of your new i
 
 
 
+0.24 => 0.25
+------------
 
+New users get a status. You can update old Users by
+
+.. code-block:: sh
+
+  db.getCollection('users').update({'status': {$exists : false}}, {$set: {'status': {
+      "name" : "active",
+      "order" : NumberLong(50)
+  }}}, {multi: true})
+
+
+Companynames ares searchable and sortable. If you want to make older companies searchable and sortable to, run the
+following query
+
+.. code-block:: sh
+
+  db.getCollection('organizations.names').find().forEach(function(name) {
+      db.getCollection('organizations').update({organizationName: name._id}, {$set: {_organizationName: name.name}}, {multi: true});
+  })

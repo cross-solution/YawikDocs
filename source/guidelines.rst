@@ -33,6 +33,7 @@ ajax.ready
 Naming Conventions
 ------------------
 
+We are following the `Zend Framework Coding Standard for PHP`_
 
 * Variables: lowerCaseStartingCamelCase like ....
 * Modules and Classes: UpperCaseStartingCamelCase
@@ -44,3 +45,4 @@ Naming Conventions
 
 
 
+.. _`Zend Framework Coding Standard for PHP`: http://framework.zend.com/manual/current/en/ref/coding.standard.html
