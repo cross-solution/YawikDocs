@@ -73,6 +73,7 @@ currently the following modules exists:
    modules/jobs/index
    modules/pdf/index
    modules/geo/index
+   modules/solr/index
    modules/settings/index
 
 
