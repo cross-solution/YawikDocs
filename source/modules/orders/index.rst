@@ -14,4 +14,6 @@ the order module adds a storage for orders. By submitting a job posting, an orde
 relevant data needed for billings. In addition, the module adds an invoice formular, which can be added into the order
 process. Default values of the invoice formular can be set in Settings/Orders.
 
+Technically, the oder module offers the feature to take a snapshot of an entify.
+
 

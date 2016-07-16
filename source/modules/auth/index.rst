@@ -21,7 +21,7 @@ The Auth module offers the following features
 * Register with Facebook, Xing, LinkedIn, Google or GitHub
 * Register via registration form
 * I forgot my Password
-* Roles for applicants and recruiters
+* Roles for applicants, recruiters and admin
 
 By using the optional Module YawikCompanyRegistration_, users can register as a company. The module provides a
 formular and creates a user and a company in one step.

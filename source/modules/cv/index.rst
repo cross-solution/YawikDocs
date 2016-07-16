@@ -8,13 +8,22 @@ CV (Curriculum vitae)
     <br/>translation state of CV module.
     </div>
 
-.. note::
-    the CV module is currently on hold. Please contact contact@yawik.org if you want to support this module
 
-The CV module is needed to realize the workflow:
+The CV module offers the possibility to store CVs. A CV consists of a contact, informations about the prefered jobs and
+job location of a cndidate and a collection of education histories, work experiences, personal skills and attachments.
 
-Job ist posted => Cadidate allies => hiring org must reject the applicant. => The applicant is asked, if he agree to be
-added to a talent pool. => If the applikant agree, he gets login data to the YAWIK installation
+The following workflow can be offered.
 
+# Job ist posted
+# Cadidate applies
+# hiring org must reject the applicant.
+# The applicant is asked, if he agree to be added to a talent pool.
+# If the applikant agrees, his application is copied to the CV module. He gets login data to the YAWIK installation
+# If the applicant disagrees, the application is deleted.
 
-a CV is a collection of education history, work experiences, personal skills and attachments
+In addition thr following fesatures will be offered
+
+# Recruiter can add multiple CVs.
+# Recuiter/Applicant can iomport CVs from Europass
+# Applicant can import CV from Social Network
+#
