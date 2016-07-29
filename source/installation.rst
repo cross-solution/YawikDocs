@@ -11,7 +11,7 @@ try a provider like mongolab.com_ or mongosoup.de_.
 .. _mongolab.com: https://mongolab.com/welcome/
 .. _mongosoup.de: https://www.mongosoup.de/
 
-* php >= 5.5.*
+* php >= 5.5.* (PHP7 is currently not supported)
 * Zend Framework 2.5.*
 * mongodb >= 2.4.*
 * php5-mongo
@@ -31,14 +31,27 @@ The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and
   aptitude install mongodb-server php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
                    php5-intl php5-common php5-cli php5-json php5 apache2 curl
 
-YAWIK should run on all operating systems, which support PHP. 
+YAWIK should run on all operating systems, which support PHP (currently php 5.5 and php 5.6). Due to the changed in the
+php extentions for mongo (php-mongo and php-mongodb) YAWIK currently does not support php7. We'll wait for
+doctrine-mongodb-odm_ until they fully support PHP7. This means, you have to downgrade php on Ubuntu Xenial 16.04. Add
+the ondrej/php repository to your apt source lists.
+
+
+.. code-block:: sh
+
+ add-apt-repository -y ppa:ondrej/php
+ aptitude update
+ aptitude install php5.6-fpm php5.6-mongo php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
+
+.. _doctrine-mongodb-odm: http://doctrine-orm.readthedocs.io/projects/doctrine-mongodb-odm/en/latest/#
+
 
 More information about installation of Mongo:
 
 http://docs.mongodb.org/manual/tutorial/install-mongodb-enterprise-on-ubuntu/
 
 YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). If you want to use a later version
-(which is recommended), you can install e.g. mongo 2.6 by:
+(which is recommended), you can install e.g. mongo 2.6 by: (Our demo is running 2.6, development is done with 3.0)
 
 .. code-block:: sh
 
@@ -46,8 +59,6 @@ YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). If you wan
  echo "deb http://repo.mongodb.com/apt/ubuntu "$(lsb_release -sc)"/mongodb-enterprise/2.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-enterprise-2.6.list
  sudo apt-get update
  sudo apt-get install -y mongodb-enterprise
-
-
 
 Setup
 -----
@@ -239,6 +250,35 @@ point the DocumentRoot of your Webserver to the ``public`` directory.
 
   you should ``SetEnv APPLICATION_ENV development`` in your VirtualHost section,
   if you plan do develop.
+
+
+Nginx
+^^^^^
+A configuration file for Nginx looks like this
+
+.. code-block:: sh
+
+  server {
+       listen         80;
+
+        server_name my.yawik.host;
+
+        root /your-location/YAWIK/public;
+        index index.html index.htm index.php;
+        charset utf-8;
+
+        location / {
+            try_files $uri $uri/ /index.php$is_args$args;
+        }
+
+        location ~ \.php$ {
+            fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_pass unix:/run/php/php5.6-fpm.sock;
+            fastcgi_param   APPLICATION_ENV  production;
+            include /etc/nginx/fastcgi_params;
+        }
+  }
+
 
 Authentication
 ^^^^^^^^^^^^^^

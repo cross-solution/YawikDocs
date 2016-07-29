@@ -3,7 +3,7 @@
 Solr
 ----
 
-this module is deactivated by default, because you need a solr server an the PHP solr pecl extention.
+this module is deactivated by default, because you need a solr server and the PHP solr pecl extension.
 
 Requirements
 ^^^^^^^^^^^^
@@ -23,9 +23,9 @@ Installation
 Description
 ^^^^^^^^^^^
 
-YAWIK entities are searchable using the fulltext feature offered by mongodb. These features are greate and normaly
-sufficiant, to offer e.g. jobs on a career page. If you want to use YAWIK as a jobboard, the requirements increase.
-A jobboard normally offers millions of jobs to millions of visitors. At first you need a scaling seach engine.
+YAWIK entities are searchable using the fulltext feature offered by mongodb. These features are great and normally
+sufficient, to offer e.g. jobs on a career page. If you want to use YAWIK as a jobboard, the requirements increase.
+A jobboard normally offers millions of jobs to millions of visitors. At first you need a scaling search engine.
 Currently Solr is supported.
 
 Using the solr module, you'll get full featured search engine offering the following features:
