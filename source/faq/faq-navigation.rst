@@ -80,3 +80,9 @@ configuration into your ``autoload/my-navigation.local.php``
     ]
 
 
+How can I hide the navigation on the application form?
+------------------------------------------------------
+
+In the YawikDemoSkin Module, you can see how this can be done.
+
+https://github.com/cbleek/YawikDemoSkin/blob/master/Module.php#L65
