@@ -165,7 +165,28 @@ is created with the ``àdmin`` role in the database.
     yawik.config.global.php
 
 All other configurations are currently done manually by copying the ```*.dist`` files
-from the modules configuration directory to the autoload directory. 
+from the modules configuration directory to the autoload directory.
+
+Setup using composer
+^^^^^^^^^^^^^^^^^^^^
+
+you can install yawik using composer
+
+.. code-block:: sh
+
+  composer create-project cross-solution/yawik:dev-develop
+
+This will clone the latest version from the develop branch, download all needed dependencies.
+
+.. code-block:: sh
+
+    cd yawik
+    php -S localhost:8000 index.php
+
+Point your browser tp localhost:8000 and start using yawik
+
+
+
 
 Example: Setting up Facebook_, Xing_ or LinkedIn_ Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
