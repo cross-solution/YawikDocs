@@ -108,7 +108,7 @@ You currently can use the following placeholders:
 | $this->uriApply            | URL a an application form           |
 +----------------------------+-------------------------------------+
 | $this->uriLogo             | URL of a company logo               |
-+----------------------------+-------------------------------------+
++----------------------------+-------------+-----------------------+
 | $this->jobApplyButtons($this->applyData) | Apply Button          |
 +------------------------------------------+-----------------------+
 

@@ -1,19 +1,34 @@
-.. index:: Orders
+.. index:: YawikCompanyRegistration
 
-Orders
-------
+YawikCompanyRegistration
+------------------------
 
-.. raw:: html
-
-    <div style="float:right; width: 50%">
-    <img src="https://www.transifex.com/projects/p/yawik/resource/orders/chart/image_png"/>
-    <br/>translation state of Orders module.
-    </div>
-
-the order module adds a storage for orders. By submitting a job posting, an order is created. The order contains all
-relevant data needed for billings. In addition, the module adds an invoice formular, which can be added into the order
-process. Default values of the invoice formular can be set in Settings/Orders.
-
-Technically, the oder module offers the feature to take a snapshot of an entify.
+If you want to offer the registration for companies, this module might be helpful. It offers a registration form with
+additional fields. When a user registers, an user and an organization entity are created. This module requires the
+"Oganizations" Module.
 
 
+Installation
+^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    composer create-project cross-solution/yawik
+    cd yawik
+    composer require cross-solution/yawik-company-registration
+
+
+This install the YawikCompanyModule into the `module` directory of your YAWIK installation. You can uninstall the module
+via
+
+.. code-block:: sh
+
+    composer remove cross-solution/yawik-company-registration
+
+This removes the directory `YawikCompanyModule` and all it content from your `module` directory of your YAWIK
+installation.
+
+.. note::
+
+    Installing modules using composer should be seen as a feature preview. You have to set `"minimum-stability": "dev"`
+    in your `composer.json` of your YAWIK installation to make this work.git pull

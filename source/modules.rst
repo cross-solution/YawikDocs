@@ -69,6 +69,7 @@ currently the following modules exists:
    modules/cv/index
    modules/applications/index
    modules/organizations/index
+   modules/company-registration/index
    modules/orders/index
    modules/jobs/index
    modules/pdf/index

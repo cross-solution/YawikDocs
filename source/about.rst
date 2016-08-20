@@ -33,7 +33,7 @@ We believe that:
 **How came YAWIK to be?**
 
 YAWIK was initiated by Carsten Bleek, owner of "CROSS Solution". "CROSS Solution" was able to convince customers about
-the YAWIK idea. An initiial group of [sponsors](https://yawik.org/sponsoren/) was found, and YAWIK was born.
+the YAWIK idea. An initial group of [sponsors](https://yawik.org/sponsoren/) was found, and YAWIK was born.
 
 Important Links for developers
 ------------------------------

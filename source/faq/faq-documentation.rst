@@ -1,5 +1,5 @@
 ===================
-FAQ: Documemntation
+FAQ: Documentation
 ===================
 
 
