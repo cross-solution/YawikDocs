@@ -13,7 +13,7 @@ try a provider like mongolab.com_ or mongosoup.de_.
 
 * php >= 5.5.* (PHP7 is currently not supported)
 * Zend Framework 2.5.*
-* mongodb >= 2.4.*
+* mongodb >= 2.4.* (you should use >= 2.6 ... see below)
 * php5-mongo
 * php5-intl
 * php5-curl (only needed to install dependencies via composer)
@@ -24,7 +24,7 @@ try a provider like mongolab.com_ or mongosoup.de_.
 On FreeBSD, make sure, the php fileinfo extention is available. Fileinfo extention is needed by validating file uploads.
 
 The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty
-14.04. There you can install the required apache, php and mongodb via:
+14.04 and Xenial 16.04. There you can install the required apache, php and mongodb via:
 
 .. code-block:: sh
 
@@ -50,8 +50,12 @@ More information about installation of Mongo:
 
 http://docs.mongodb.org/manual/tutorial/install-mongodb-enterprise-on-ubuntu/
 
-YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). If you want to use a later version
-(which is recommended), you can install e.g. mongo 2.6 by: (Our demo is running 2.6, development is done with 3.0)
+YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). You should use a later version. Otherwise you have
+to `enable the text search`_, which is disabled in 2.4 by default. In 2.6 and above the text search is enabled by default.
+
+.. _enable the text search: https://docs.mongodb.com/v2.4/tutorial/enable-text-search/
+
+You can install e.g. mongo 2.6 by: (Our demo is running 2.6, development is done with 3.0)
 
 .. code-block:: sh
 
