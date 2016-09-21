@@ -110,9 +110,10 @@ You currently can use the following placeholders:
 | $this->uriLogo             | URL of a company logo               |
 +----------------------------+-------------+-----------------------+
 | $this->jobApplyButtons($this->applyData) | Apply Button          |
+| $this->jobApplyButtons($this->applyData) | Apply Button          |
 +------------------------------------------+-----------------------+
 
-Yawik comes with the example temples "default", "modern" and "classic". If you want to change the Templates within your
+Yawik comes with the example templates "default", "modern" and "classic". If you want to change the Templates within your
 Module, you can overwrite the template mapping adding the following configuration to your module config. Eg. you can put
 a file ``templates.config.php`` into your ``MyModule/config`` directory.
 
