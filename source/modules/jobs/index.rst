@@ -120,11 +120,14 @@ a file ``templates.config.php`` into your ``MyModule/config`` directory.
 .. code-block:: php
 
  <?php
- return ['view_manager' => [
-        'templates/default/index' => __DIR__ . '/../view/yourTemplate1/index.phtml',
-        'templates/modern/index' => __DIR__ . '/../view/yourTemplate2/index.phtml',
-        'templates/classic/index' => __DIR__ . '/../view/yourTemplate3/index.phtml',
-       ]
+ return [
+    'view_manager' => [
+        'template_map' => [
+            'templates/default/index' => __DIR__ . '/../view/yourTemplate1/index.phtml',
+            'templates/modern/index' => __DIR__ . '/../view/yourTemplate2/index.phtml',
+            'templates/classic/index' => __DIR__ . '/../view/yourTemplate3/index.phtml',
+        ]
+    ]
  ];
 
 If you want to modify the selection of the templates (iframe_) add the following mapping
