@@ -39,6 +39,7 @@ the ondrej/php repository to your apt source lists.
 
 .. code-block:: sh
 
+ export LANG=en_US.UTF-8
  add-apt-repository -y ppa:ondrej/php
  aptitude update
  aptitude install php5.6-fpm php5.6-mongo php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
@@ -48,21 +49,21 @@ the ondrej/php repository to your apt source lists.
 
 More information about installation of Mongo:
 
-http://docs.mongodb.org/manual/tutorial/install-mongodb-enterprise-on-ubuntu/
+https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/
 
 YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). You should use a later version. Otherwise you have
 to `enable the text search`_, which is disabled in 2.4 by default. In 2.6 and above the text search is enabled by default.
 
 .. _enable the text search: https://docs.mongodb.com/v2.4/tutorial/enable-text-search/
 
-You can install e.g. mongo 2.6 by: (Our demo is running 2.6, development is done with 3.0)
+You can install e.g. mongo 3.2 by: (Our demo is running 2.6, development is done with 3.0 and 3.2)
 
 .. code-block:: sh
 
- sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
- echo "deb http://repo.mongodb.com/apt/ubuntu "$(lsb_release -sc)"/mongodb-enterprise/2.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-enterprise-2.6.list
+ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
  sudo apt-get update
- sudo apt-get install -y mongodb-enterprise
+ sudo apt-get install -y mongodb-org
 
 Setup
 -----
@@ -114,14 +115,18 @@ A VirtualHost section might look like.
         DocumentRoot ${YAWIK_HOME}/public
         AddDefaultCharset utf-8
 
-        SetEnv APPLICATION_ENV "development"             // you can set
+        # set an env to disable caching.
+        SetEnv APPLICATION_ENV "development"
 
         <Directory ${YAWIK_HOME}/public>
              DirectoryIndex index.php
              Options Indexes FollowSymLinks MultiViews
              AllowOverride All
-             Require all granted   // for apache >= 2.4
-             //Allow from all      // for apache <= 2.2
+             # for apache >=2.4
+             Require all granted
+
+             # for apache <= 2.2
+             # Allow from all
         </Directory>
     </VirtualHost>
 
@@ -187,7 +192,7 @@ This will clone the latest version from the develop branch, download all needed 
     cd yawik
     php -S localhost:8000 index.php
 
-Point your browser tp localhost:8000 and start using yawik
+Point your browser to localhost:8000 and start using yawik
 
 
 
