@@ -25,10 +25,6 @@ via
 
     composer remove cross-solution/yawik-company-registration
 
-This removes the directory `YawikCompanyModule` and all it content from your `module` directory of your YAWIK
+This removes the directory `YawikCompanyRegistration` and all it content from your `module` directory of your YAWIK
 installation.
 
-.. note::
-
-    Installing modules using composer should be seen as a feature preview. You have to set `"minimum-stability": "dev"`
-    in your `composer.json` of your YAWIK installation to make this work.git pull

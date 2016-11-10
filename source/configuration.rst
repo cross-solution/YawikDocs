@@ -119,6 +119,13 @@ copy the auth.options.global.php.dist_ to ``config/autoload/auth.options.global.
 Mail
 ----
 
+YAWIK currently sends mail using the Zend/Mail_ class. This means, As long there is no special transport mechanism
+configured, YAWIK expects a local MTA. This means, you currently have to install an MTA like postfix, sendmail, exim,
+nullmailer,
+
+.. _Zend/Mail https://framework.zend.com/manual/2.3/en/modules/zend.mail.introduction.html
+
+
 Setting the senders address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

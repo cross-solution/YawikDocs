@@ -75,6 +75,8 @@ currently the following modules exists:
    modules/pdf/index
    modules/geo/index
    modules/solr/index
+   modules/xing-vendor-api/index
    modules/settings/index
+
 
 

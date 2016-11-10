@@ -361,3 +361,14 @@ the Apply buttons. These options can be used to modify the layout and the behavi
 +-----------------+----------------+----------------------------------------------------------------------------------------------+
 
 By modifying the labels, you normally loose the translations. Feature was sponsored by http://stellenmarkt.de
+
+XML Feeds
+^^^^^^^^^
+
+Since 0.28 each job channel can be exported as an XML Feed. A lot of existing jobboards does not provide an API to publish
+jobs. Job publishing is often done via XML Feeds. Therefore a default XML Structure is provided, which can be
+imported by external jobboards. The XML Structure can be easily modified and my vary between different jobboards.
+
+Example of the default XML:
+
+https://yawik.org/demo/en/export/xml
