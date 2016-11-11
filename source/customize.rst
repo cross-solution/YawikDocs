@@ -123,7 +123,7 @@ Formular Fields
 +----------------+---------------------------------------------------------------------------------------------------------+
 |InfoCheckbox_   | InfoCheckbox Form element. Adds a Link like to the description Text.                                    |
 +----------------+---------------------------------------------------------------------------------------------------------+
-|Location_       | autocomplete a location and adds additional Geo data, see: :ref:`Geo Module <geo>`                      |
+|Location_       | autocomplete a location and adds additional Geo data, see: :ref:`Once Click Apply <one-click-apply>`    |
 +----------------+---------------------------------------------------------------------------------------------------------+
 |Phone_          | adds Validation for a phone number                                                                      |
 +----------------+---------------------------------------------------------------------------------------------------------+
@@ -150,9 +150,18 @@ View Helper Scripts
 +================+=========================================================================================================+
 |Alert_          | displays notification like error or success                                                             |
 +----------------+---------------------------------------------------------------------------------------------------------+
-|Services_       | can access Services.                                                                                    |
+|Services_       | can access Services within view view scripts                                                            |
++----------------+---------------------------------------------------------------------------------------------------------+
+|jobUrl_         | displays the link to a job posting.                                                                     |
++----------------+---------------------------------------------------------------------------------------------------------+
+|applyUrl_       | displays the link to an application form of a job posting.                                              |
++----------------+---------------------------------------------------------------------------------------------------------+
+|applyButton_    | displays application buttons. see: :ref:`Geo Module <geo>`                                              |
 +----------------+---------------------------------------------------------------------------------------------------------+
 
 
 .. _Alert: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Alert.php
 .. _Services: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Services.php
+.. _jobUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/JobUrl.php
+.. _applyUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/ApplyUrl.php
+.. _applyButton: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/ApplyButton.php

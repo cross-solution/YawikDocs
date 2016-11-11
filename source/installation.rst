@@ -11,7 +11,7 @@ try a provider like mongolab.com_ or mongosoup.de_.
 .. _mongolab.com: https://mongolab.com/welcome/
 .. _mongosoup.de: https://www.mongosoup.de/
 
-* php >= 5.5.* (PHP7 is currently not supported)
+* php >= 5.6.* (PHP7 is currently not supported)
 * Zend Framework 2.5.*
 * mongodb >= 2.4.* (you should use >= 2.6 ... see below)
 * php5-mongo
@@ -42,7 +42,7 @@ the ondrej/php repository to your apt source lists.
  export LANG=en_US.UTF-8
  add-apt-repository -y ppa:ondrej/php
  aptitude update
- aptitude install php5.6-fpm php5.6-mongo php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
+ aptitude install php5.6-mongo php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
 
 .. _doctrine-mongodb-odm: http://doctrine-orm.readthedocs.io/projects/doctrine-mongodb-odm/en/latest/#
 

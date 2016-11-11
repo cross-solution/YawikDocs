@@ -10,3 +10,5 @@ Frequently Asked Questions
     faq/faq-translation
     faq/faq-core
     faq/faq-documentation
+    faq/faq-xml-feeds
+

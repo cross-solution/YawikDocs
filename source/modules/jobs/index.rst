@@ -321,6 +321,8 @@ To use your filter, you have to put the following config into your modules.confi
 
 .. index:: One-Click-Apply
 
+.. _one-click-apply:
+
 One-Click-Apply
 ^^^^^^^^^^^^^^^
 
