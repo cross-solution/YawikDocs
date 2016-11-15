@@ -2,6 +2,10 @@
 FAQ: Mails
 ================
 
+Is it possible to configure an SMTP Server
+------------------------------------------
+
+Yes. Copy the ``Core/config/MailServiceOptions.config.local.php.dist`` into you autoload directory and adjects the values.
 
 How can I translate Mails?
 --------------------------
