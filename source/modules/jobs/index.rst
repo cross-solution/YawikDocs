@@ -83,6 +83,8 @@ You currently can use the following placeholders:
 +----------------------------+-------------------------------------+
 | $this->descriptionEditable | editable description of the company |
 +----------------------------+-------------------------------------+
+| $this->jobId               | ID of the job posting (since 0.29)  |
++----------------------------+-------------------------------------+
 | $this->qualifications      | Needed qualifications               |
 +----------------------------+-------------------------------------+
 | $this->location            | Location of the job                 |
@@ -103,9 +105,11 @@ You currently can use the following placeholders:
 +----------------------------+-------------------------------------+
 | $this->title               | editable title of the job posting   |
 +----------------------------+-------------------------------------+
-| $this->titleHead           | title of the job posting            |
+| $this->headTitle           | title of the job posting            |
 +----------------------------+-------------------------------------+
-| $this->uriApply            | URL a an application form           |
+| $this->uriApply            | URL a an application form           |+
++----------------------------+-------------------------------------+
+| $this->uriJob              | URL a the job posting               |
 +----------------------------+-------------------------------------+
 | $this->uriLogo             | URL of a company logo               |
 +----------------------------+-------------+-----------------------+
