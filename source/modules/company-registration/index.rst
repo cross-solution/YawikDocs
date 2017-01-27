@@ -28,3 +28,24 @@ via
 This removes the directory `YawikCompanyRegistration` and all it content from your `module` directory of your YAWIK
 installation.
 
+Configuration
+^^^^^^^^^^^^^
+
+The registration form contains by default the fields:
+
+* gender
+* name
+* email
+* organizationName
+* postalCode
+* city
+* street
+* houseNumber
+* phone
+
+You can configure the registration form. Copy the `RegistrationFormOptions.config.local.php.dist`_ into your `autoload`
+directory and adjust the values.
+
+.. _RegistrationFormOptions.config.local.php.dist: https://github.com/cross-solution/YawikCompanyRegistration/blob/develop/config/RegistrationFormOptions.config.local.php.dist
+
+

@@ -72,50 +72,42 @@ Modifications to the label fields ``labelBenefits``, ``labelQualifications`` and
 
 You currently can use the following placeholders:
 
-+----------------------------+-------------------------------------+
-| Name                       | Description                         |
-+============================+=====================================+
-| $this->benefits            | Employee benefits                   |
-+----------------------------+-------------------------------------+
-| $this->city                | City of the company                 |
-+----------------------------+-------------------------------------+
-| $this->description         | description of the company          |
-+----------------------------+-------------------------------------+
-| $this->descriptionEditable | editable description of the company |
-+----------------------------+-------------------------------------+
-| $this->jobId               | ID of the job posting (since 0.29)  |
-+----------------------------+-------------------------------------+
-| $this->qualifications      | Needed qualifications               |
-+----------------------------+-------------------------------------+
-| $this->location            | Location of the job                 |
-+----------------------------+-------------------------------------+
-| $this->labelBenefits       | Label of the Benefits Section       |
-+----------------------------+-------------------------------------+
-| $this->labelQualifications | Label of the Qualifications Section |
-+----------------------------+-------------------------------------+
-| $this->labelRequirements   | Label of the Requirements Secion    |
-+----------------------------+-------------------------------------+
-| $this->oraganizationName   | Name of the company                 |
-+----------------------------+-------------------------------------+
-| $this->postalCode          | postalCode of the company           |
-+----------------------------+-------------------------------------+
-| $this->requirements        | requirements of the job posting     |
-+----------------------------+-------------------------------------+
-| $this->street              | Street of the company               |
-+----------------------------+-------------------------------------+
-| $this->title               | editable title of the job posting   |
-+----------------------------+-------------------------------------+
-| $this->headTitle           | title of the job posting            |
-+----------------------------+-------------------------------------+
-| $this->uriApply            | URL a an application form           |+
-+----------------------------+-------------------------------------+
-| $this->uriJob              | URL a the job posting               |
-+----------------------------+-------------------------------------+
-| $this->uriLogo             | URL of a company logo               |
-+----------------------------+-------------+-----------------------+
-| $this->jobApplyButtons($this->applyData) | Apply Button          |
-| $this->jobApplyButtons($this->applyData) | Apply Button          |
-+------------------------------------------+-----------------------+
+============================================== ========================================================================
+ Name                                           Description
+============================================== ========================================================================
+ $this->benefits                                Employee benefits
+ $this->city                                    City of the company
+ $this->description                             description of the company
+ $this->descriptionEditable                     editable description of the company
+ $this->jobId                                   ID of the job posting (since 0.29)
+ $this->qualifications                          Needed qualifications
+ $this->location                                Location of the job
+ $this->labelBenefits                           Label of the Benefits Section
+ $this->labelQualifications                     Label of the Qualifications Section
+ $this->labelRequirements                       Label of the Requirements Section
+ $this->oraganizationName                       Name of the company
+ $this->postalCode                              postalCode of the company
+ $this->requirements                            requirements of the job posting
+ $this->street                                  Street of the company
+ $this->title                                   editable title of the job posting
+ $this->headTitle                               title of the job posting
+ $this->uriApply                                URL a an application form
+ $this->uriJob                                  URL a the job posting
+ $this->uriLogo                                 URL of a company logo
+ $this->jobApplyButtons($this->applyData)       Apply Button
+ $this->jobApplyButtons($this->applyData)       Apply Button
+============================================== ========================================================================
+
+
+
+
+
+
+
+
+
+
+
 
 Yawik comes with the example templates "default", "modern" and "classic". If you want to change the Templates within your
 Module, you can overwrite the template mapping adding the following configuration to your module config. Eg. you can put
