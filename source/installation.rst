@@ -29,7 +29,7 @@ The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and
 .. code-block:: sh
 
   aptitude install mongodb-server php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
-                   php5-intl php5-common php5-cli php5-json php5 apache2 curl
+                   php5-intl php5-common php5-cli php5-json php5 apache2 curl npm
 
 YAWIK should run on all operating systems, which support PHP (currently php 5.5 and php 5.6). Due to the changed in the
 php extentions for mongo (php-mongo and php-mongodb) YAWIK currently does not support php7. We'll wait for

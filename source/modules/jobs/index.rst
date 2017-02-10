@@ -370,3 +370,13 @@ imported by external jobboards. The XML Structure can be easily modified and my 
 Example of the default XML:
 
 https://yawik.org/demo/en/export/xml
+
+Search
+^^^^^^
+
+search formulars can be prefilled using
+
+
+
+
+
