@@ -374,7 +374,24 @@ https://yawik.org/demo/en/export/xml
 Search
 ^^^^^^
 
-search formulars can be prefilled using
+the search formular contains the following fields
+
+====== ===================
+ name   Description
+====== ===================
+ q      fulltext search
+ l      location
+ d      distance
+ c      category
+====== ===================
+
+search formulars can be prefilled by using the formular field names. Example: https://yawik.org/demo/de/jobboard?d=20&l=Frankfurt+am+Main&q=bla
+
+Will prefill the fullext field with "Bla", The distance field with "20" and the location with "Frankfurt am Main"
+
+The formular field for the professions has the name "c". You can use the name with a separator prefix. Example
+
+https://yawik.org/demo/de/jobboard?:c=it:sales will prefill categories with "it" and "sales". 
 
 
 
