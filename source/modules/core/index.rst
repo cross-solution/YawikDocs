@@ -16,6 +16,7 @@ Contents:
 .. toctree:: 
    :maxdepth: 1
 
+   assets
    forms
    navigation
    pagination

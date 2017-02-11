@@ -391,7 +391,7 @@ Will prefill the fullext field with "Bla", The distance field with "20" and the 
 
 The formular field for the professions has the name "c". You can use the name with a separator prefix. Example
 
-https://yawik.org/demo/de/jobboard?:c=it:sales will prefill categories with "it" and "sales". 
+https://yawik.org/demo/de/jobboard?:c=it:sales will prefill categories with "it" and "sales".
 
 
 
