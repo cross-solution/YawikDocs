@@ -261,3 +261,17 @@ You have to trigger an event with the whole response as data.
     $.post(url, param, function(data) {
         $(this).trigger('ajax.ready', {'data': data});
     })
+
+
+Language Switcher
+^^^^^^^^^^^^^^^^^
+
+you can add a Language Switcher into you skin by:
+
+.. code-block:: php
+
+  <?=$this->languageSwitcher()?>
+
+If you want to modify the Layout, edit the view script `language-switcher.phtml`_
+
+.. _language-switcher.phtml: https://github.com/cross-solution/YAWIK/blob/develop/module/Core/view/partial/language-switcher.phtml
