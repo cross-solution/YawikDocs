@@ -145,19 +145,16 @@ Formular Fields
 View Helper Scripts
 -------------------
 
-+----------------+---------------------------------------------------------------------------------------------------------+
-|Name            |description                                                                                              |
-+================+=========================================================================================================+
-|Alert_          | displays notification like error or success                                                             |
-+----------------+---------------------------------------------------------------------------------------------------------+
-|Services_       | can access Services within view view scripts                                                            |
-+----------------+---------------------------------------------------------------------------------------------------------+
-|jobUrl_         | displays the link to a job posting.                                                                     |
-+----------------+---------------------------------------------------------------------------------------------------------+
-|applyUrl_       | displays the link to an application form of a job posting.                                              |
-+----------------+---------------------------------------------------------------------------------------------------------+
-|applyButton_    | displays application buttons. see: :ref:`Geo Module <geo>`                                              |
-+----------------+---------------------------------------------------------------------------------------------------------+
+=================== ======================================================================================================
+ Name                description
+=================== ======================================================================================================
+ Alert_              displays notification like error or success
+ Services_           can access Services within view view scripts
+ jobUrl_             displays the link to a job posting.
+ applyUrl_           displays the link to an application form of a job posting.
+ applyButton_        displays application buttons. see: :ref:`Geo Module <geo>`
+ languageSwitcher_   renders a language switcher select box. see: :ref:`Language Switcher <language-switcher>`
+=================== ======================================================================================================
 
 
 .. _Alert: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Alert.php
@@ -165,3 +162,4 @@ View Helper Scripts
 .. _jobUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/JobUrl.php
 .. _applyUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/ApplyUrl.php
 .. _applyButton: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/ApplyButton.php
+.. _languageSwitcher: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Core/View/Helper/LanguageSwitcher.php
