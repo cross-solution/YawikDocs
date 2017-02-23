@@ -19,6 +19,25 @@ Installation
 * https://cwiki.apache.org/confluence/display/solr/Installing+Solr
 * http://nl3.php.net/manual/en/solr.installation.php
 
+.. note::
+
+ Solr needs a schema. The schema is currently a work in progress. You can use the schema in "Solr/contrib"_.
+
+.. _Solr/conrtib: https://github.com/yawik/Solr/tree/master/contrib
+
+copy the Solr options file into you autoload directory and adjust the value
+
+.. code-block:: sh
+ 
+  cp module/Solr/config/solr.moduleoptions.local.php.dist config/autoload/solr.moduleoptions.local.php
+
+
+you can initially index all active jobs by:
+
+.. code-block:: sh
+
+ bin/console solr index job
+
 
 Description
 ^^^^^^^^^^^

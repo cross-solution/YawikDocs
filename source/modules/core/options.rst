@@ -28,6 +28,8 @@ To modify the options, copy the module.core.options.local.php.dist_ to you ``con
 supportedLanguages is an assoziative array. The key is used for routing. The value is used as the locale. The upper case part of the
 locale defines the regions.
 
+.. code-block:: php
+
  protected $supportedLanguages = array(
         'de' => 'de_DE',
         'fr' => 'fr',
@@ -36,5 +38,6 @@ locale defines the regions.
         'it' => 'it',
         'el' => 'el_GR'
     );
+
 
 .. _module.core.options.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Core/config/module.core.options.local.php.dist
