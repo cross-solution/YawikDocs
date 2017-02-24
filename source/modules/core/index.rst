@@ -238,6 +238,8 @@ You have to trigger an event with the whole response as data.
     })
 
 
+.. _language-switcher:
+
 Language Switcher
 ^^^^^^^^^^^^^^^^^
 

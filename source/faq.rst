@@ -11,4 +11,5 @@ Frequently Asked Questions
     faq/faq-core
     faq/faq-documentation
     faq/faq-xml-feeds
+    faq/faq-geo-simple-location
 

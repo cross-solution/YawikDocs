@@ -86,3 +86,5 @@ Geo/config/Geo.options.local.php to the autoload directory of you YAWIK installa
  ];
 
 .. _photon: http://photon.komoot.de/
+
+It it possible to configure
