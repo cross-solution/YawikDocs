@@ -198,7 +198,9 @@ Events
 ========================= ==============================================================================================
  Name                      Description
 ========================= ==============================================================================================
- core.create_paginator     is fired when CreatePaginator plugins creating a paginator
+ core.create_paginator     is fired, when CreatePaginator plugins creating a paginator
+ job.created               is fired, when a user created a job opening.
+ job.accepted              is fired, when an admin accepts a new or modifications on an existing job opening
 ========================= ==============================================================================================
 
 
