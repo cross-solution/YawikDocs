@@ -3,7 +3,17 @@
 Solr
 ----
 
-this module is deactivated by default, because you need a solr server and the PHP solr pecl extension.
+.. sidebar:: DHCP
+
+   =======================  ==========================================
+   ``Repsotory``             `yawik/solr`_
+   ``build``                 |coverage|
+   =======================  ==========================================
+
+.. |coverage| raw:: html
+
+	<a href='https://coveralls.io/github/yawik/Solr'><img src='https://coveralls.io/repos/github/yawik/Solr/badge.svg' alt='Coverage Status' /></a>
+
 
 Requirements
 ^^^^^^^^^^^^
