@@ -3,16 +3,22 @@
 Solr
 ----
 
-.. sidebar:: DHCP
+.. sidebar:: Solr
 
    =======================  ==========================================
-   ``Repsotory``             `yawik/solr`_
-   ``build``                 |coverage|
+   ``Repository``            `yawik/solr`_
+   ``coverage``              |coverage|
+   ``buid``                  |build|
    =======================  ==========================================
 
 .. |coverage| raw:: html
 
-	<a href='https://coveralls.io/github/yawik/Solr'><img src='https://coveralls.io/repos/github/yawik/Solr/badge.svg' alt='Coverage Status' /></a>
+	<a href='https://coveralls.io/github/yawik/Solr?branch=develop'><img src='https://coveralls.io/repos/github/yawik/Solr/badge.svg?branch=develop' alt='Coverage Status' /></a>
+
+
+.. |build| raw:: html
+
+        <a href="https://travis-ci.org/yawik/Solr"><img src="https://travis-ci.org/yawik/Solr.svg?branch=master"></a>
 
 
 Requirements
@@ -31,19 +37,19 @@ Good resources on how to install solr:
 Installation
 ^^^^^^^^^^^^
 
-to install the "yawik/solr"_ Modul into a running YAWIK, change into the `YAWIK/modules` directory and clone
+to install the `yawik/solr`_ Modul into a running YAWIK, change into the `YAWIK/modules` directory and clone
 the yawik/solr module.
 
 .. code-block:: sh
 
  git clone https://github.com/yawik/Solr
 
-To activate the module create a php file named ``My.module.php`` in you config autoload directory containing:
+To activate the module create a php file named ``WhateverYouWant.module.php`` in your config autoload directory containing:
 
 .. code-block:: php
 
  <?php
- return ['Solr];
+ return ['Solr'];
 
 To configure the solr connection copy the Solr options file into you autoload directory and adjust the values.
 
@@ -53,7 +59,7 @@ To configure the solr connection copy the Solr options file into you autoload di
 
 .. note::
 
- Solr needs a schema. The schema is currently a work in progress. You can use the schema in "Solr/contrib"_.
+ Solr needs a schema. The schema is currently a work in progress. You can use the schema in `Solr/contrib`_.
 
 .. _yawik/solr: https://github.com/yawik/Solr
 .. _Solr/contrib: https://github.com/yawik/Solr/tree/master/contrib
