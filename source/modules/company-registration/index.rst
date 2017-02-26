@@ -1,7 +1,25 @@
-.. index:: YawikCompanyRegistration
+.. index:: CompanyRegistration
 
-YawikCompanyRegistration
-------------------------
+CompanyRegistration
+-------------------
+
+.. sidebar:: CompanyRegistration
+
+   =======================  ==========================================
+   ``Repository``            `yawik/CompanyRegistration`_
+   ``coverage``              |coverage|
+   ``buid``                  |build|
+   =======================  ==========================================
+
+.. _yawik/CompanyRegistration: https://github.com/yawik/CompanyRegistration.git
+.. |coverage| raw:: html
+
+	<a href='https://coveralls.io/github/yawik/CompanyRegistration?branch=develop'><img src='https://coveralls.io/repos/github/yawik/CompanyRegistration/badge.svg?branch=develop' alt='Coverage Status' /></a>
+
+
+.. |build| raw:: html
+
+        <a href="https://travis-ci.org/yawik/CompanyRegistration"><img src="https://travis-ci.org/yawik/CompanyRegistration.svg?branch=master"></a>
 
 If you want to offer the registration for companies, this module might be helpful. It offers a registration form with
 additional fields. When a user registers, an user and an organization entity are created. This module requires the
