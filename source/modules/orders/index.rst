@@ -13,7 +13,7 @@ Orders
 
 .. |coverage| raw:: html
 
-        <a href='https://coveralls.io/github/yawik/Orders?branch=develop'><img src='https://coveralls.io/repos/github/yawik/Orders/badge.svg?branch=develop' alt='Coverage Status' /></a>
+        <a href='https://coveralls.io/github/yawik/Orders?branch=master'><img src='https://coveralls.io/repos/github/yawik/Orders/badge.svg?branch=master' alt='Coverage Status' /></a>
 
 
 .. |build| raw:: html
