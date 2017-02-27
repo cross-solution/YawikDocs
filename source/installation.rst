@@ -6,9 +6,9 @@ Requirements
 
 you need at least a webserver, a mongo database and PHP. We're developing using 
 apache with mod_php5 enabled. If you don't have a local mongoDB available you can
-try a provider like mongolab.com_ or google_.
+try a provider like mlab.com_ or google_.
 
-.. _mongolab.com: https://mongolab.com/welcome/
+.. _mongolab.com: https://mlab.com/
 .. _google: https://console.cloud.google.com/launcher?q=mongodb
 
 * php >= 5.6.* (PHP7 is currently not supported)
