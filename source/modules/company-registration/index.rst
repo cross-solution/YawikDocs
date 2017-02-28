@@ -29,6 +29,25 @@ additional fields. When a user registers, an user and an organization entity are
 Installation
 ^^^^^^^^^^^^
 
+to install the `yawik/CompanyRegistration`_ Module into a running YAWIK, change into the `YAWIK/modules` directory and clone
+the yawik/CompanyRegistration repository.
+
+.. code-block:: sh
+
+ git clone https://github.com/yawik/CompanyRegistration
+
+To activate the module create a php file named ``WhateverYouWant.module.php`` in your config autoload directory containing:
+
+.. code-block:: php
+
+ <?php
+ return ['CompanyRegistration'];
+
+.. _yawik/CompanyRegistration: https://github.com/yawik/CompanyRegistration
+
+
+Another possibility to install YAWIK modules is using composer.
+
 .. code-block:: sh
 
     composer create-project cross-solution/yawik
@@ -36,14 +55,14 @@ Installation
     composer require cross-solution/yawik-company-registration
 
 
-This install the YawikCompanyModule into the `module` directory of your YAWIK installation. You can uninstall the module
+This install the CompanyModule into the `module` directory of your YAWIK installation. You can uninstall the module
 via
 
 .. code-block:: sh
 
     composer remove cross-solution/yawik-company-registration
 
-This removes the directory `YawikCompanyRegistration` and all it content from your `module` directory of your YAWIK
+This removes the directory `CompanyRegistration` and all it content from your `module` directory of your YAWIK
 installation.
 
 Configuration
@@ -64,6 +83,6 @@ The registration form contains by default the fields:
 You can configure the registration form. Copy the `RegistrationFormOptions.config.local.php.dist`_ into your `autoload`
 directory and adjust the values.
 
-.. _RegistrationFormOptions.config.local.php.dist: https://github.com/cross-solution/YawikCompanyRegistration/blob/develop/config/RegistrationFormOptions.config.local.php.dist
+.. _RegistrationFormOptions.config.local.php.dist: https://github.com/yawik/CompanyRegistration/blob/develop/config/RegistrationFormOptions.config.local.php.dist
 
 
