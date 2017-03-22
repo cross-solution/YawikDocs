@@ -1,18 +1,18 @@
 Installation
 ============
 
+you need at least a webserver, a mongo database and PHP. We're developing using
+apache with mod_php5 enabled. But you can use ngix, too. If you don't have a local mongoDB available you can try a
+provider like `mlab.com`_ or google_.
+
+.. _mlab.com: https://mlab.com/
+.. _google: https://console.cloud.google.com/launcher?q=mongodb
+
 Requirements
 ------------
 
-you need at least a webserver, a mongo database and PHP. We're developing using 
-apache with mod_php5 enabled. If you don't have a local mongoDB available you can
-try a provider like mlab.com_ or google_.
-
-.. _mongolab.com: https://mlab.com/
-.. _google: https://console.cloud.google.com/launcher?q=mongodb
-
 * php >= 5.6.* (PHP7 is currently not supported)
-* Zend Framework 2.5.*
+* Zend Framework 2.5.* (we're currently `updating to ZF3`_, ZF2 Support will be dropped in 0.29+)
 * mongodb >= 2.4.* (you should use >= 2.6 ... see below)
 * php5-mongo
 * php5-intl
@@ -21,15 +21,56 @@ try a provider like mlab.com_ or google_.
 * php5-openssl (only needed to install dependencies via composer)
 * php5-mbstring (only needed, if the PDF module is used)
 
+YAWIK should run on any OS, which supports the above software components. In real life, we've seen YAWIK running on
+Linux Ubuntu, Debian, FreeBSD and OSX. It's possible to run YAWIK on AWS.
+
+.. _updating to ZF3: https://github.com/cross-solution/YAWIK/projects/3
+
 On FreeBSD, make sure, the php fileinfo extention is available. Fileinfo extention is needed by validating file uploads.
 
 The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty
 14.04 and Xenial 16.04. There you can install the required apache, php and mongodb via:
 
+.. _get_mongo:
+
+Install mongo Database
+^^^^^^^^^^^^^^^^^^^^^^
+
+YAWIK runs with mongo 2.4. So you can use the mongod version, which is shipped with your distribution. However, you
+should use a later version. Otherwise you have to `enable the text search`_, which is disabled in 2.4 by default.
+In 2.6 and above the text search is enabled by default.
+
+.. _enable the text search: https://docs.mongodb.com/v2.4/tutorial/enable-text-search/
+
+You can install e.g. mongo 3.2 by: (Our demo is running 2.6, development is done with 3.0 and 3.2)
+
+
+https://docs.mongodb.com/manual/administration/install-on-linux/
+
+We've installed mongo the following way:
+
 .. code-block:: sh
 
-  aptitude install mongodb-server php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
+ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+ echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+ sudo apt-get update
+ sudo apt-get install -y mongodb-org
+
+
+Install YAWIK on Debian 8
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+  aptitude install php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
                    php5-intl php5-common php5-cli php5-json php5 apache2 curl npm
+
+
+
+Install YAWIK on Ubuntu 16.04
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We assume, you have a running mongod. Otherwise check :ref:`getting a mongo db<get_mongo>`
 
 YAWIK should run on all operating systems, which support PHP (currently php 5.5 and php 5.6). Due to the changed in the
 php extentions for mongo (php-mongo and php-mongodb) YAWIK currently does not support php7. We'll wait for
@@ -46,24 +87,6 @@ the ondrej/php repository to your apt source lists.
 
 .. _doctrine-mongodb-odm: http://doctrine-orm.readthedocs.io/projects/doctrine-mongodb-odm/en/latest/#
 
-
-More information about installation of Mongo:
-
-https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/
-
-YAWIK runs with mongo 2.4 (which comes by default with ubuntu 14.04). You should use a later version. Otherwise you have
-to `enable the text search`_, which is disabled in 2.4 by default. In 2.6 and above the text search is enabled by default.
-
-.. _enable the text search: https://docs.mongodb.com/v2.4/tutorial/enable-text-search/
-
-You can install e.g. mongo 3.2 by: (Our demo is running 2.6, development is done with 3.0 and 3.2)
-
-.. code-block:: sh
-
- sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
- echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
- sudo apt-get update
- sudo apt-get install -y mongodb-org
 
 Setup
 -----

@@ -11,7 +11,6 @@ CompanyRegistration
    ``buid``                  |build|
    =======================  ==========================================
 
-.. _yawik/CompanyRegistration: https://github.com/yawik/CompanyRegistration.git
 .. |coverage| raw:: html
 
 	<a href='https://coveralls.io/github/yawik/CompanyRegistration?branch=develop'><img src='https://coveralls.io/repos/github/yawik/CompanyRegistration/badge.svg?branch=develop' alt='Coverage Status' /></a>
