@@ -63,7 +63,7 @@ Install YAWIK on Debian 8
 .. code-block:: sh
 
   aptitude install php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
-                   php5-intl php5-common php5-cli php5-json php5 apache2 curl npm
+                   php5-intl php5-common php5-cli php5-json php5 apache2 curl npm uglifyjs
 
 
 
@@ -110,7 +110,7 @@ They extract into a subdirectory YAWIK-x.y.z. If you preserve the permissions, t
     :scale: 20%
     :align: right
 
-By pointing your browser to the ``YAWIK/public`` directory, an installation page appears. You'll be asked to
+By pointing your browser to the ``YAWIK-x.y.z/public`` directory, an installation page appears. You'll be asked to
 enter a mongodb connection string, a username, a password and an email address.
 
 .. note::
@@ -124,7 +124,7 @@ YAWIK on. In addition you need to enable the rewrite module of apache.
 
 .. code-block:: sh
 
-  sudo a2enmod rewrite && sudo /etc/init.d/apache2 reload
+  sudo a2enmod rewrite && sudo service apache2 reload
 
 Then you have to make sure that the DocumentRoot of apache is pointing to ``YAWIK/public``
 and apache is allowed to Access the YAWIK directory.
@@ -134,12 +134,12 @@ A VirtualHost section might look like.
 .. code-block:: sh
 
    <VirtualHost *:80>
-        ServerName example.com/
+        ServerName ${YAWIK_HOST}
         DocumentRoot ${YAWIK_HOME}/public
         AddDefaultCharset utf-8
 
         # set an env to disable caching.
-        SetEnv APPLICATION_ENV "development"
+        #SetEnv APPLICATION_ENV "development"
 
         <Directory ${YAWIK_HOME}/public>
              DirectoryIndex index.php
@@ -153,15 +153,26 @@ A VirtualHost section might look like.
         </Directory>
     </VirtualHost>
 
+Place this in a file called ``YAWIK.conf`` in ``/etc/apache2/conf`` and execute
+
+.. code-block:: sh
+
+  sudo a2ensite YAWIK.conf && sudo service apache2 reload
+
+.. note::
+
 
 
 now you should be able to login into your YAWIK by pointing a browser to
 
-http://example.com/
+http://${YAWIK_HOST}
 
 .. note::
 
-    make sure your Webserver cannot access your build.properties. You can safely remove this file
+    Be sure you either export the variables YAWIK_HOST and YAWIK_HOME or replace them with the actual values in the
+    apache config file.
+
+    Also your Webserver should not be able to access your build.properties. You can safely remove this file
     after you've run the installation is done.
 
 
@@ -197,7 +208,17 @@ is created with the ``àdmin`` role in the database.
     yawik.config.global.php
 
 All other configurations are currently done manually by copying the ```*.dist`` files
-from the modules configuration directory to the autoload directory.
+from the modules configuration directory to the autoload directory and removing the ".dist" part.
+
+.. note::
+
+    To disable the caching of the config autoload files you need to set an environment variable called
+    ``APPLICATION_ENV`` to the value "development"
+
+    If you use apache, you can do this in your virtual section config with
+    ``SetEnv APPLICATION_ENV="development"``
+
+
 
 Setup using composer
 ^^^^^^^^^^^^^^^^^^^^
