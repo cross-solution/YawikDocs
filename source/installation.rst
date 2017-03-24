@@ -119,6 +119,9 @@ enter a mongodb connection string, a username, a password and an email address.
     have to remove the ``cache/module-classmap-cache.module_map.php`` and ``cache/module-config-cache.production.php``.
 
 
+Using Apache
+^^^^^^^^^^^^
+
 If you want to use Apache, you probably need root access to the machine you've installed
 YAWIK on. In addition you need to enable the rewrite module of apache.
 
@@ -159,9 +162,6 @@ Place this in a file called ``YAWIK.conf`` in ``/etc/apache2/conf`` and execute
 
   sudo a2ensite YAWIK.conf && sudo service apache2 reload
 
-.. note::
-
-
 
 now you should be able to login into your YAWIK by pointing a browser to
 
@@ -175,6 +175,40 @@ http://${YAWIK_HOST}
     Also your Webserver should not be able to access your build.properties. You can safely remove this file
     after you've run the installation is done.
 
+Using Nginx
+^^^^^^^^^^^
+
+A configuration file for Nginx looks like this
+
+.. code-block:: sh
+
+  server {
+       listen         80;
+
+        server_name my.yawik.host;
+
+        root /your-location/YAWIK/public;
+        index index.html index.htm index.php;
+        charset utf-8;
+
+        location / {
+            try_files $uri $uri/ /index.php$is_args$args;
+        }
+
+        location ~ \.php$ {
+            fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_pass unix:/run/php/php5.6-fpm.sock;
+            fastcgi_param   APPLICATION_ENV  production;
+            include /etc/nginx/fastcgi_params;
+        }
+  }
+
+
+.. todo::
+
+    We need more details on setup nginx here.
+    - Where to put the server config
+    - What commands to run.
 
 Yawik can be downloaded at https://sourceforge.net/projects/yawik/files/
 
@@ -299,59 +333,6 @@ array defining routing specific things.
 If the enviroment is set to ``production``, all configurations are cached in
 ``cahe/module-classmap-cache.module_map.php``. There is currently no way to invalidate the
 cache. You have to remove this file, if you alter files in ``config/autoload``.
-
-
-Apache
-^^^^^^
-
-point the DocumentRoot of your Webserver to the ``public`` directory.
-
-.. code-block:: sh
-
-  <VirtualHost *:80>
-        ServerName YOUR.HOSTNAME
-        DocumentRoot /YOUR/DIRECTORY/YAWIK/public
-  
-        <Directory /YOUR/DIRECTORY/YAWIK/public>
-                DirectoryIndex index.php
-                AllowOverride All
-                Order allow,deny
-                Allow from all
-        </Directory>
-  </VirtualHost>
-
-.. note::
-
-  you should ``SetEnv APPLICATION_ENV development`` in your VirtualHost section,
-  if you plan do develop.
-
-
-Nginx
-^^^^^
-A configuration file for Nginx looks like this
-
-.. code-block:: sh
-
-  server {
-       listen         80;
-
-        server_name my.yawik.host;
-
-        root /your-location/YAWIK/public;
-        index index.html index.htm index.php;
-        charset utf-8;
-
-        location / {
-            try_files $uri $uri/ /index.php$is_args$args;
-        }
-
-        location ~ \.php$ {
-            fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            fastcgi_pass unix:/run/php/php5.6-fpm.sock;
-            fastcgi_param   APPLICATION_ENV  production;
-            include /etc/nginx/fastcgi_params;
-        }
-  }
 
 
 Authentication

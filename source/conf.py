@@ -34,7 +34,12 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ['sphinx.ext.todo']
+
+# --todo extention
+todo_include_todos=True
+todo_link_only=True
+
 
 # The name of the default domain.
 primary_domain = 'php'
