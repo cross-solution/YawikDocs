@@ -77,6 +77,6 @@ currently the following modules exists:
    modules/solr/index
    modules/xing-vendor-api/index
    modules/settings/index
-
+   modules/jobs-by-mail/index
 
 

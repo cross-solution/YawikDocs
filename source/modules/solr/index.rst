@@ -29,6 +29,17 @@ current development is using:
 * php5-solr (pecl >= 2.4.0)
 * apache solr (6.1)
 
+.. note:: Debian 8 ships with php5-solr 1.0.2. You can build your solr extension by:
+
+    .. code-block:: sh
+
+        aptitude install php5-dev libcurl4-openssl-dev libxml2-dev
+        pecl install solr
+        echo "extension=solr.so" > /etc/php5/mods-available/solr.ini
+        php5enmod solr
+        php -m| grep solr # should show the activated solr extension
+
+
 Good resources on how to install solr:
 
 * https://cwiki.apache.org/confluence/display/solr/Installing+Solr

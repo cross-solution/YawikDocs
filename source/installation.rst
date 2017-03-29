@@ -28,8 +28,7 @@ Linux Ubuntu, Debian, FreeBSD and OSX. It's possible to run YAWIK on AWS.
 
 On FreeBSD, make sure, the php fileinfo extention is available. Fileinfo extention is needed by validating file uploads.
 
-The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty
-14.04 and Xenial 16.04. There you can install the required apache, php and mongodb via:
+The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty 14.04, Xenial 16.04 and Debian 8.
 
 .. _get_mongo:
 
@@ -56,16 +55,37 @@ We've installed mongo the following way:
  sudo apt-get update
  sudo apt-get install -y mongodb-org
 
+If your linux comes with systemd, you can start your mongod with ``service mongo start``. If you need an init script,
+because your linux comes with `sysv`_, you can fetch it from mongodb github repository
+
+.. code-block:: sh
+
+    cd /etc/init.d/
+    curl https://raw.githubusercontent.com/mongodb/mongo/master/debian/init.d > mongod
+    chmod +x mongod
+    update-rc.d mongod defaults
+
+Start your mongod with ``/etc/init.d/mongod start``
 
 Install YAWIK on Debian 8
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+If like to run YAWIK in an `LXC container`_ on proxmox_. If we do so, we prefere debian 8, because it ships with php5.6.
+So we do not have to downgrade to php5.6. On the other hand it comes with `sysv`_. However, installing YAWIK on Debian 8
+you have to install the following packages.
+
 .. code-block:: sh
 
-  aptitude install php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
+  apt-get install php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
                    php5-intl php5-common php5-cli php5-json php5 apache2 curl npm uglifyjs
 
+``npm`` and ``uglifyjs`` are needed to install assets (boostrap, jquery, select2 ...). You're only need those packages,
+if you want to install YAWIK git ``cdgit``
 
+
+.. _LXC container: http://download.proxmox.com/images/system/
+.. _proxmox: https://www.proxmox.com/de/
+.. _sysv: https://forum.proxmox.com/threads/debian-8-6-lxc-template-with-systemd-feature-request.30212/
 
 Install YAWIK on Ubuntu 16.04
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,8 +100,7 @@ the ondrej/php repository to your apt source lists.
 
 .. code-block:: sh
 
- export LANG=en_US.UTF-8
- add-apt-repository -y ppa:ondrej/php
+ LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
  aptitude update
  aptitude install php5.6-mongo php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
 
@@ -137,14 +156,14 @@ A VirtualHost section might look like.
 .. code-block:: sh
 
    <VirtualHost *:80>
-        ServerName ${YAWIK_HOST}
-        DocumentRoot ${YAWIK_HOME}/public
+        ServerName yawik.example.com
+        DocumentRoot /var/www/YAWIK/public
         AddDefaultCharset utf-8
 
         # set an env to disable caching.
         #SetEnv APPLICATION_ENV "development"
 
-        <Directory ${YAWIK_HOME}/public>
+        <Directory /var/www/YAWIK/public>
              DirectoryIndex index.php
              Options Indexes FollowSymLinks MultiViews
              AllowOverride All
@@ -156,11 +175,11 @@ A VirtualHost section might look like.
         </Directory>
     </VirtualHost>
 
-Place this in a file called ``YAWIK.conf`` in ``/etc/apache2/conf`` and execute
+Place this in a file called ``yawik.example.com.conf`` in ``/etc/apache2/conf`` and execute
 
 .. code-block:: sh
 
-  sudo a2ensite YAWIK.conf && sudo service apache2 reload
+  sudo a2ensite yawik.example.com.conf && sudo service apache2 reload
 
 
 now you should be able to login into your YAWIK by pointing a browser to
