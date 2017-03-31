@@ -1,4 +1,5 @@
 .. index:: Solr
+.. _solr:
 
 Solr
 ----

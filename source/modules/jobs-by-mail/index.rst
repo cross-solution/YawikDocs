@@ -12,19 +12,22 @@ JobsByMail (Work in Progress)
    =======================  ==========================================
 
 The JobsByMail module offers a simple Formular to sign up to get the latest jobs by email. By activating the module you'll
-be able to the Form into the search result `<?= $this->`
+be able to access the subscriber form via ``<?=$this->form($this->jobsByMailForm)?>``
 
 Features
 
-* view script for the formular and a result page.
+* view script for the `subscriber form`_ and a `result page`_.
 * form ist pre-filled with the latest search parameters
 * form can be used as an authenticated and as an anonymous user
+* module works with or without the :ref:`solr module<solr>`
 
 If the formular is used by an anonymous users, a confirmation mail is send to the subscriber. Search profiles width
 confirmed email adresses will receive new jobs my mail.
 
-The Infomation Mail about new Jobs contains an unsubscribe Link.
+The information Mail about new Jobs contains an unsubscribe Link.
 
+.. _subscriber form: https://github.com/yawik/JobsByMail/blob/develop/view/jobs-by-mail/form/subscribe/form.phtml
+.. _result page: https://github.com/yawik/JobsByMail/blob/develop/view/jobs-by-mail/form/subscribe/form.phtml
 
 .. |coverage| raw:: html
 
