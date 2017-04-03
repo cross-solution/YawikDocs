@@ -19,3 +19,19 @@ The MimeType of uploaded files is checked by default using the libmagic. Please 
 .. _firebug: https://addons.mozilla.org/en-US/firefox/addon/firebug/
 
 
+File Upload shows "An unknown error occured" on large files
+-----------------------------------------------------------
+
+When the upload seems to work, but at the end, it shows an "An unknown error occured", and in the
+``log/error.log`` appears a line like
+
+    "ERR POST Content-Length of 16414047 bytes exceeds the limit of 8388608 bytes (errno 2)"
+
+you should check that you set all required configuration values.
+
+ * The allowed max size must be set in the yawik configurations
+   .e.g. for attachments in an application the option 'attachmentsMaxSize' in the file ``config/autoload/applications.forms.global.php``
+   must be set appropriatly.
+ * The php.ini value of 'upload_max_size' must also be set accordingly. Either in the php.ini or (for apache) via 'php_admin_value'
+ * Do not forget the 'post_max_size' php.ini option.
+
