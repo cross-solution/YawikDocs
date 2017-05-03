@@ -40,6 +40,7 @@ Important Links for developers
 
 * Sources: https://github.com/cross-solution/YAWIK
 * Demo: https://yawik.org/demo/
+* Forum: https://forum.yawik.org/
 * Scrutnitzer: https://scrutinizer-ci.com/g/cross-solution/YAWIK/
 * Coveralls: https://coveralls.io/github/cross-solution/YAWIK
 * Openhub: https://www.openhub.net/p/YAWIK
