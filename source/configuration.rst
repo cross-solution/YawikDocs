@@ -47,7 +47,7 @@ file to ``config/autoload/module.auth.local.php`` and adjust your keys and secre
             ),
             "LinkedIn" => array (
                 "enabled" => true,
-                "keys"    => array ( "key" => "your-consumer-key", "secret" => "your-consumer-secret" ),
+                "keys"    => array ( "id" => "your-consumer-key", "secret" => "your-consumer-secret" ),
                 "scope"   => "r_fullprofile, r_emailaddress"
             ),
             "XING" => array(
