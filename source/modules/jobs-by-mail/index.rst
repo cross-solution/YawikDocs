@@ -1,7 +1,7 @@
 .. index:: JobsByMail
 
-JobsByMail (Work in Progress)
------------------------------
+JobsByMail
+----------
 
 .. sidebar:: JobsByMail
 
@@ -12,7 +12,7 @@ JobsByMail (Work in Progress)
    =======================  ==========================================
 
 The JobsByMail module offers a simple Formular to sign up to get the latest jobs by email. By activating the module you'll
-be able to access the subscriber form via ``<?=$this->proxy('jobsByMailSubscriptionForm')->render()?>``
+be able to add the subscriber in your view form by adding the line ``<?=$this->proxy('jobsByMailSubscriptionForm')->render()?>``
 
 Features
 
