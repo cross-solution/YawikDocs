@@ -61,6 +61,7 @@ The script is set in the code, so there you can make the choice of the content, 
 But always remember to consign the location of the script in the template-map.
 
 .. notice::
+
     The mail service injects itself in the view script in the variable "mail", so you can access the mail service with
     `$this->mail`. But if you alter the headers (e.g. by setting a subject) you need to call the mail services `renderBodyText()`
     method prior to sending. Otherwise when using some transports (e.g. Smtp), the modifications made to the headers are
