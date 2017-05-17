@@ -18,16 +18,20 @@ User Data are stored in the ``users`` collection.
 
 The Auth module offers the following features
 
-* Register with Facebook, Xing, LinkedIn, Google or GitHub
-* Register via registration form
+* Register with Facebook, Xing, LinkedIn, Google, Twitter or GitHub
+* Register via a configurable registration form
 * I forgot my Password
 * Roles for applicants, recruiters and admin
+* Notifications about new registrations
 
-By using the optional Module YawikCompanyRegistration_, users can register as a company. The module provides a
+To configure the module, copy the `auth.options.global.php`_ into your ``config/autoload`` directory.
+
+By using the optional Module CompanyRegistration_, users can register as a company. The module provides a
 formular and creates a user and a company in one step.
 
 .. _hybridauth: http://hybridauth.sourceforge.net/
-.. _YawikCompanyRegistration: https://github.com/cross-solution/YawikCompanyRegistration
+.. _CompanyRegistration: https://github.com/yawik/CompanyRegistration
+.. _auth.options.global.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/config/auth.options.global.php.dist
 
 
 Mails
