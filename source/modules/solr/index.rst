@@ -104,6 +104,8 @@ Set the the user/pass in :file:`/etc/apache2/solr.passwd` via :command:`htpasswd
 
 
 
+
+
 Installation
 ^^^^^^^^^^^^
 
@@ -133,6 +135,23 @@ To configure the solr connection copy the Solr options file into you autoload di
 
 .. _yawik/solr: https://github.com/yawik/Solr
 .. _Solr/contrib: https://github.com/yawik/Solr/tree/master/contrib
+
+.. note:: at least one field needs JTS. So if you want to use the contributed schema, you have to install JTS
+    via:
+
+    .. code-block:: sh
+
+        mkdir tmp
+        cd tmp
+        wget wget https://downloads.sourceforge.net/project/jts-topo-suite/jts/1.14/jts-1.14.zip
+        unzip jts-1.14.zip
+        cp lib/*.jar /opt/solr-6.6.0/server/solr-webapp/webapp/WEB-INF/lib/
+
+
+    Or take a look at the issue https://github.com/yawik/Solr/issues/4 . Maybe the fiels using JTS is not needed by
+    YAWIK any more.
+
+
 
 
 you can initially index all active jobs by:

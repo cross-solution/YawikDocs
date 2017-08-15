@@ -256,18 +256,18 @@ Widget
 by using the folloging Javascript Widget you can add your jobs into your personal homepage. 
 
 
-.. code-block:: javascript
+.. code-block:: html
 
- <script>
-    (function (window, document) {
-        var loader = function () {
-            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
-            script.src = "view-source:https://yawik.org/YawikWidget/yawik.min.js";
-            tag.parentNode.insertBefore(script, tag);
-        };
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-    })(window, document);
- </script>
+     <script>
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                script.src = "view-source:https://yawik.org/YawikWidget/yawik.min.js";
+                tag.parentNode.insertBefore(script, tag);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+     </script>
 
 
 The javascript renders a joblist inside a container with the id ``YawikWidget``
@@ -346,12 +346,13 @@ the Apply buttons. These options can be used to modify the layout and the behavi
             ]
         )?>
 
+
 +-----------------+----------------+----------------------------------------------------------------------------------------------+
 | name            | value          | description                                                                                  |
 +=================+================+==============================================================================================+
-| sendImmediately | bool           | true = Application is send immediatly. Privacy policy are accepted by clicking on the button |
+| sendImmediately | bool           | true: Application is send immediately. Privacy policy are accepted by clicking on the button |
 +-----------------+----------------+----------------------------------------------------------------------------------------------+
-| oneClickOnly    | bool           | true = normal button, which refers to the form is hidden                                     |
+| oneClickOnly    | bool           | true: normal button, which refers to the form is hidden                                      |
 +-----------------+----------------+----------------------------------------------------------------------------------------------+
 | defaultLabel    | string or NULL | label of the normal button.                                                                  |
 +-----------------+----------------+----------------------------------------------------------------------------------------------+
