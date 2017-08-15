@@ -46,6 +46,64 @@ Good resources on how to install solr:
 * https://cwiki.apache.org/confluence/display/solr/Installing+Solr
 * http://nl3.php.net/manual/en/solr.installation.php
 
+Here is the way we've installed it in our Demo. First, you need JAVA. On Debian 8 you can install it via:
+
+.. code-block:: sh
+
+    apt install -t jessie-backports  openjdk-8-jre-headless ca-certificates-java
+
+
+then get a binary version of solr. The binary package contains an installation script. So unzip/untar it and execute the
+installation script. By default you'll find your solr server in :file:`/opt/solr/`. The solr data are stored in
+:file:`/var/solr/data/`. After the installation you can remove the downloaded and extracted files.
+
+
+.. code-block:: sh
+
+
+   > wget http://apache.lauf-forum.at/lucene/solr/6.6.0/solr-6.6.0.tgz
+   > tar xzf solr-6.6.0.tgz
+   > solr-6.6.0/bin/install_solr_service.sh solr-6.6.0.tgz
+
+
+After the installation, solr server ist running at localhost port 8983. This is enough for yawik to be able the access
+the solr Server.
+
+If you want to be able the access the solr frontend via https without touching the solr installation at all, an apache
+proxy may be a solution. If you want to use this solution, you have to enable the apache proxy module.
+
+
+.. code-block:: sh
+
+    > a2enmod proxy proxy_http
+
+For setting up an apache Proxy you can use a Virtual Host which looks like
+
+.. code-block:: sh
+
+    <VirtualHost *:8443>
+
+         ProxyRequests Off
+         <Proxy *>
+            AuthType Basic
+            AuthName "Solr Search"
+            AuthBasicProvider file
+            AuthUserFile /etc/apache2/solr.passwd
+            Require valid-user
+            Order deny,allow
+            Allow from all
+         </Proxy>
+
+         ProxyPass / http://localhost:8983/
+         ProxyPassReverse / http://localhost:8983/
+
+    </VirtualHost>
+
+
+Set the the user/pass in :file:`/etc/apache2/solr.passwd` via :command:`htpasswd /etc/apache2/solr.passwd username`
+
+
+
 Installation
 ^^^^^^^^^^^^
 
@@ -82,6 +140,21 @@ you can initially index all active jobs by:
 .. code-block:: sh
 
  bin/console solr index job
+
+Schema
+^^^^^^
+
+==================================== ===================================================================================
+ fields
+==================================== ===================================================================================
+ id                                   Primary key
+ title                                Job title
+ city                                 city of the job opening
+ lang                                 language of the job opening
+ entityName                           possible values "job", "location" or "organization"
+ *MultiString*                        Used by categories. E.g. regionMultiString, industryMultiString,
+                                      professionMultiString
+==================================== ===================================================================================
 
 
 Description

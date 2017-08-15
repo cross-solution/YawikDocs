@@ -129,9 +129,9 @@ and the script which renders the items:
     <table class="pagination-content table table-striped table-bordered table-hover" id="jobs-list">
         <thead>
         <tr>
-            <th><?php echo $this->translate('Title of the job')?> / <?php echo $this->translate('Companyname')?></th>
-            <th><?php echo $this->translate('Location')?> / <?php echo $this->translate('Date of receipt')?></th>
-            <th><?php echo $this->translate('Apply')?></th>
+            <th><?= $this->translate('Title of the job')?> / <?= $this->translate('Companyname')?></th>
+            <th><?= $this->translate('Location')?> / <?= $this->translate('Date of receipt')?></th>
+            <th><?= $this->translate('Apply')?></th>
         </tr>
         </thead>
 

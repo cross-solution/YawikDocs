@@ -65,5 +65,5 @@ It is possible to inject head script tags using the module.config.php.
 
 .. code-block:: php
 
-    <?php echo $this->configHeadscript() ?>
+    <?= $this->configHeadscript() ?>
 
