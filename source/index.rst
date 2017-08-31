@@ -7,6 +7,11 @@
 YAWIK documentation!
 ========================================
 
+:Contact: contact@yawik.org
+:Revision: |version|
+:Date: |today|
+
+
 Contents:
 
 .. toctree::
