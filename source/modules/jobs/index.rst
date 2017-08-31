@@ -49,7 +49,7 @@ module`_ which lets YAWIK act like a jobboard. This module is running on
 
 http://jobs.yawik.org
 
-.. _`jobboard module`: https://github.com/cbleek/YawikDemoJobboard
+.. _`jobboard module`: https://github.com/yawik/Jobboard
 
 
 Job Templates
