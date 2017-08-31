@@ -1,7 +1,7 @@
 Configuration
 =============
 
-Configuration files are located in ``config/autoload``. Config files are
+Configuration files are located in :file:`config/autoload`. Config files are
 returning an associative array. All arrays are merged, so the order how
 the configuration files are processed is relevant.
 
@@ -20,16 +20,16 @@ into sections. E.g. a router.config.php file should contain an associative
 array defining routing specific things.
 
 If the enviroment is set to ``production``, all configurations are cached in
-``cache/module-classmap-cache.module_map.php`` and ``module-config-cache.production.php``.
+:file:`cache/module-classmap-cache.module_map.php` and :file:`cache/module-config-cache.production.php`.
 There is currently no way to invalidate the cache. You have to remove these
-files, if you modify files in ``config/autoload``.
+files, if you modify files in file:`config/autoload`.
 
 
 Authentication
 --------------
 
 to enable login via Facebook, Xing, LinkedIn or any other hybridauth_ adapter simply copy the module.auth.local.php.dist_
-file to ``config/autoload/module.auth.local.php`` and adjust your keys and secrets.
+file to :file:`config/autoload/module.auth.local.php` and adjust your keys and secrets.
 
 .. _hybridauth: http://hybridauth.sourceforge.net/
 .. _module.auth.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/config/module.auth.global.php.dist
@@ -70,8 +70,8 @@ file to ``config/autoload/module.auth.local.php`` and adjust your keys and secre
        ?>
 
 The configuration structure was simply taken from the hybridauth library. So the "enabled" field means enabled for the hybridauth library. It 
-does not mean "enabled" for login. To enable a social network for login you have to ad the lowercased key to `ènableLogins` array. You have to
-copy the auth.options.global.php.dist_ to ``config/autoload/auth.options.global.php`` and adjust your values.
+does not mean "enabled" for login. To enable a social network for login you have to ad the lowercased key to `enableLogins` array. You have to
+copy the auth.options.global.php.dist_ to :file:`config/autoload/auth.options.global.php` and adjust your values.
 
 .. _auth.options.global.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/config/auth.options.global.php.dist
 
