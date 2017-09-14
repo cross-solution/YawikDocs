@@ -26,7 +26,7 @@ Orders
 
     <div style="float:right; width: 50%">
     <img src="https://www.transifex.com/projects/p/yawik/resource/orders/chart/image_png"/>
-    <br/>translation state of Orders module.
+    <br/>translation state of orders module.
     </div>
 
 Requirements
@@ -58,10 +58,11 @@ To activate the module create a php file named ``WhateverYouWant.module.php`` in
 Description
 ^^^^^^^^^^^
 
-the oder module injects a billing address to to wizard for entering job postings. the order module adds a storage for orders. By submitting a job posting, an order is created. 
+the orders module injects a billing address to to wizard for entering job postings. In addition it adds a storage for orders.
+By submitting a job posting, an order is created. 
 The order contains all relevant data needed for billings. In addition, the module adds an invoice formular, which can be added into the order
 process. Default values of the invoice formular can be set in Settings/Orders.
 
-Technically, the oder module offers the feature to take a snapshot of an entity.
+Technically, the orders module offers the feature to take a snapshot of an entity.
 
 
