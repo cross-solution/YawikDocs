@@ -303,12 +303,35 @@ MongoDB
 Debugging
 ---------
 
-you can enable the debugging Mode by setting the environment variable
-``APPLICATION_ENV=development``. This will increase the debug
-level, enable error messages on the screen and disables sending of mails to the
-recipients, stored in the database. You can overwrite the the all recipients (To, CC, Bcc)
-by setting ``mail.develop.override_recipient=<your mail address>``
+You can enable the debugging mode by setting the following configuration:
 
+.. code-block:: php
+
+    'tracy' => [
+        'mode' => false
+    ]
+
+This will enable displaying of error messages on the screen and disables sending of email error notifications to the
+recipients specified in the following configuration:
+
+.. code-block:: php
+
+    'tracy' => [
+        'email' => 'first.recipient@domain.tld, second.recipient@domain.tld'
+    ],
+
+The complete debugging configuration with default values consists of:
+
+.. code-block:: php
+
+    'tracy' => [
+        'mode' => true, // toggles the production/development mode (true = production, false = development, null = autodetect, IP address(es) csv/array)
+        'bar' => false, // toggles the diagnostics bar (a small bar placed in the bottom right corner of a browser displaying system info such a memory usage, elapsed time, ...)
+        'strict' => true, // sets the error level strictness (bool = cause immediate death, int = matched against error severity)
+        'log' => __DIR__ . '/../../../log/tracy', // sets the path to a log directory (this directory keeps error.log, snoozing mailsent file & html exception trace files)
+        'email' => null, // sets the recipient(s) of email error notifications in the production mode (multiple recipients are separated with a comma or presented as an array)
+        'email_snooze' => 900 // sets the interval for sending email error notifications in seconds
+    ], 
 
 Debugging Mails
 ^^^^^^^^^^^^^^^
