@@ -335,3 +335,25 @@ The complete debugging configuration with default values consists of:
 
 Debugging Mails
 ^^^^^^^^^^^^^^^
+
+To send all mails to one or more specific mail addresses, regardless of the original recipients in To:, Cc: and Bcc: headers, you can set the configuration:
+
+.. code-block:: php
+
+    'mails' => array(
+        'develop' => array(
+                /* 
+                 * Every mail send from the system will be send ONLY to this address(es),
+                 * regardless of the original set recipient(s) (including CC and BCC).
+                 * Use comma to separate addresses. 
+                 * Use an empty string (or comment out) to disable.
+                 */
+                'override_recipient' => '',
+
+        ),
+    ),
+
+If you put this configuration in an autoloaded config file which name ends in `.development.php`, it will be loaded only, when the environment variable 
+`APPLICATION_ENV` is set to "development". This allows for quick enabling and disabling without the need to modify configuration files.
+
+ 
