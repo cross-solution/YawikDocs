@@ -22,8 +22,9 @@ Contents:
    upgrade
    configuration
    modules
-   guidelines
    customize
+   developer/guidelines
+   developer/testing
    api
    faq
 

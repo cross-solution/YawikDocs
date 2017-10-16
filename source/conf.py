@@ -271,4 +271,10 @@ lexers['php'] = PhpLexer(startinline=True)
 
 github_base_account = 'cross-solution'
 github_project = 'yawik'
-  
+
+
+extensions.append('sphinx.ext.intersphinx')
+
+intersphinx_mapping = {
+    'scrapy': ('http://scrapy-docs.yawik.org/build/html', None)
+    }
