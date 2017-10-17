@@ -5,7 +5,7 @@
 SimpleImport
 ------------
 
-.. sidebar:: Solr
+.. sidebar:: SimpleImport
 
    =======================  ==========================================
    ``Repository``            `yawik/SimpleImport`_
