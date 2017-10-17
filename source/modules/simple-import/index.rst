@@ -5,7 +5,29 @@
 SimpleImport
 ------------
 
-The SimpleImport module offers an  command line tool to import jobs from feeds.
+.. sidebar:: Solr
+
+   =======================  ==========================================
+   ``Repository``            `yawik/SimpleImport`_
+   ``coverage``              |coverage|
+   ``buid``                  |build|
+   =======================  ==========================================
+
+.. |coverage| raw:: html
+
+	<a href='https://coveralls.io/github/yawik/SimpleImport?branch=master'><img src='https://coveralls.io/repos/github/yawik/SimpleImport/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+
+.. |build| raw:: html
+
+        <a href="https://travis-ci.org/yawik/SimpleImport"><img src="https://travis-ci.org/yawik/SimpleImport.svg?branch=master"></a>
+
+
+
+.. _yawik/SimpleImport: https://github.com/yawik/SimpleImport.git
+
+
+The SimpleImport module offers a command line tool to import jobs from feeds. It's usefull, if you plan to use YAWIK as a jobportal and if you would like to import jobs from customers.
 
 
 .. code-block:: sh
