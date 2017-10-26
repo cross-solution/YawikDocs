@@ -76,6 +76,7 @@ currently the following modules exists:
    modules/geo/index
    modules/solr/index
    modules/xing-vendor-api/index
+   modules/stackoverflow-api/index
    modules/settings/index
    modules/simple-import/index
    modules/jobs-by-mail/index
