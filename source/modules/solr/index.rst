@@ -110,7 +110,7 @@ Installation
 ^^^^^^^^^^^^
 
 to install the `yawik/solr`_ Modul into a running YAWIK, change into the `YAWIK/modules` directory and clone
-the yawik/solr module.
+the yawik/solr module .
 
 .. code-block:: sh
 
@@ -152,6 +152,33 @@ To configure the solr connection copy the Solr options file into you autoload di
     YAWIK any more.
 
 
+If you want to set a user/password for solr you first have to enable an `Authorization Plugin`_.  Since Solr6 you can do
+so by copying the following json to :file:`/var/solr/data/security.json`
+
+.. ::
+
+    {
+    "authentication":{
+       "blockUnknown": true,
+       "class":"solr.BasicAuthPlugin",
+       "credentials":{"solr":"IV0EHq1OnNrj6gvRCwvFwTrZ1+z1oBbnQdiVC3otuq0= Ndd7LKvVBAaZIF0QAVi1ekCfAJXr1GGfLtRUXhgrF8c="}
+    },
+    "authorization":{
+       "class":"solr.RuleBasedAuthorizationPlugin",
+       "permissions":[{"name":"security-edit",
+          "role":"admin"}],
+       "user-role":{"solr":"admin"}
+    }}
+
+
+This will add a user "solr" with the password "SolrRocks". After that you can change the password with
+
+.. _Authorization Plugin: https://lucene.apache.org/solr/guide/6_6/basic-authentication-plugin.html
+
+.. code-block:: sh
+
+    curl --user solr:SolrRocks http://localhost:8983/solr/admin/authentication -H 'Content-type:application/json' \
+        -d '{"set-user": {"solr" : "myPassword"}}'
 
 
 you can initially index all active jobs by:
@@ -171,8 +198,8 @@ Schema
  city                                 city of the job opening
  lang                                 language of the job opening
  entityName                           possible values "job", "location" or "organization"
- *MultiString*                        Used by categories. E.g. regionMultiString, industryMultiString,
-                                      professionMultiString
+ *_MultiString*                       Used by categories. E.g. region_MultiString, industry_MultiString,
+                                      profession_MultiString
 ==================================== ===================================================================================
 
 
