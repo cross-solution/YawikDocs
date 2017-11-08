@@ -18,6 +18,7 @@ Contents:
 
    assets
    forms
+   imagesets
    navigation
    pagination
    notifications
