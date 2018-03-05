@@ -11,8 +11,8 @@ provider like `mlab.com`_ or google_.
 Requirements
 ------------
 
-* php >= 5.6.* (PHP7 is currently not supported)
-* Zend Framework 2.5.* (we're currently `updating to ZF3`_, ZF2 Support will be dropped in 0.29+)
+* php >= 5.6.* (PHP7 is currently not supported - but it's possible http://php7.yawik.org )
+* Zend Framework 3
 * mongodb >= 2.4.* (you should use >= 2.6 ... see below)
 * php5-mongo
 * php5-intl
