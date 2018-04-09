@@ -119,13 +119,16 @@ copy the auth.options.global.php.dist_ to :file:`config/autoload/auth.options.gl
 Mail
 ----
 
-To configure an SMTP Server, copy ``Core/config/MailServiceOptions.config.local.php.dist`` to your ``config/autoload``
- directory and adjust the values.
+To configure an SMTP Server, copy `MailServiceOptions.config.local.php`_ to your ``config/autoload``
+directory and adjust the values.
 
 Setting the senders address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+copy the `auth.options.global.php`_ into your ``config/autoload`` and set the fromEmail value.
 
+.. _auth.options.global.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Auth/config/auth.options.global.php.dist
+.. _MailServiceOptions.config.local.php: https://github.com/cross-solution/YAWIK/blob/develop/module/Core/config/MailServiceOptions.config.local.php.dist
 
 Setting Mail Texts
 ^^^^^^^^^^^^^^^^^^
@@ -135,10 +138,22 @@ The mail texts are defined by the following templats. You can overwrite the mail
 .. code-block:: php
    :linenos:
 
+            'mail/header' => __DIR__ . '/../view/mail/header.phtml',
+            'mail/footer' => __DIR__ . '/../view/mail/footer.phtml',
+            'mail/footer.en' => __DIR__ . '/../view/mail/footer.en.phtml',
+            'mail/forgotPassword' =>  __DIR__ . '/../view/mail/forgot-password.phtml',
+            'mail/register' =>  __DIR__ . '/../view/mail/register.phtml',
             'mail/job-created' => __DIR__ . '/../view/mails/job-created.phtml',
             'mail/job-pending' => __DIR__ . '/../view/mails/job-pending.phtml',
             'mail/job-accepted' => __DIR__ . '/../view/mails/job-accepted.phtml',
             'mail/job-rejected' => __DIR__ . '/../view/mails/job-rejected.phtml',
+            'auth/mail/new-registration' => __DIR__ . '/../view/mail/new-registration.phtml',
+            'auth/mail/user-confirmed' => __DIR__ . '/../view/mail/user-confirmed.phtml',
+            'jobs-by-mail/form/subscribe/form' => __DIR__ . '/../view/jobs-by-mail/form.phtml',
+            'jobs-by-mail/mail/jobs' => __DIR__ . '/../view/mail/jobs.phtml',
+            'jobs-by-mail/mail/confirmation' => __DIR__ . '/../view/mail/confirmation.phtml',
+
+
 
 
 The mail texts can be translated by adding the languages to the mapping keys. The Logic is coded in:
