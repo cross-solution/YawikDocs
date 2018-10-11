@@ -11,11 +11,12 @@ provider like `mlab.com`_ or google_.
 Requirements
 ------------
 
-* php >= 5.6.* (PHP7 is currently not supported - but it's possible http://php7.yawik.org )
+* php >= 5.6.*
 * Zend Framework 3
-* mongodb >= 2.4.* (you should use >= 2.6 ... see below)
-* php5-mongo
+* mongodb >= 2.6.*
+* php5-mongodb (php5-mongo works with yawik<=v0.31)
 * php5-intl
+* php5-gd
 * php5-curl (only needed to install dependencies via composer)
 * php5-xsl (only needed to install dependencies via composer)
 * php5-openssl (only needed to install dependencies via composer)
@@ -76,7 +77,7 @@ you have to install the following packages.
 
 .. code-block:: sh
 
-  apt-get install php5-mongo libapache2-mod-php5 php5-curl php5-xsl \
+  apt-get install php5-mongodb libapache2-mod-php5 php5-curl php5-xsl php5-gd \
                    php5-intl php5-common php5-cli php5-json php5 apache2 curl npm uglifyjs
 
 ``npm`` and ``uglifyjs`` are needed to install assets (boostrap, jquery, select2 ...). You're only need those packages,
@@ -102,7 +103,7 @@ the ondrej/php repository to your apt source lists.
 
  LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
  aptitude update
- aptitude install php5.6-mongo php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
+ aptitude install php5.6-mongodb php5.6-gd php5.6-curl php5.6-xsl php5.6-intl php5.6-common php5.6-cli php5.6-json curl
 
 .. _doctrine-mongodb-odm: http://doctrine-orm.readthedocs.io/projects/doctrine-mongodb-odm/en/latest/#
 

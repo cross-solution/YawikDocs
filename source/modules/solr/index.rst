@@ -206,13 +206,18 @@ Schema
 Description
 ^^^^^^^^^^^
 
-YAWIK entities are searchable using the fulltext feature offered by mongodb. These features are great and normally
-sufficient, to offer e.g. jobs on a career page. If you want to use YAWIK as a jobboard, the requirements increase.
-A jobboard normally offers millions of jobs to millions of visitors. At first you need a scaling search engine.
-Currently Solr is supported.
+YAWIK entities can be searched with the full text function of mongodb. This feature is great and usually sufficient, for
+example, to offer jobs on your own career site. If you want to use YAWIK as a job board, the requirements increase. A
+job exchange must be able to provide many jobs to many visitors. You need a search engine that scales. Currently Solr is
+supported.
 
-Using the solr module, you'll get full featured search engine offering the following features:
+With the solr module, the search is outsourced to the Solr search engine. The module synchronizes the search index with
+the jobs from the MongoDB.
 
-* facet searches (e.g. list of categories showing possible matches)
-* highlight matches in the search result
+
+Configuration
+^^^^^^^^^^^^^
+
+Since 0.5.1 you can use the following parameters to search
+
 

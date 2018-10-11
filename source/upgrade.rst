@@ -56,3 +56,8 @@ following query
   db.getCollection('organizations.names').find().forEach(function(name) {
       db.getCollection('organizations').update({organizationName: name._id}, {$set: {_organizationName: name.name}}, {multi: true});
   })
+
+0.31 => 0.32
+------------
+
+0.32 requires to use the ext-mongodb extension. You have to replace your ext-mongo by ext-mongodb.
