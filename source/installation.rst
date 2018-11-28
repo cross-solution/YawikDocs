@@ -1,9 +1,9 @@
 Installation
 ============
 
-you need at least a webserver, a mongo database and PHP. We're developing using
-apache with mod_php5 enabled. But you can use ngix, too. If you don't have a local mongoDB available you can try a
-provider like `mlab.com`_ or google_.
+you need at least PHP and a mongo database. For testing, you can use the php buildin server. Apache and ngix are known to work
+We're developing using apache with mod_php5 enabled. But you can use ngix, too.
+If you don't have a local mongoDB available you can try a provider like `mlab.com`_ or google_.
 
 .. _mlab.com: https://mlab.com/
 .. _google: https://console.cloud.google.com/launcher?q=mongodb
@@ -29,7 +29,7 @@ Linux Ubuntu, Debian, FreeBSD and OSX. It's possible to run YAWIK on AWS.
 
 On FreeBSD, make sure, the php fileinfo extention is available. Fileinfo extention is needed by validating file uploads.
 
-The YAWIK development is done on Ubuntu Linux. It is tested on Precise 12.04 and Trusty 14.04, Xenial 16.04 and Debian 8.
+The YAWIK development is done mainly on Ubuntu Linux.
 
 .. _get_mongo:
 
@@ -42,7 +42,7 @@ In 2.6 and above the text search is enabled by default.
 
 .. _enable the text search: https://docs.mongodb.com/v2.4/tutorial/enable-text-search/
 
-You can install e.g. mongo 3.2 by: (Our demo is running 2.6, development is done with 3.0 and 3.2)
+You can install e.g. mongo 3.2 by: (Our demo is running 2.6, development is done with 3.x)
 
 
 https://docs.mongodb.com/manual/administration/install-on-linux/
@@ -370,7 +370,7 @@ into sections. E.g. a router.config.php file should contain an associative
 array defining routing specific things.
 
 If the enviroment is set to ``production``, all configurations are cached in
-``cahe/module-classmap-cache.module_map.php``. There is currently no way to invalidate the
+``cache/module-classmap-cache.module_map.php``. There is currently no way to invalidate the
 cache. You have to remove this file, if you alter files in ``config/autoload``.
 
 
