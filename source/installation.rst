@@ -11,7 +11,7 @@ If you don't have a local mongoDB available you can try a provider like `mlab.co
 Requirements
 ------------
 
-* php >= 5.6.*
+* php >= 5.6.* || php 7.*
 * Zend Framework 3
 * mongodb >= 2.6.*
 * php5-mongodb (php5-mongo works with yawik<=v0.31)
@@ -126,10 +126,51 @@ add-apt-repository ppa:ondrej/php
     aptitude install php-mongodb php-curl php-xsl php-intl php-common php-cli php-json curl libapache2-mod-php php-cli apache2
 
 
-
 Setup
 -----
 
+Build with composer
+^^^^^^^^^^^^^^^^^^^
+
+A YAWIK instance can be build with composer.
+
+.. code-block:: sh
+
+    composer create-project yawik/standard path/to/yawik
+
+This will install YAWIK with all development dependencies. You can add additional modules with
+
+.. code-block:: sh
+
+    cd path/to/yawik
+    composer require [modulename]
+
+For a list of available modules, check https://packagist.org/?type=yawik-module
+
+If you do not want to have all development dependencies on your production server, you need to copy all files
+except the ``vendor`` directory and all directories under ``public``  from ``path/to/yawik`` to a new
+directory. In this directory you then run
+
+.. code-block:: sh
+    composer install --no-dev
+
+Alternatively you can create a new yawik project and copy the files ``config/modules.config.php`` and ``composer.lock`` from
+``path/to/yawik``. Then run the ``composer install``
+
+.. code-block:: sh
+
+    composer create-project --no-dev path/to/yawik-production
+    cd path/to/yawik-production
+    cp path/to/yawik/config/modules.config.php ./config
+    cp path/to/yawik/composer.lock path/to/yawik/composer.json .
+    composer install --no-dev
+
+Finally you need to transfer the ``path/to/yawik-production`` to your webserver.
+For configuring apache to server YAWIK, please look in the section below.
+Document root must be the ``public`` directory.
+
+Install without composer
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Get the latest YAWIK Package from Sourceforge_. Packages are build as ZIP or TGZ archive. 
 They extract into a subdirectory YAWIK-x.y.z. If you preserve the permissions, the directories
@@ -251,6 +292,8 @@ A configuration file for Nginx looks like this
 
 Yawik can be downloaded at https://sourceforge.net/projects/yawik/files/
 
+
+
 Setup for Developers
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -290,27 +333,6 @@ from the modules configuration directory to the autoload directory and removing 
 
     If you use apache, you can do this in your virtual section config with
     ``SetEnv APPLICATION_ENV="development"``
-
-
-
-Setup using composer
-^^^^^^^^^^^^^^^^^^^^
-
-you can install yawik using composer
-
-.. code-block:: sh
-
-  composer create-project cross-solution/yawik:dev-develop
-
-This will clone the latest version from the develop branch, download all needed dependencies.
-
-.. code-block:: sh
-
-    cd yawik
-    php -S localhost:8000 index.php
-
-Point your browser to localhost:8000 and start using yawik
-
 
 
 
