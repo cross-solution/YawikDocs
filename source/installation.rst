@@ -152,6 +152,7 @@ except the ``vendor`` directory and all directories under ``public``  from ``pat
 directory. In this directory you then run
 
 .. code-block:: sh
+
     composer install --no-dev
 
 Alternatively you can create a new yawik project and copy the files ``config/modules.config.php`` and ``composer.lock`` from
