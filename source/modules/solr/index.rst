@@ -28,7 +28,7 @@ Requirements
 current development is using:
 
 * php5-solr (pecl >= 2.4.0)
-* apache solr (6.1)
+* apache solr (6.6.5) (solr >7 is currently not working)  
 
 .. note:: Debian 8 ships with php5-solr 1.0.2. You can build your solr extension by:
 
@@ -61,9 +61,9 @@ installation script. By default you'll find your solr server in :file:`/opt/solr
 .. code-block:: sh
 
 
-   > wget http://apache.lauf-forum.at/lucene/solr/6.6.0/solr-6.6.0.tgz
-   > tar xzf solr-6.6.0.tgz
-   > solr-6.6.0/bin/install_solr_service.sh solr-6.6.0.tgz
+   > wget https://www-us.apache.org/dist/lucene/solr/6.6.5/solr-6.6.5.tgz
+   > tar xzf solr-6.6.5.tgz
+   > solr-6.6.5/bin/install_solr_service.sh solr-6.6.5.tgz
 
 
 After the installation, solr server ist running at localhost port 8983. This is enough for yawik to be able the access
