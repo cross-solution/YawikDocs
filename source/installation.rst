@@ -11,14 +11,14 @@ If you don't have a local mongoDB available you can try a provider like `mlab.co
 Requirements
 ------------
 
-* php >= 5.6.* || php 7.*
+* php >= php 7.1
 * Zend Framework 3
-* mongodb >= 2.6.*
-* php5-mongodb (php5-mongo works with yawik<=v0.31)
+* mongodb >= 3.*
+* php5-mongodb
 * php5-intl
 * php5-gd
 * php5-curl (only needed to install dependencies via composer)
-* php5-xsl (only needed to install dependencies via composer)
+* php5-xml (only needed to install dependencies via composer)
 * php5-openssl (only needed to install dependencies via composer)
 * php5-mbstring (only needed, if the PDF module is used)
 

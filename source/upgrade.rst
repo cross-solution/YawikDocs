@@ -1,6 +1,9 @@
 Upgrade
 =======
 
+``composer update`` should do the task.
+
+But: never forget to backup before upgrade.
 
 .. _backup-database:
 
@@ -18,7 +21,6 @@ To drop all indexes, go to your mongo shell and type:
   set1:PRIMARY> db.users.dropIndexes();
   set1:PRIMARY> db.applications.dropIndexes();
   set1:PRIMARY> db.jobs.dropIndexes();
-
 
 .. _mongodump: https://docs.mongodb.org/manual/reference/program/mongodump/
 .. _mongorestore: https://docs.mongodb.org/manual/reference/program/mongorestore/
