@@ -6,3 +6,6 @@ build/**
 .project
 .settings/
 .idea
+
+# VS Code
+.vscode/
