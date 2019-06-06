@@ -124,7 +124,8 @@ from PECL by yourself or use the great ondrej repos.
 
 .. code-block:: sh
     
-    aptitude install php-mongodb php-curl php-xsl php-intl php-common php-cli php-json curl libapache2-mod-php php-cli apache2
+    aptitude install php-mongodb php-curl php-xsl php-intl php-common php-cli php-json curl libapache2-mod-php php-cli \
+             apache2 php-dom php-mbstring
 
 
 Setup
