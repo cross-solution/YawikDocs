@@ -113,16 +113,16 @@ the ondrej/php repository to your apt source lists.
 Install YAWIK on Ubuntu 18.04
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installation of PHP7.2 and apache2. Ubuntu 18.04 comes with php7.2.3 and exz-mongodb 1.3.4. You'll need at least ext-mongodb ^1.5.0. You'' have to build it
-from PECL or use the great
+Installation of PHP7.2 and apache2. Ubuntu 18.04 comes with php7.2.3 and ext-mongodb 1.3.4. You'll need at least ext-mongodb ^1.5.0. You'll have to build it
+from PECL by yourself or use the great ondrej repos.
 
--- code-block:: sh
+.. code-block:: sh
       
     apt-get install software-properties-common
     add-apt-repository ppa:ondrej/php
 
 
--- code-block:: sh
+.. code-block:: sh
     
     aptitude install php-mongodb php-curl php-xsl php-intl php-common php-cli php-json curl libapache2-mod-php php-cli apache2
 
