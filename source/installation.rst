@@ -14,13 +14,13 @@ Requirements
 * php >= php 7.1
 * Zend Framework 3
 * mongodb >= 3.*
-* php5-mongodb
-* php5-intl
-* php5-gd
-* php5-curl (only needed to install dependencies via composer)
-* php5-xml (only needed to install dependencies via composer)
-* php5-openssl (only needed to install dependencies via composer)
-* php5-mbstring (only needed, if the PDF module is used)
+* php-mongodb
+* php-intl
+* php-gd
+* php-curl (only needed to install dependencies via composer)
+* php-dom (only needed to install dependencies via composer)
+* php-openssl (only needed to install dependencies via composer)
+* php-mbstring (only needed, if the PDF module is used)
 
 YAWIK should run on any OS, which supports the above software components. In real life, we've seen YAWIK running on
 Linux Ubuntu, Debian, FreeBSD and OSX. It's possible to run YAWIK on AWS.
