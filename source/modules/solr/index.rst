@@ -28,7 +28,7 @@ Requirements
 current development is using:
 
 * php5-solr (pecl >= 2.4.0)
-* apache solr (6.6.5) (solr >7 is currently not working)  
+* apache solr (6.6.5) (solr >7 is currently not working)
 
 .. note:: Debian 8 ships with php5-solr 1.0.2. You can build your solr extension by:
 
@@ -125,8 +125,33 @@ To activate the module create a php file named ``WhateverYouWant.module.php`` in
 
 To configure the solr connection copy the Solr options file into you autoload directory and adjust the values.
 
+Available configuration options
+===============================
+
+====================== ============== ===================================================================================
+ Option                 Type           Description
+====================== ============== ===================================================================================
+ secure                 bool           Use SSL (https) [true] or not [false]
+ hostname               string         Hostname of the solr server
+ port                   int            The TCP port. Default: 8983
+ username               string         Username used for HTTP Authentication (if needed)
+ password               string         Password of the HTTP Authentocation
+ jobsPath               string         The path to the solr jobs index
+ facetFields            array          List of facet fields. Each entry must be an array with at least the key "name".
+                                       An optional key "label" specifies a headline for the factes results.
+ facetLimit             int            Maps to facet.limit. Sets the maximum number of constraint counts that should be
+                                       returned for the facet fields.
+ facetMinCount          int            Sets the minimum counts for facet fields that should be included in the response
+ parameterNames         array          Maps query parameter names to solr field names. (see .dist file for examples)
+ sorts                  array          Specify the sort order used for an empty search.
+                                       Must be an associated array where the key is the field name and the value
+                                       is the sort order.
+                                       (Default: [ "datePublishStart" => \SolrQuery::ORDER_DESC ] )
+====================== ============== ===================================================================================
+
+
 .. code-block:: sh
- 
+
   cp module/Solr/config/solr.moduleoptions.local.php.dist config/autoload/solr.moduleoptions.local.php
 
 .. note::
