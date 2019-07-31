@@ -18,7 +18,10 @@ Contents:
    :maxdepth: 2
 
    about
+   requirements
+   preparations
    installation
+   runtime
    upgrade
    configuration
    modules

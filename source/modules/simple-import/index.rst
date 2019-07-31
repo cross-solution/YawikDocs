@@ -27,7 +27,8 @@ SimpleImport
 .. _yawik/SimpleImport: https://github.com/yawik/SimpleImport.git
 
 
-The SimpleImport module offers a command line tool to import jobs from feeds. It's usefull, if you plan to use YAWIK as a jobportal and if you would like to import jobs from customers.
+The SimpleImport module offers a command line tool to import jobs from feeds. It's usefull, if you plan to use YAWIK as a jobportal and if you would like to 
+import jobs from customers.
 
 
 .. code-block:: sh

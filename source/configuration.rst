@@ -24,6 +24,11 @@ If the enviroment is set to ``production``, all configurations are cached in
 There is currently no way to invalidate the cache. You have to remove these
 files, if you modify files in file:`config/autoload`.
 
+.. toctree::
+   :maxdepth: 2
+   
+   configuration/auth
+   configuration/sm
 
 Authentication
 --------------
