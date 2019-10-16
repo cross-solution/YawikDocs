@@ -128,27 +128,35 @@ To configure the solr connection copy the Solr options file into you autoload di
 Available configuration options
 ===============================
 
-====================== ============== ===================================================================================
- Option                 Type           Description
-====================== ============== ===================================================================================
- secure                 bool           Use SSL (https) [true] or not [false]
- hostname               string         Hostname of the solr server
- port                   int            The TCP port. Default: 8983
- username               string         Username used for HTTP Authentication (if needed)
- password               string         Password of the HTTP Authentocation
- jobsPath               string         The path to the solr jobs index
- facetFields            array          List of facet fields. Each entry must be an array with at least the key "name".
-                                       An optional key "label" specifies a headline for the factes results.
- facetLimit             int            Maps to facet.limit. Sets the maximum number of constraint counts that should be
-                                       returned for the facet fields.
- facetMinCount          int            Sets the minimum counts for facet fields that should be included in the response
- parameterNames         array          Maps query parameter names to solr field names. (see .dist file for examples)
- sorts                  array          Specify the sort order used for an empty search.
-                                       Must be an associated array where the key is the field name and the value
-                                       is the sort order.
-                                       (Default: [ "datePublishStart" => \SolrQuery::ORDER_DESC ] )
-====================== ============== ===================================================================================
 
+.. table:: Options
+    :widths: auto
+    
+    ====================== ============== ===================================================================================
+     Option                 Type           Description
+    ====================== ============== ===================================================================================
+     secure                 bool           Use SSL (https) [true] or not [false]
+     hostname               string         Hostname of the solr server
+     port                   int            The TCP port. Default: 8983
+     username               string         Username used for HTTP Authentication (if needed)
+     password               string         Password of the HTTP Authentocation
+     jobsPath               string         The path to the solr jobs index
+     facetFields            array          List of facet fields. Each entry must be an array with at least the key "name".
+                                           An optional key "label" specifies a headline for the factes results.
+     facetLimit             int            Maps to facet.limit. Sets the maximum number of constraint counts that should be
+                                           returned for the facet fields.
+     facetMinCount          int            Sets the minimum counts for facet fields that should be included in the response
+     parameterNames         array          Maps query parameter names to solr field names. (see `.dist file`_ for examples)
+     sorts                  array          Specify the sort order used for an empty search.
+                                           Must be an associated array where the key is the field name and the value
+                                           is the sort order.
+                                           (Default: [ "datePublishStart" => \SolrQuery::ORDER_DESC ] )
+     filterQueries          array          todo
+     boostQueries           array          todo 
+    ====================== ============== ===================================================================================
+
+
+.. _.dist file: https://github.com/yawik/Solr/blob/master/config/solr.moduleoptions.local.php.dist
 
 .. code-block:: sh
 
