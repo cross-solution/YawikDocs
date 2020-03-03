@@ -94,4 +94,4 @@ Since most of the own classes are derived from laminas-mail_ (at least they shou
 they will have a full pledge of all the methods, which are provided especially for mails, like ``setEncoding``, ``setFrom`` etc...
 
 
-_laminas-mail: https://docs.laminas.dev/laminas-mail/message/intro/
+.. _laminas-mail: https://docs.laminas.dev/laminas-mail/message/intro/
