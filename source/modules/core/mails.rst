@@ -90,6 +90,8 @@ With being announced, the mail-service can instantiate and initialize this class
     $mail = $mailService->get('myOwnClass');
     $mailService->send($mail);
 
-Since most of the own classes are derived from ``Zend\Mail\Message`` (at least they should be derived from it),
+Since most of the own classes are derived from laminas-mail_ (at least they should be derived from it),
 they will have a full pledge of all the methods, which are provided especially for mails, like ``setEncoding``, ``setFrom`` etc...
 
+
+_laminas-mail: https://docs.laminas.dev/laminas-mail/message/intro/

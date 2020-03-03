@@ -167,20 +167,20 @@ Options
 To modify the options, copy the module.jobs.options.local.php.dist_ to you ``config/autoload`` directory, remove the
 ``.dist`` prefix and adjust the values
 
-+----------------------------+--------+----------------------------------------------------------------------------------------+
-|Name                        | type   | description                                                                            |
-+============================+========+========================================================================================+
-|multipostingApprovalMail    | string | recipient email of the approval team                                                   |
-+----------------------------+--------+----------------------------------------------------------------------------------------+
-|multipostingTargetUri       | string | Send a Rest Request to this target on status changes of a job opening. The URI can     |
-|                            |        | contain username/password. eg:  ``http://user:pass@host/location?query``               |
-+----------------------------+--------+----------------------------------------------------------------------------------------+
-|defaultLogo                 | string | The default Logo is shown in a job opening and in the application form                 |
-+----------------------------+--------+----------------------------------------------------------------------------------------+
-|companyLogoMaxSize          | int    | Maximum size in bytes of a company Logo. Default 200kB                                 |
-+----------------------------+--------+----------------------------------------------------------------------------------------+
-|companyLogoMimeType         | array  | Allowed Mime-Types for company Logos                                                   |
-+----------------------------+--------+----------------------------------------------------------------------------------------+
++--------------------------+--------+------------------------------------------------------------------------------------+
+|           Name           |  type  |                                    description                                     |
++==========================+========+====================================================================================+
+| multipostingApprovalMail | string | recipient email of the approval team                                               |
++--------------------------+--------+------------------------------------------------------------------------------------+
+| multipostingTargetUri    | string | Send a Rest Request to this target on status changes of a job opening. The URI can |
+|                          |        | contain username/password. eg:  ``http://user:pass@host/location?query``           |
++--------------------------+--------+------------------------------------------------------------------------------------+
+| defaultLogo              | string | The default Logo is shown in a job opening and in the application form             |
++--------------------------+--------+------------------------------------------------------------------------------------+
+| companyLogoMaxSize       | int    | Maximum size in bytes of a company Logo. Default 200kB                             |
++--------------------------+--------+------------------------------------------------------------------------------------+
+| companyLogoMimeType      | array  | Allowed Mime-Types for company Logos                                               |
++--------------------------+--------+------------------------------------------------------------------------------------+
 
 .. _module.jobs.options.local.php.dist: https://github.com/cross-solution/YAWIK/blob/develop/module/Jobs/config/module.jobs.options.local.php.dist
 
@@ -233,17 +233,17 @@ ATS Mode
 
 The ATS (Applicant Tracking System) Mode defines, how applications should be processed. The following modes exist:
 
-+----------------------------+----------------------------------------------------------------------------------------+
-|Name                        | description                                                                            |
-+============================+========================================================================================+
-|intern                      | Applications are stored within the local YAWIK instance                                |
-+----------------------------+----------------------------------------------------------------------------------------+
-|uri                         | Application Form is pointed to en external ATS System                                  |
-+----------------------------+----------------------------------------------------------------------------------------+
-|email                       | Application Form is forwarded via Email                                                |
-+----------------------------+----------------------------------------------------------------------------------------+
-|none                        | The Application Formular is deactivated                                                |
-+----------------------------+----------------------------------------------------------------------------------------+
++--------+---------------------------------------------------------+
+|  Name  |                       description                       |
++========+=========================================================+
+| intern | Applications are stored within the local YAWIK instance |
++--------+---------------------------------------------------------+
+| uri    | Application Form is pointed to en external ATS System   |
++--------+---------------------------------------------------------+
+| email  | Application Form is forwarded via Email                 |
++--------+---------------------------------------------------------+
+| none   | The Application Formular is deactivated                 |
++--------+---------------------------------------------------------+
 
 By using the ATS Mote ``intern``, you can enable the One-Click-Apply Feature. This will add an additional Apply Button
 per selected social network into the job opening.

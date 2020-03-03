@@ -4,7 +4,7 @@ Requirements
 ------------
 
 * php >= php 7.2
-* Zend Framework 3
+* Laminas
 * mongodb >= 3.*
 * php-mongodb >= 1.5
 * php-intl

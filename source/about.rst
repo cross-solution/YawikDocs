@@ -14,12 +14,12 @@ a Hire-Me-Page. Currently it is possible to integrate YAWIK into a corporate web
 applicants.
 
 
-YAWIK is a PHP web application. It's based on ZF2_ "Zend Framework 2" and mongo. The target group of YAWIK are companies
+YAWIK is a PHP web application. It's based on Laminas_ and mongo. The target group of YAWIK are companies
 and candidates.
 
 As started in 2013, YAWIK is quite new but stable enough to be used by aprox 20 companies to manage applications.
 
-.. _ZF2: http://framework.zend.com/manual/current/en/user-guide/overview.html
+.. _Laminas: https://docs.laminas.dev/components/
 
 **Why do we do this?**
 

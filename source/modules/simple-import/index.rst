@@ -32,7 +32,6 @@ YAWIK as a jobportal and if you would like to import jobs from customers.
 
 The CLI offers the following functionalisites.
 
-
 .. code-block:: sh
 
   Simple import operations

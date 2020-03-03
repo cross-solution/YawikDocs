@@ -73,7 +73,7 @@ container div
     >
 
 The javascript will bind to the click events of any link inside an element with the class "pagination", as the
-PaginationControl view helper of the Zend Framework will do.
+PaginationControl view helper of the Laminas Framework will do.
 
 Once such a link is clicked, the loading div is displayed, an AJAX request is issued to the url of that
 links href attribute and the content of the div.pagination-content is replaced by the response.

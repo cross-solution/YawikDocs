@@ -6,9 +6,9 @@ Headscripts
 ^^^^^^^^^^^
 
 To inject script tags (with and without source) to the head section of the rendered output, YAWIK makes use of
-the Headscript_ view helper of Zend Framework.
+the Headscript_ view helper of Laminas Framework.
 
-.. _Headscript: http://framework.zend.com/manual/2.3/en/modules/zend.view.helpers.head-script.html
+.. _Headscript: https://docs.laminas.dev/laminas-view/helpers/head-script/
 
 
 Inject scripts from a view script
@@ -24,7 +24,7 @@ To inject a script tag from a view script:
     <!-- prepend a file -->
     <?php $this->headscript()->appendFile($this->basePath('path/to/script.js')) ?>
 
-    <!-- or use another method of Zend Frameworks' helper. -->
+    <!-- or use another method of Laminas helper. -->
 
 
 Inject scripts via module.config.php
