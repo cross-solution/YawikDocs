@@ -11,11 +11,11 @@ Applications
     </div>
 
 the application module offers an application formular, a list of applications and
-a detail view of an application. Depending on the users privileges the detail 
-view offers a way to invite or reject an applicant, to rate an application or to 
+a detail view of an application. Depending on the users privileges the detail
+view offers a way to invite or reject an applicant, to rate an application or to
 forward an application by email.
 
-If the :ref:`PDF` Module is installed, the Application can be downloaded as a PDF 
+If the :ref:`PDF` Module is installed, the Application can be downloaded as a PDF
 document with attachments and social profiles embedded.
 
 Options
@@ -79,6 +79,44 @@ you can attach Listeners to the following events
 +----------------------------------------+---------------------------+-----------------------------------------------------------------------+
 | EVENT_APPLICATION_STATUS_CHANGE        | application.status.change | Thrown, befor an application is removed from the Database             |
 +----------------------------------------+---------------------------+-----------------------------------------------------------------------+
+
+API
+^^^
+
+It is possible to create an application through POST request to
+`api/apply` passing in the apply id of the job ad as query parameter.
+
+The data must be sent with the content type `multipart/form-data`
+
+
++-----------------------------------------------+------------------------------------------------------------------+
+| Contact                                       |                                                                  |
++-----------------------------------------------+------------------------------------------------------------------+
+| contact[gender]                               |                                                                  |
+| contact[first_name]                           | First name                                                       |
+| contact[last_name]                            | Last name                                                        |
+| contact[birthday]                             | YYYY-mm-dd                                                       |
+| contact[street]                               |                                                                  |
+| contact[house_number]                         |                                                                  |
+| contact[postal_code]                          |                                                                  |
+| contact[city]                                 |                                                                  |
+| contact[country]                              |                                                                  |
+| contact[email]                                |                                                                  |
+| contact[image]                                | user image (avatar) (must be an image)                           |
++-----------------------------------------------+------------------------------------------------------------------+
+
+Every property of an application and its embedded documents can be send using the above mapping stategy.
+Field name 'attachments[]' sends a file as attachment for example.
+
+The response is a json string.
+
+.. code-block::
+    { "status": "OK" }
+
+    { "status": "Error", "message": "" }
+
+
+
 
 Workflow
 ^^^^^^^^
