@@ -83,7 +83,7 @@ you can attach Listeners to the following events
 API
 ^^^
 
-It is possible to create an application through POST request to
+It is possible to create an application through a POST request to
 `api/apply` passing in the apply id of the job ad as query parameter.
 
 The data must be sent with the content type `multipart/form-data`
@@ -115,19 +115,93 @@ The data must be sent with the content type `multipart/form-data`
 +-----------------------------------------------+------------------------------------------------------------------+
 | contact[image]                                | user image (avatar) (must be an image)                           |
 +-----------------------------------------------+------------------------------------------------------------------+
+| General application data                      |                                                                  |
++-----------------------------------------------+------------------------------------------------------------------+
+| summary                                       | The cover letter                                                 |
++-----------------------------------------------+------------------------------------------------------------------+
+| Facts                                         |                                                                  |
++-----------------------------------------------+------------------------------------------------------------------+
+| facts[expected_salary]                        |                                                                  |
++-----------------------------------------------+------------------------------------------------------------------+
+| facts[earliest_starting_date]                 |                                                                  |
++-----------------------------------------------+------------------------------------------------------------------+
+| facts[driving_license]                        | Possible values: 0, 1, yes, no                                   |
++-----------------------------------------------+------------------------------------------------------------------+
+| Attachments                                   |                                                                  |
++-----------------------------------------------+------------------------------------------------------------------+
+| attachments[]                                 | One or multiple files                                            |
++-----------------------------------------------+------------------------------------------------------------------+
+
+
 
 Every property of an application and its embedded documents can be send using the above mapping stategy.
 Field name 'attachments[]' sends a file as attachment for example.
 
-The response is a json string.
+The response is a json string. The complete application entity is returned.
 
-.. code-block::
-    { "status": "OK" }
+.. code-block:: sh
 
-    { "status": "Error", "message": "" }
+    # On success (HTTP-Code: 200)
+    {
+        "status": "OK",
+        "entity": {
+            "resource_id": "Entity/Application",
+            "job": "5c5abf660fc61f047c063b28",
+            "user": "token:****************",
+            "status": null,
+            "contact": {
+                "birth_day": null,
+                "birth_month": null,
+                "birth_year": null,
+                "email": null,
+                "is_email_verified": null,
+                "gender": null,
+                "first_name": "Firstname",
+                "house_number": null,
+                "last_name": null,
+                "display_name": null,
+                "phone": null,
+                "postal_code": null,
+                "city": null,
+                "image": "/file/Applications.Attachment/user-image.png",
+                "street": null,
+                "country": null
+            },
+            "summary": null,
+            "facts": {},
+            "cv": {},
+            "attachments": [
+                "/file/Applications.Attachment/some-attachment.doc",
+                "/file/Applications.Attachment/other-attachment.pdf"
+            ],
+            "profiles": {},
+            "attributes": {},
+            "id": null,
+            "date_created": null,
+            "date_modified": null
+        }
+    }
+
+    # on Failure
+    # Either HTTP-Code 400 (No job for the apply id or invalid application data)
+    # or HTTP-Code 405 (Invalid request method)
+
+    { "status": "Error", "message": "Meaningful error message" }
+
+Examples
+========
+
+To try out the API it is best to use an application which is capable of sending post
+requests with file uploads, such as Postman_.
+
+.. figure:: ../../images/yawik-application-api-postman.png
+    :scale: 100%
+    :align: right
+
+    Postman screenshot
 
 
-
+.. _Postman: https://www.postman.com/
 
 Workflow
 ^^^^^^^^
