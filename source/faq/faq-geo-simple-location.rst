@@ -36,5 +36,4 @@ with all attributes of a Location_ entity
     :scale: 20%
     :align: right
 
-.. _Location: https://github.com/cross-solution/YAWIK/blob/develop/module/Core/src/Core/Entity/AbstractLocation.php
-
+.. _Location: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Entity/AbstractLocation.php
