@@ -6,7 +6,7 @@ Requirements
 * php >= php 7.2
 * Laminas
 * mongodb >= 3.*
-* php-mongodb >= 1.5
+* php-mongodb >= 1.7
 * php-intl
 * php-gd
 * php-curl (only needed to install dependencies via composer)
