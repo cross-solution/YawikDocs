@@ -79,7 +79,7 @@ CSS
 ---
 
 YAWIK comes with bootstrap. Glyphicons are replaced by awesome fonts. The sources_ for for the main CSS
-is currently build with lessc_.
+is currently build with lessc.
 Bootstrap and awesome font sources are symlinked to the ``vendor`` directory`.
 CSS files are build by grunt tasks. You can compile the main CSS file by:
 
@@ -99,8 +99,8 @@ for the fixed footer. This is achieved by creating a new less file, which can im
   @footer-height:                     39px;
 
 
-.. _sources: https://github.com/cross-solution/YAWIK/tree/master/less
-.. _make-css.sh: https://github.com/cross-solution/YAWIK/blob/master/less/make-css.sh
+.. _sources: https://github.com/cross-solution/YAWIK/tree/master/module/Core/public/less
+
 
 
 Formular Fields
