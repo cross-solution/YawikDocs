@@ -68,7 +68,7 @@ copyright = u'2020, CROSS Solution'
 # built documents.
 #
 # The short X.Y version.
-version = '0.34.1'
+version = '0.34.5'
 # The full version, including alpha/beta/rc tags.
 release = '0.34.1'
 

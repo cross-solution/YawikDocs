@@ -131,7 +131,7 @@ Available configuration options
 
 .. table:: Options
     :widths: auto
-    
+
     ====================== ============== ===================================================================================
      Option                 Type           Description
     ====================== ============== ===================================================================================
@@ -152,7 +152,7 @@ Available configuration options
                                            is the sort order.
                                            (Default: [ "datePublishStart" => \SolrQuery::ORDER_DESC ] )
      filterQueries          array          todo
-     boostQueries           array          todo 
+     boostQueries           array          todo
     ====================== ============== ===================================================================================
 
 
@@ -227,11 +227,20 @@ Schema
  fields
 ==================================== ===================================================================================
  id                                   Primary key
+ applyId                              unique ID for the application
  title                                Job title
  city                                 city of the job opening
+ dateCreated
+ datePublishStart
+ datePublishEnd
+ dateModified
  lang                                 language of the job opening
- entityName                           possible values "job", "location" or "organization"
- *_MultiString*                       Used by categories. E.g. region_MultiString, industry_MultiString,
+ location                             location of the job posting (string)
+ organizationName                     name of the hiring Organziation
+ companyLogo                          logo of the hiring Organization
+ entityName                           possible values "job" or "location"
+
+ *_MultiString*                       Used by facets. E.g. region_MultiString, industry_MultiString,
                                       profession_MultiString
 ==================================== ===================================================================================
 
@@ -251,6 +260,17 @@ the jobs from the MongoDB.
 Configuration
 ^^^^^^^^^^^^^
 
-Since 0.5.1 you can use the following parameters to search
+Since 0.9 you can use the following parameters to search
 
 
+==================================== ===================================================================================
+ parameter
+==================================== ===================================================================================
+ l                                    location
+ d                                    distance
+ q                                    query
+ organizationTag                      company
+ profession_Mutistring                profession
+ industry_Multistring                 industry
+ employmentType_Multistring           employmentType
+==================================== ===================================================================================
