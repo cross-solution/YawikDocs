@@ -80,7 +80,7 @@ CSS
 
 YAWIK comes with bootstrap. Glyphicons are replaced by awesome fonts. The sources_ for for the main CSS
 is currently build with lessc.
-Bootstrap and awesome font sources are symlinked to the ``vendor`` directory`.
+Bootstrap and awesome font sources are symlinked to the ``vendor`` directory.
 CSS files are build by grunt tasks. You can compile the main CSS file by:
 
 .. code-block:: sh
