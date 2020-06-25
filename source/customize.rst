@@ -8,27 +8,27 @@ You can activate/deactivate Modules in config/config.php
 .. code-block:: sh
 
    $modules = array(
-         'DoctrineModule', 
-         'DoctrineMongoODMModule', 
-         'Core', 
-         'Auth', 
-         'Cv', 
-         'Applications', 
-         'Jobs', 
-         'Settings', 
+         'DoctrineModule',
+         'DoctrineMongoODMModule',
+         'Core',
+         'Auth',
+         'Cv',
+         'Applications',
+         'Jobs',
+         'Settings',
          'Pdf',
     );
 
 
-If you want to customize the layout, you can do so by writing a plugin. The easiest way is to clone 
+If you want to customize the layout, you can do so by writing a plugin. The easiest way is to clone
 the YawikDemoSkin_ into your ``modules`` directory.
 
 .. code-block:: sh
- 
+
  cd modules
  git clone https://github.com/cbleek/YawikDemoSkin
 
-To activate the plugin you can either simply add ``'YawikDemoSkin'`` to your modules array in ``config/config.php``, 
+To activate the plugin you can either simply add ``'YawikDemoSkin'`` to your modules array in ``config/config.php``,
 or if you don't want to touch any code from git at all, simply put a file named eg. ``config/autoload/MyModule.module.php``
 in your autoload directory. Files named *.module.* are read to include additional Modules.
 
@@ -79,7 +79,7 @@ CSS
 ---
 
 YAWIK comes with bootstrap. Glyphicons are replaced by awesome fonts. The sources_ for for the main CSS
-is currently build with lessc_. 
+is currently build with lessc_.
 Bootstrap and awesome font sources are symlinked to the ``vendor`` directory`.
 The global CSS file is build with make-css.sh_
 
@@ -123,7 +123,7 @@ Formular Fields
 +----------------+---------------------------------------------------------------------------------------------------------+
 |InfoCheckbox_   | InfoCheckbox Form element. Adds a Link like to the description Text.                                    |
 +----------------+---------------------------------------------------------------------------------------------------------+
-|Location_       | autocomplete a location and adds additional Geo data, see: :ref:`Once Click Apply <one-click-apply>`    |
+|Location        | autocomplete a location and adds additional Geo data, see: :ref:`Once Click Apply <one-click-apply>`    |
 +----------------+---------------------------------------------------------------------------------------------------------+
 |Phone_          | adds Validation for a phone number                                                                      |
 +----------------+---------------------------------------------------------------------------------------------------------+
@@ -133,14 +133,12 @@ Formular Fields
 +----------------+---------------------------------------------------------------------------------------------------------+
 
 
-.. _Editor: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/Editor.php
-.. _FileUpload: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/FileUpload.php
-.. _InfoCheckbox: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/InfoCheckbox.php
-.. _Location: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/GeoText.php
-.. _Phone: https://github.com/cross-solution/YAWIK/blob/develop/module/Geo/src/Geo/Form/Phone.php
-.. _Rating: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/Rating.php
-.. _SpinnerSubmit: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/Form/Element/SpinnerSubmit.php
-
+.. _Editor: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Form/Element/Editor.php
+.. _FileUpload: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Form/Element/FileUpload.php
+.. _InfoCheckbox: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Form/Element/InfoCheckbox.php
+.. _Phone: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Form/Element/Phone.php
+.. _Rating: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Form/Element/Rating.php
+.. _SpinnerSubmit: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Form/Element/SpinnerSubmit.php
 
 View Helper Scripts
 -------------------
