@@ -65,8 +65,8 @@ in the sources and rename the Directory "YawikDemoSkin" into "MyModule". Do not 
 Now you have a module which you can use as a starting point for modifications.
 
 
-.. _layout.phtml: https://github.com/cbleek/YawikDemoSkin/blob/master/view/layout.phtml
-.. _YawikDemoSkin: https://github.com/cbleek/YawikDemoSkin
+.. _layout.phtml: https://github.com/yawik/DemoSkin/blob/master/view/layout.phtml
+.. _YawikDemoSkin: https://github.com/yawik/DemoSkin
 
 customize your Skin by mapping more :ref:`templates <templates>` to your own views scripts.
 
@@ -81,32 +81,24 @@ CSS
 YAWIK comes with bootstrap. Glyphicons are replaced by awesome fonts. The sources_ for for the main CSS
 is currently build with lessc_.
 Bootstrap and awesome font sources are symlinked to the ``vendor`` directory`.
-The global CSS file is build with make-css.sh_
-
-you can install lessc on ubuntu by
+CSS files are build by grunt tasks. You can compile the main CSS file by:
 
 .. code-block:: sh
 
-  sudo apt-get install npm
-  sudo npm install -g less
+  $ ./node_modules/.bin/grunt less:core
+  Running "less:core" (less) task
+  >> 1 stylesheet created.
 
 Our YawikDemoSkin_ can be seen as an example, how to modify the CSS. The Skin needs a different height
 for the fixed footer. This is achieved by creating a new less file, which can import our
-``yawik/yawik.less`` (a symlink is pointing to it). You can overwrite all less variables.
+``module/Core/public/less/yawik-core.less``. You can overwrite all less variables.
 
 .. code-block:: sh
 
-  @import "yawik/yawik.less";
+  @import "yawik/yawik-core.less";
   @footer-height:                     39px;
 
-Your customized CSS can be compiled with lessc like:
 
-.. code-block:: sh
-
- lessc YawikDemoSkin.less ../public/YawikDemoSkin.css
-
-
-.. _lessc: http://lesscss.org/#using-less
 .. _sources: https://github.com/cross-solution/YAWIK/tree/master/less
 .. _make-css.sh: https://github.com/cross-solution/YAWIK/blob/master/less/make-css.sh
 
@@ -155,9 +147,9 @@ View Helper Scripts
 =================== ======================================================================================================
 
 
-.. _Alert: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Alert.php
-.. _Services: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/Core/View/Helper/Services.php
-.. _jobUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/JobUrl.php
-.. _applyUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/ApplyUrl.php
-.. _applyButton: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Jobs/View/Helper/ApplyButton.php
-.. _languageSwitcher: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/Core/View/Helper/LanguageSwitcher.php
+.. _Alert: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/View/Helper/Alert.php
+.. _Services: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/View/Helper/Services.php
+.. _jobUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/View/Helper/JobUrl.php
+.. _applyUrl: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/View/Helper/ApplyUrl.php
+.. _applyButton: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/src/View/Helper/ApplyButton.php
+.. _languageSwitcher: https://github.com/cross-solution/YAWIK/blob/master/module/Core/src/View/Helper/LanguageSwitcher.php
