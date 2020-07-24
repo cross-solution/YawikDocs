@@ -135,9 +135,10 @@ The data must be sent with the content type `multipart/form-data`
 
 
 Every property of an application and its embedded documents can be send using the above mapping stategy.
-Field name 'attachments[]' sends a file as attachment for example.
+Field name `attachments[]` sends a file as attachment for example.
 
-The response is a json string. The complete application entity is returned.
+The response is a json string. The complete application entity is returned. The url to track the progress
+of the application process is also returned in a key named `track`.
 
 .. code-block:: sh
 
@@ -163,7 +164,7 @@ The response is a json string. The complete application entity is returned.
                 "phone": null,
                 "postal_code": null,
                 "city": null,
-                "image": "/file/Applications.Attachment/user-image.png",
+                "image": "http(s)://yawikserver.tld/file/Applications.Attachment/user-image.png",
                 "street": null,
                 "country": null
             },
@@ -179,7 +180,8 @@ The response is a json string. The complete application entity is returned.
             "id": null,
             "date_created": null,
             "date_modified": null
-        }
+        },
+        "track": "http(s)://yawikserver.tld/de/applications/ID?token=*********"
     }
 
     # on Failure
@@ -190,6 +192,9 @@ The response is a json string. The complete application entity is returned.
 
 Examples
 ========
+
+Postman
+~~~~~~~
 
 To try out the API it is best to use an application which is capable of sending post
 requests with file uploads, such as Postman_.
@@ -202,6 +207,26 @@ requests with file uploads, such as Postman_.
 
 
 .. _Postman: https://www.postman.com/
+
+cURL
+~~~~
+
+But it is also possible to use a cURL command:
+
+.. code-block:: sh
+
+    curl -X POST \
+        'http://php7-mg:8080/api/apply?applyId=5ec7aa95af2a2349123cc59f' \
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'Postman-Token: 7a60e36f-d2c3-4d41-85d0-899f4810bd26' \
+        -H 'cache-control: no-cache' \
+        -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+        -F 'contact[first_name]=John' \
+        -F 'contact[last_name]=Doe'
+        -F 'contact[image]=@/path/to/an/image.png' \
+        -F 'attachments[]=@/path/to/a/file' \
+        -F 'attachments[]=@/path/to/another/file'
+
 
 Workflow
 ^^^^^^^^
