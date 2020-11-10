@@ -372,6 +372,11 @@ Example of the default XML:
 
 https://yawik.org/demo/en/export/xml
 
+Example für a certain channel. In this case yawik_
+https://yawik.org/demo/en/export/xml/yawik
+
+
+
 Search
 ^^^^^^
 
@@ -395,6 +400,4 @@ The formular field for the professions has the name "c". You can use the name wi
 https://yawik.org/demo/de/jobboard?:c=it:sales will prefill categories with "it" and "sales".
 
 
-
-
-
+.. _yawik: https://github.com/cross-solution/YAWIK/blob/master/module/Jobs/view/jobs/export/feed.yawik.xml.phtml
