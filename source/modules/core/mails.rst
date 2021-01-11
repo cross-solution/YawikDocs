@@ -95,3 +95,42 @@ they will have a full pledge of all the methods, which are provided especially f
 
 
 .. _laminas-mail: https://docs.laminas.dev/laminas-mail/message/intro/
+
+
+Mail queue
+==========
+
+It is possible to decouple the sending of mail from the process of the actual request
+with a mail queue.
+
+Similar to other queues, the mail queue is started with command
+
+.. code-block:: sh
+
+    # In a yawik instance
+    bin/console queue mongo mail
+
+    # In a custom module skin
+    vendor/bin/yawik queue mongo mail
+
+
+Sending a mail via the queue is  done by enqueuing a MailJob or by using the
+method 'queue' of the mail service.
+
+Currently it is possible to send the reject mail to an applicant delayed via the queue.
+If the (Applications' ) module option 'delayApplicantRejectMail' is set to an integer
+value greater than 0, the reject mail is send with the given delay value in seconds.
+
+The applications' module options are set in the config:
+
+.. code-block:: php
+
+    return [
+        // ...
+        'application_options' => [
+            // ...
+            'delayApplicantRejectMail => 240, // delay the mail 3 Minutes
+        ],
+        // ...
+    ];
+
